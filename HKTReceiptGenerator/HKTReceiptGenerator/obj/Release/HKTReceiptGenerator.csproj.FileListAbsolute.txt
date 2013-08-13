@@ -1,0 +1,9 @@
+c:\users\jay\documents\visual studio 2012\Projects\HKTReceiptGenerator\HKTReceiptGenerator\bin\Release\HKTReceiptGenerator.exe.config
+c:\users\jay\documents\visual studio 2012\Projects\HKTReceiptGenerator\HKTReceiptGenerator\bin\Release\HKTReceiptGenerator.exe
+c:\users\jay\documents\visual studio 2012\Projects\HKTReceiptGenerator\HKTReceiptGenerator\bin\Release\HKTReceiptGenerator.pdb
+c:\users\jay\documents\visual studio 2012\Projects\HKTReceiptGenerator\HKTReceiptGenerator\obj\Release\HKTReceiptGenerator.LoginForm.resources
+c:\users\jay\documents\visual studio 2012\Projects\HKTReceiptGenerator\HKTReceiptGenerator\obj\Release\HKTReceiptGenerator.MainForm.resources
+c:\users\jay\documents\visual studio 2012\Projects\HKTReceiptGenerator\HKTReceiptGenerator\obj\Release\HKTReceiptGenerator.Properties.Resources.resources
+c:\users\jay\documents\visual studio 2012\Projects\HKTReceiptGenerator\HKTReceiptGenerator\obj\Release\HKTReceiptGenerator.csproj.GenerateResource.Cache
+c:\users\jay\documents\visual studio 2012\Projects\HKTReceiptGenerator\HKTReceiptGenerator\obj\Release\HKTReceiptGenerator.exe
+c:\users\jay\documents\visual studio 2012\Projects\HKTReceiptGenerator\HKTReceiptGenerator\obj\Release\HKTReceiptGenerator.pdb

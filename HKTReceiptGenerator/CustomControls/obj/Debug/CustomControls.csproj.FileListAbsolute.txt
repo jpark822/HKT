@@ -1,0 +1,4 @@
+C:\Users\Jay\Documents\Visual Studio 2012\Projects\HKTReceiptGenerator\CustomControls\bin\Debug\CustomControls.dll
+C:\Users\Jay\Documents\Visual Studio 2012\Projects\HKTReceiptGenerator\CustomControls\bin\Debug\CustomControls.pdb
+C:\Users\Jay\Documents\Visual Studio 2012\Projects\HKTReceiptGenerator\CustomControls\obj\Debug\CustomControls.dll
+C:\Users\Jay\Documents\Visual Studio 2012\Projects\HKTReceiptGenerator\CustomControls\obj\Debug\CustomControls.pdb

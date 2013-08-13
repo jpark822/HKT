@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Windows Desktop
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HKTReceiptGenerator", "HKTReceiptGenerator\HKTReceiptGenerator.csproj", "{0E30B8FB-C471-4F9D-831A-AE08CEB04500}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainModel", "DomainModel\DomainModel.csproj", "{691C94CA-93FF-46E3-8701-A9CBC5D4617E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomControls", "CustomControls\CustomControls.csproj", "{8064423F-9FC5-4EF0-9ED7-3F595EBF57D6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E30B8FB-C471-4F9D-831A-AE08CEB04500}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E30B8FB-C471-4F9D-831A-AE08CEB04500}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E30B8FB-C471-4F9D-831A-AE08CEB04500}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E30B8FB-C471-4F9D-831A-AE08CEB04500}.Release|Any CPU.Build.0 = Release|Any CPU
+		{691C94CA-93FF-46E3-8701-A9CBC5D4617E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{691C94CA-93FF-46E3-8701-A9CBC5D4617E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{691C94CA-93FF-46E3-8701-A9CBC5D4617E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{691C94CA-93FF-46E3-8701-A9CBC5D4617E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8064423F-9FC5-4EF0-9ED7-3F595EBF57D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8064423F-9FC5-4EF0-9ED7-3F595EBF57D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8064423F-9FC5-4EF0-9ED7-3F595EBF57D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8064423F-9FC5-4EF0-9ED7-3F595EBF57D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

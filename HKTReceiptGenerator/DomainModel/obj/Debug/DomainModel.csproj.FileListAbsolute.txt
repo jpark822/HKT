@@ -1,0 +1,10 @@
+C:\Users\Jay\Documents\Visual Studio 2012\Projects\HKTReceiptGenerator\DomainModel\bin\Debug\DomainModel.pdb
+C:\Users\Jay\Documents\Visual Studio 2012\Projects\HKTReceiptGenerator\DomainModel\bin\Debug\System.Data.SQLite.dll
+C:\Users\Jay\Documents\Visual Studio 2012\Projects\HKTReceiptGenerator\DomainModel\bin\Debug\System.Data.SQLite.xml
+C:\Users\Jay\Documents\Visual Studio 2012\Projects\HKTReceiptGenerator\DomainModel\obj\Debug\DomainModel.Properties.Resources.resources
+C:\Users\Jay\Documents\Visual Studio 2012\Projects\HKTReceiptGenerator\DomainModel\obj\Debug\DomainModel.csproj.GenerateResource.Cache
+C:\Users\Jay\Documents\Visual Studio 2012\Projects\HKTReceiptGenerator\DomainModel\obj\Debug\DomainModel.pdb
+C:\Users\Jay\Documents\Visual Studio 2012\Projects\HKTReceiptGenerator\DomainModel\bin\Debug\DomainModel.dll.config
+C:\Users\Jay\Documents\Visual Studio 2012\Projects\HKTReceiptGenerator\DomainModel\bin\Debug\DomainModel.dll
+C:\Users\Jay\Documents\Visual Studio 2012\Projects\HKTReceiptGenerator\DomainModel\obj\Debug\DomainModel.dll
+C:\Users\Jay\Documents\Visual Studio 2012\Projects\HKTReceiptGenerator\DomainModel\obj\Debug\DomainModel.csprojResolveAssemblyReference.cache

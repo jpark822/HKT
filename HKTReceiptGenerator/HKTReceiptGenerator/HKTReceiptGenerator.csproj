@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0E30B8FB-C471-4F9D-831A-AE08CEB04500}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HKTReceiptGenerator</RootNamespace>
+    <AssemblyName>HKTReceiptGenerator</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddAlterationModal\AddAlterationBaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAlterationModal\AddAlterationBaseForm.Designer.cs">
+      <DependentUpon>AddAlterationBaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddAlterationModal\AddJacketModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAlterationModal\AddJacketModal.Designer.cs">
+      <DependentUpon>AddJacketModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddAlterationModal\AddMiscModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAlterationModal\AddMiscModal.Designer.cs">
+      <DependentUpon>AddMiscModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddAlterationModal\AddOtherModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAlterationModal\AddOtherModal.Designer.cs">
+      <DependentUpon>AddOtherModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddAlterationModal\AddPantsModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAlterationModal\AddPantsModal.Designer.cs">
+      <DependentUpon>AddPantsModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddAlterationModal\AddShirtModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAlterationModal\AddShirtModal.Designer.cs">
+      <DependentUpon>AddShirtModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddAlterationModal\AddVestModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAlterationModal\AddVestModal.Designer.cs">
+      <DependentUpon>AddVestModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddAlterationModal\AlterationModalCallbackArguments.cs" />
+    <Compile Include="AdminStats\AdminStatsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminStats\AdminStatsForm.Designer.cs">
+      <DependentUpon>AdminStatsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AlterationForm\AlterationGridItem.cs" />
+    <Compile Include="EmailGenerator\Emailer.cs" />
+    <Compile Include="EmailGenerator\ReceiptStringBuilderArguments.cs" />
+    <Compile Include="EmailGenerator\ReceiptStringBulder.cs" />
+    <Compile Include="LoginForm\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AlterationForm\AlterationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlterationForm\AlterationForm.Designer.cs">
+      <DependentUpon>AlterationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReceiptWriter\ReceiptWriter.cs" />
+    <Compile Include="SearchForm\SearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchForm\SearchForm.Designer.cs">
+      <DependentUpon>SearchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Encryption\SimpleAES.cs" />
+    <EmbeddedResource Include="AddAlterationModal\AddAlterationBaseForm.resx">
+      <DependentUpon>AddAlterationBaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddAlterationModal\AddJacketModal.resx">
+      <DependentUpon>AddJacketModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddAlterationModal\AddMiscModal.resx">
+      <DependentUpon>AddMiscModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddAlterationModal\AddOtherModal.resx">
+      <DependentUpon>AddOtherModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddAlterationModal\AddPantsModal.resx">
+      <DependentUpon>AddPantsModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddAlterationModal\AddShirtModal.resx">
+      <DependentUpon>AddShirtModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddAlterationModal\AddVestModal.resx">
+      <DependentUpon>AddVestModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminStats\AdminStatsForm.resx">
+      <DependentUpon>AdminStatsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AlterationForm\AlterationForm.resx">
+      <DependentUpon>AlterationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SearchForm\SearchForm.resx">
+      <DependentUpon>SearchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CustomControls\CustomControls.csproj">
+      <Project>{8064423f-9fc5-4ef0-9ed7-3f595ebf57d6}</Project>
+      <Name>CustomControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainModel\DomainModel.csproj">
+      <Project>{691c94ca-93ff-46e3-8701-a9cbc5d4617e}</Project>
+      <Name>DomainModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\MaroonStripe.pg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\LogoMock4.jpg" />
+    <Content Include="Images\LogoMock5.jpg" />
+    <Content Include="Images\LogoMock6.jpg" />
+    <Content Include="Images\MainScreenBackground.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
