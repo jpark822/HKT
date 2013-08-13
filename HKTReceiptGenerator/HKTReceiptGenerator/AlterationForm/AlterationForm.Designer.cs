@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AlterationForm));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -83,6 +83,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.NumItemsLabel = new System.Windows.Forms.Label();
             this.TitleComboBox = new System.Windows.Forms.ComboBox();
+            this.OrderIdTextBox = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.AlterationGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,7 +92,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(83, 34);
+            this.label1.Location = new System.Drawing.Point(83, 47);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(101, 19);
             this.label1.TabIndex = 0;
@@ -100,7 +102,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(10, 67);
+            this.label2.Location = new System.Drawing.Point(10, 80);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 19);
             this.label2.TabIndex = 1;
@@ -110,7 +112,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(10, 100);
+            this.label3.Location = new System.Drawing.Point(10, 113);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 19);
             this.label3.TabIndex = 2;
@@ -120,7 +122,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(372, 100);
+            this.label4.Location = new System.Drawing.Point(372, 113);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 19);
             this.label4.TabIndex = 3;
@@ -130,7 +132,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(605, 100);
+            this.label5.Location = new System.Drawing.Point(605, 113);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(34, 19);
             this.label5.TabIndex = 4;
@@ -140,7 +142,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(10, 134);
+            this.label6.Location = new System.Drawing.Point(10, 147);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(97, 19);
             this.label6.TabIndex = 5;
@@ -150,7 +152,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(402, 205);
+            this.label8.Location = new System.Drawing.Point(402, 218);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(102, 19);
             this.label8.TabIndex = 7;
@@ -160,7 +162,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(10, 205);
+            this.label9.Location = new System.Drawing.Point(10, 218);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(72, 19);
             this.label9.TabIndex = 8;
@@ -170,7 +172,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(10, 168);
+            this.label10.Location = new System.Drawing.Point(10, 181);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(63, 19);
             this.label10.TabIndex = 9;
@@ -180,7 +182,7 @@
             // 
             this.FirstNameTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.FirstNameTextBox.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FirstNameTextBox.Location = new System.Drawing.Point(190, 31);
+            this.FirstNameTextBox.Location = new System.Drawing.Point(190, 44);
             this.FirstNameTextBox.Name = "FirstNameTextBox";
             this.FirstNameTextBox.Size = new System.Drawing.Size(215, 26);
             this.FirstNameTextBox.TabIndex = 1;
@@ -190,7 +192,7 @@
             // 
             this.AddressTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.AddressTextBox.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddressTextBox.Location = new System.Drawing.Point(99, 64);
+            this.AddressTextBox.Location = new System.Drawing.Point(99, 77);
             this.AddressTextBox.Name = "AddressTextBox";
             this.AddressTextBox.Size = new System.Drawing.Size(718, 26);
             this.AddressTextBox.TabIndex = 4;
@@ -200,7 +202,7 @@
             // 
             this.CityTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.CityTextBox.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CityTextBox.Location = new System.Drawing.Point(63, 97);
+            this.CityTextBox.Location = new System.Drawing.Point(63, 110);
             this.CityTextBox.Name = "CityTextBox";
             this.CityTextBox.Size = new System.Drawing.Size(296, 26);
             this.CityTextBox.TabIndex = 5;
@@ -210,7 +212,7 @@
             // 
             this.StateTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.StateTextBox.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StateTextBox.Location = new System.Drawing.Point(428, 97);
+            this.StateTextBox.Location = new System.Drawing.Point(428, 110);
             this.StateTextBox.Name = "StateTextBox";
             this.StateTextBox.Size = new System.Drawing.Size(160, 26);
             this.StateTextBox.TabIndex = 6;
@@ -220,7 +222,7 @@
             // 
             this.ZipTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.ZipTextBox.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ZipTextBox.Location = new System.Drawing.Point(645, 97);
+            this.ZipTextBox.Location = new System.Drawing.Point(645, 110);
             this.ZipTextBox.Name = "ZipTextBox";
             this.ZipTextBox.Size = new System.Drawing.Size(172, 26);
             this.ZipTextBox.TabIndex = 7;
@@ -230,7 +232,7 @@
             // 
             this.PhoneTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.PhoneTextBox.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PhoneTextBox.Location = new System.Drawing.Point(121, 131);
+            this.PhoneTextBox.Location = new System.Drawing.Point(121, 144);
             this.PhoneTextBox.Name = "PhoneTextBox";
             this.PhoneTextBox.Size = new System.Drawing.Size(696, 26);
             this.PhoneTextBox.TabIndex = 8;
@@ -241,7 +243,7 @@
             // 
             this.EmailTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.EmailTextBox.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmailTextBox.Location = new System.Drawing.Point(85, 165);
+            this.EmailTextBox.Location = new System.Drawing.Point(85, 178);
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(732, 26);
             this.EmailTextBox.TabIndex = 9;
@@ -250,7 +252,7 @@
             // DateInPicker
             // 
             this.DateInPicker.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DateInPicker.Location = new System.Drawing.Point(83, 199);
+            this.DateInPicker.Location = new System.Drawing.Point(83, 212);
             this.DateInPicker.Name = "DateInPicker";
             this.DateInPicker.Size = new System.Drawing.Size(308, 26);
             this.DateInPicker.TabIndex = 10;
@@ -259,7 +261,7 @@
             // DateReadyPicker
             // 
             this.DateReadyPicker.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DateReadyPicker.Location = new System.Drawing.Point(505, 199);
+            this.DateReadyPicker.Location = new System.Drawing.Point(505, 212);
             this.DateReadyPicker.Name = "DateReadyPicker";
             this.DateReadyPicker.Size = new System.Drawing.Size(312, 26);
             this.DateReadyPicker.TabIndex = 11;
@@ -268,14 +270,14 @@
             // AlterationGrid
             // 
             this.AlterationGrid.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AlterationGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AlterationGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.AlterationGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AlterationGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.quantityCol,
@@ -283,16 +285,16 @@
             this.priceCol,
             this.taxableCol});
             this.AlterationGrid.Cursor = System.Windows.Forms.Cursors.IBeam;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("HelveticaNeueLT Pro 55 Roman", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.AlterationGrid.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("HelveticaNeueLT Pro 55 Roman", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.AlterationGrid.DefaultCellStyle = dataGridViewCellStyle2;
             this.AlterationGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.AlterationGrid.Location = new System.Drawing.Point(14, 237);
+            this.AlterationGrid.Location = new System.Drawing.Point(14, 253);
             this.AlterationGrid.MultiSelect = false;
             this.AlterationGrid.Name = "AlterationGrid";
             this.AlterationGrid.RowHeadersVisible = false;
@@ -332,7 +334,7 @@
             this.SubmitButton.BackColor = System.Drawing.Color.Maroon;
             this.SubmitButton.Font = new System.Drawing.Font("Trajan Pro", 14F);
             this.SubmitButton.ForeColor = System.Drawing.Color.White;
-            this.SubmitButton.Location = new System.Drawing.Point(686, 385);
+            this.SubmitButton.Location = new System.Drawing.Point(686, 401);
             this.SubmitButton.Name = "SubmitButton";
             this.SubmitButton.Size = new System.Drawing.Size(131, 128);
             this.SubmitButton.TabIndex = 15;
@@ -345,7 +347,7 @@
             this.SaveBttn.BackColor = System.Drawing.Color.Maroon;
             this.SaveBttn.Font = new System.Drawing.Font("Trajan Pro", 14F);
             this.SaveBttn.ForeColor = System.Drawing.Color.White;
-            this.SaveBttn.Location = new System.Drawing.Point(686, 237);
+            this.SaveBttn.Location = new System.Drawing.Point(686, 253);
             this.SaveBttn.Name = "SaveBttn";
             this.SaveBttn.Size = new System.Drawing.Size(131, 128);
             this.SaveBttn.TabIndex = 14;
@@ -357,7 +359,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(494, 34);
+            this.label18.Location = new System.Drawing.Point(494, 47);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(94, 19);
             this.label18.TabIndex = 29;
@@ -367,7 +369,7 @@
             // 
             this.LastNameTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.LastNameTextBox.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LastNameTextBox.Location = new System.Drawing.Point(591, 31);
+            this.LastNameTextBox.Location = new System.Drawing.Point(591, 44);
             this.LastNameTextBox.Name = "LastNameTextBox";
             this.LastNameTextBox.Size = new System.Drawing.Size(226, 26);
             this.LastNameTextBox.TabIndex = 3;
@@ -377,7 +379,7 @@
             // 
             this.MiddleNameTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.MiddleNameTextBox.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MiddleNameTextBox.Location = new System.Drawing.Point(457, 31);
+            this.MiddleNameTextBox.Location = new System.Drawing.Point(457, 44);
             this.MiddleNameTextBox.Name = "MiddleNameTextBox";
             this.MiddleNameTextBox.Size = new System.Drawing.Size(31, 26);
             this.MiddleNameTextBox.TabIndex = 2;
@@ -387,7 +389,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(411, 34);
+            this.label19.Location = new System.Drawing.Point(411, 47);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(40, 19);
             this.label19.TabIndex = 31;
@@ -397,7 +399,7 @@
             // 
             this.TotalPriceTextLabel.AutoSize = true;
             this.TotalPriceTextLabel.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TotalPriceTextLabel.Location = new System.Drawing.Point(539, 731);
+            this.TotalPriceTextLabel.Location = new System.Drawing.Point(539, 747);
             this.TotalPriceTextLabel.Name = "TotalPriceTextLabel";
             this.TotalPriceTextLabel.Size = new System.Drawing.Size(53, 16);
             this.TotalPriceTextLabel.TabIndex = 32;
@@ -408,7 +410,7 @@
             this.TotalPriceLabel.AutoSize = true;
             this.TotalPriceLabel.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TotalPriceLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.TotalPriceLabel.Location = new System.Drawing.Point(590, 731);
+            this.TotalPriceLabel.Location = new System.Drawing.Point(590, 747);
             this.TotalPriceLabel.Name = "TotalPriceLabel";
             this.TotalPriceLabel.Size = new System.Drawing.Size(39, 16);
             this.TotalPriceLabel.TabIndex = 33;
@@ -419,7 +421,7 @@
             // 
             this.TicketNumberTextLabel.AutoSize = true;
             this.TicketNumberTextLabel.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TicketNumberTextLabel.Location = new System.Drawing.Point(10, 7);
+            this.TicketNumberTextLabel.Location = new System.Drawing.Point(10, 15);
             this.TicketNumberTextLabel.Name = "TicketNumberTextLabel";
             this.TicketNumberTextLabel.Size = new System.Drawing.Size(84, 19);
             this.TicketNumberTextLabel.TabIndex = 34;
@@ -429,7 +431,7 @@
             // 
             this.TicketNumberLabel.AutoSize = true;
             this.TicketNumberLabel.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TicketNumberLabel.Location = new System.Drawing.Point(90, 7);
+            this.TicketNumberLabel.Location = new System.Drawing.Point(90, 15);
             this.TicketNumberLabel.Name = "TicketNumberLabel";
             this.TicketNumberLabel.Size = new System.Drawing.Size(33, 19);
             this.TicketNumberLabel.TabIndex = 35;
@@ -438,7 +440,7 @@
             // CommentBox
             // 
             this.CommentBox.Font = new System.Drawing.Font("HelveticaNeueLT Pro 55 Roman", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CommentBox.Location = new System.Drawing.Point(12, 730);
+            this.CommentBox.Location = new System.Drawing.Point(12, 746);
             this.CommentBox.Multiline = true;
             this.CommentBox.Name = "CommentBox";
             this.CommentBox.Size = new System.Drawing.Size(516, 73);
@@ -449,7 +451,7 @@
             this.PrintCustomerBttn.BackColor = System.Drawing.Color.Maroon;
             this.PrintCustomerBttn.Font = new System.Drawing.Font("Trajan Pro", 14F);
             this.PrintCustomerBttn.ForeColor = System.Drawing.Color.White;
-            this.PrintCustomerBttn.Location = new System.Drawing.Point(686, 531);
+            this.PrintCustomerBttn.Location = new System.Drawing.Point(686, 547);
             this.PrintCustomerBttn.Name = "PrintCustomerBttn";
             this.PrintCustomerBttn.Size = new System.Drawing.Size(131, 128);
             this.PrintCustomerBttn.TabIndex = 36;
@@ -462,7 +464,7 @@
             this.DisplayAddAlterationModalButton.BackColor = System.Drawing.Color.Maroon;
             this.DisplayAddAlterationModalButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DisplayAddAlterationModalButton.ForeColor = System.Drawing.Color.White;
-            this.DisplayAddAlterationModalButton.Location = new System.Drawing.Point(542, 237);
+            this.DisplayAddAlterationModalButton.Location = new System.Drawing.Point(542, 253);
             this.DisplayAddAlterationModalButton.Name = "DisplayAddAlterationModalButton";
             this.DisplayAddAlterationModalButton.Size = new System.Drawing.Size(128, 276);
             this.DisplayAddAlterationModalButton.TabIndex = 37;
@@ -474,7 +476,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Trajan Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(567, 585);
+            this.label21.Location = new System.Drawing.Point(567, 601);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(72, 14);
             this.label21.TabIndex = 38;
@@ -488,7 +490,7 @@
             "n/a",
             "y",
             "n"});
-            this.PickedUpComboBox.Location = new System.Drawing.Point(570, 599);
+            this.PickedUpComboBox.Location = new System.Drawing.Point(570, 615);
             this.PickedUpComboBox.Name = "PickedUpComboBox";
             this.PickedUpComboBox.Size = new System.Drawing.Size(69, 32);
             this.PickedUpComboBox.TabIndex = 39;
@@ -499,7 +501,7 @@
             this.PrintEmployeeBttn.BackColor = System.Drawing.Color.Maroon;
             this.PrintEmployeeBttn.Font = new System.Drawing.Font("Trajan Pro", 14F);
             this.PrintEmployeeBttn.ForeColor = System.Drawing.Color.White;
-            this.PrintEmployeeBttn.Location = new System.Drawing.Point(686, 675);
+            this.PrintEmployeeBttn.Location = new System.Drawing.Point(686, 691);
             this.PrintEmployeeBttn.Name = "PrintEmployeeBttn";
             this.PrintEmployeeBttn.Size = new System.Drawing.Size(131, 128);
             this.PrintEmployeeBttn.TabIndex = 40;
@@ -516,7 +518,7 @@
             "d",
             "c",
             "i"});
-            this.StatusComboBox.Location = new System.Drawing.Point(570, 550);
+            this.StatusComboBox.Location = new System.Drawing.Point(570, 566);
             this.StatusComboBox.Name = "StatusComboBox";
             this.StatusComboBox.Size = new System.Drawing.Size(69, 32);
             this.StatusComboBox.TabIndex = 42;
@@ -526,7 +528,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Trajan Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(578, 533);
+            this.label22.Location = new System.Drawing.Point(578, 549);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(47, 14);
             this.label22.TabIndex = 41;
@@ -537,7 +539,7 @@
             this.BalanceLabel.AutoSize = true;
             this.BalanceLabel.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BalanceLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BalanceLabel.Location = new System.Drawing.Point(607, 781);
+            this.BalanceLabel.Location = new System.Drawing.Point(607, 797);
             this.BalanceLabel.Name = "BalanceLabel";
             this.BalanceLabel.Size = new System.Drawing.Size(39, 16);
             this.BalanceLabel.TabIndex = 44;
@@ -548,7 +550,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(540, 781);
+            this.label17.Location = new System.Drawing.Point(540, 797);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(70, 16);
             this.label17.TabIndex = 43;
@@ -558,7 +560,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(539, 755);
+            this.label20.Location = new System.Drawing.Point(539, 771);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(80, 16);
             this.label20.TabIndex = 45;
@@ -567,7 +569,7 @@
             // DepositTextBox
             // 
             this.DepositTextBox.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DepositTextBox.Location = new System.Drawing.Point(605, 752);
+            this.DepositTextBox.Location = new System.Drawing.Point(605, 768);
             this.DepositTextBox.Name = "DepositTextBox";
             this.DepositTextBox.Size = new System.Drawing.Size(65, 24);
             this.DepositTextBox.TabIndex = 46;
@@ -587,7 +589,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Trajan Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(565, 633);
+            this.label16.Location = new System.Drawing.Point(565, 649);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(84, 14);
             this.label16.TabIndex = 47;
@@ -605,7 +607,7 @@
             "Hong",
             "Felicia",
             "Gloria"});
-            this.TailorComboBox.Location = new System.Drawing.Point(542, 650);
+            this.TailorComboBox.Location = new System.Drawing.Point(542, 666);
             this.TailorComboBox.Name = "TailorComboBox";
             this.TailorComboBox.Size = new System.Drawing.Size(128, 32);
             this.TailorComboBox.TabIndex = 48;
@@ -615,7 +617,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(540, 708);
+            this.label11.Location = new System.Drawing.Point(540, 724);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(51, 16);
             this.label11.TabIndex = 49;
@@ -625,7 +627,7 @@
             // 
             this.NumItemsLabel.AutoSize = true;
             this.NumItemsLabel.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NumItemsLabel.Location = new System.Drawing.Point(589, 708);
+            this.NumItemsLabel.Location = new System.Drawing.Point(589, 724);
             this.NumItemsLabel.Name = "NumItemsLabel";
             this.NumItemsLabel.Size = new System.Drawing.Size(15, 16);
             this.NumItemsLabel.TabIndex = 50;
@@ -641,10 +643,29 @@
             "Ms.",
             "Mrs.",
             "Dr."});
-            this.TitleComboBox.Location = new System.Drawing.Point(14, 31);
+            this.TitleComboBox.Location = new System.Drawing.Point(14, 44);
             this.TitleComboBox.Name = "TitleComboBox";
             this.TitleComboBox.Size = new System.Drawing.Size(63, 27);
             this.TitleComboBox.TabIndex = 51;
+            // 
+            // OrderIdTextBox
+            // 
+            this.OrderIdTextBox.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OrderIdTextBox.Location = new System.Drawing.Point(540, 12);
+            this.OrderIdTextBox.Name = "OrderIdTextBox";
+            this.OrderIdTextBox.Size = new System.Drawing.Size(279, 26);
+            this.OrderIdTextBox.TabIndex = 52;
+            this.OrderIdTextBox.Leave += new System.EventHandler(this.OrderIdTextBox_OnLeave);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(453, 15);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(81, 19);
+            this.label7.TabIndex = 53;
+            this.label7.Text = "Order #:";
             // 
             // AlterationForm
             // 
@@ -652,7 +673,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(832, 811);
+            this.ClientSize = new System.Drawing.Size(832, 827);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.OrderIdTextBox);
             this.Controls.Add(this.TitleComboBox);
             this.Controls.Add(this.NumItemsLabel);
             this.Controls.Add(this.label11);
@@ -764,5 +787,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn priceCol;
         private System.Windows.Forms.DataGridViewCheckBoxColumn taxableCol;
         private System.Windows.Forms.ComboBox TitleComboBox;
+        private System.Windows.Forms.TextBox OrderIdTextBox;
+        private System.Windows.Forms.Label label7;
     }
 }

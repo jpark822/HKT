@@ -24,3 +24,29 @@ C:\Users\Jay\Documents\Visual Studio 2012\Projects\HKTReceiptGenerator\HKTReceip
 C:\Users\Jay\Documents\Visual Studio 2012\Projects\HKTReceiptGenerator\HKTReceiptGenerator\bin\Debug\DomainModel.dll
 C:\Users\Jay\Documents\Visual Studio 2012\Projects\HKTReceiptGenerator\HKTReceiptGenerator\bin\Debug\CustomControls.dll
 C:\Users\Jay\Documents\Visual Studio 2012\Projects\HKTReceiptGenerator\HKTReceiptGenerator\bin\Debug\CustomControls.pdb
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\HKTReceiptGenerator\bin\Debug\HKTReceiptGenerator.exe.config
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\HKTReceiptGenerator\obj\Debug\HKTReceiptGenerator.exe
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\HKTReceiptGenerator\obj\Debug\HKTReceiptGenerator.pdb
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\HKTReceiptGenerator\obj\Debug\HKTReceiptGenerator.csprojResolveAssemblyReference.cache
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\HKTReceiptGenerator\obj\Debug\HKTReceiptGenerator.AddAlterationModal.AddAlterationBaseForm.resources
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\HKTReceiptGenerator\obj\Debug\HKTReceiptGenerator.AddAlterationModal.AddJacketModal.resources
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\HKTReceiptGenerator\obj\Debug\HKTReceiptGenerator.AddAlterationModal.AddMiscModal.resources
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\HKTReceiptGenerator\obj\Debug\HKTReceiptGenerator.AddAlterationModal.AddOtherModal.resources
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\HKTReceiptGenerator\obj\Debug\HKTReceiptGenerator.AddAlterationModal.AddPantsModal.resources
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\HKTReceiptGenerator\obj\Debug\HKTReceiptGenerator.AddAlterationModal.AddShirtModal.resources
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\HKTReceiptGenerator\obj\Debug\HKTReceiptGenerator.AddAlterationModal.AddVestModal.resources
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\HKTReceiptGenerator\obj\Debug\HKTReceiptGenerator.AdminStats.AdminStatsForm.resources
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\HKTReceiptGenerator\obj\Debug\HKTReceiptGenerator.LoginForm.resources
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\HKTReceiptGenerator\obj\Debug\HKTReceiptGenerator.AlterationForm.resources
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\HKTReceiptGenerator\obj\Debug\HKTReceiptGenerator.MainForm.resources
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\HKTReceiptGenerator\obj\Debug\HKTReceiptGenerator.Properties.Resources.resources
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\HKTReceiptGenerator\obj\Debug\HKTReceiptGenerator.SearchForm.resources
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\HKTReceiptGenerator\obj\Debug\HKTReceiptGenerator.csproj.GenerateResource.Cache
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\HKTReceiptGenerator\bin\Debug\HKTReceiptGenerator.exe
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\HKTReceiptGenerator\bin\Debug\HKTReceiptGenerator.pdb
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\HKTReceiptGenerator\bin\Debug\CustomControls.dll
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\HKTReceiptGenerator\bin\Debug\DomainModel.dll
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\HKTReceiptGenerator\bin\Debug\System.Data.SQLite.dll
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\HKTReceiptGenerator\bin\Debug\CustomControls.pdb
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\HKTReceiptGenerator\bin\Debug\DomainModel.pdb
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\HKTReceiptGenerator\bin\Debug\System.Data.SQLite.xml

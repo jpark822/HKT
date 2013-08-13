@@ -10,7 +10,7 @@ namespace DomainModel.Ticket
     public class TicketFactory
     {
         public static TicketResource CreateTicket(int ticketId, String status, String title, String firstName, String lastName, String middleName, String address, String city, String state, String zip, String telephone, String email, String comments,
-            String pickedUp, DateTime dateIn, DateTime dateReady, double totalPrice, double Deposit, String tailorName)
+            String pickedUp, DateTime dateIn, DateTime dateReady, double totalPrice, double Deposit, String tailorName, String orderId)
         {
             TicketResource ticket = new TicketResource
             {
@@ -32,7 +32,8 @@ namespace DomainModel.Ticket
                 DateReady = dateReady,
                 TotalPrice = totalPrice,
                 Deposit = Deposit,
-                TailorName = tailorName
+                TailorName = tailorName,
+                OrderId = orderId
             };
             return ticket;
         }

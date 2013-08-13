@@ -28,5 +28,6 @@ namespace DomainModel.Ticket
         public double TotalPrice { get; set; }
         public double Deposit { get; set; }
         public String TailorName { get; set; }
+        public String OrderId { get; set; }
     }
 }

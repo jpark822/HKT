@@ -33,7 +33,8 @@ namespace DomainModel.Ticket
             DateReady ,
             TotalPrice ,
             Deposit ,
-            TailorName
+            TailorName,
+            OrderId
         };
 
         /* @return the generated ticketID of the new ticket */
@@ -168,6 +169,10 @@ namespace DomainModel.Ticket
                 {
                     sql += "tailor_name = \"" + (String)entry.Value + "\"  COLLATE NOCASE";
                 }
+                if (entry.Key == TicketProperty.OrderId)
+                {
+                    sql += "order_id = \"" + (String)entry.Value + "\"  COLLATE NOCASE";
+                }
 
                 counter++;
                 if (counter < arguments.Count)
@@ -226,6 +231,7 @@ namespace DomainModel.Ticket
             ticketArgs.Add("total_price", ticket.TotalPrice);
             ticketArgs.Add("picked_up", ticket.PickedUp);
             ticketArgs.Add("deposit", ticket.Deposit);
+            ticketArgs.Add("order_id", ticket.OrderId);
 
             return ticketArgs;
         }
@@ -252,8 +258,9 @@ namespace DomainModel.Ticket
             DateTime dateReady = (DateTime)dataRow["date_ready"];
             DateTime lastModifiedTimestamp = (DateTime)dataRow["last_modified_timestamp"];
             String tailorName = dataRow["tailor_name"] is DBNull ? "" : (String)dataRow["tailor_name"];
+            String orderId = dataRow["order_id"] is DBNull ? "" : (String)dataRow["order_id"];
 
-            return TicketFactory.CreateTicket(ticketId, status, title, firstName, lastName, middleName, address, city, state, zip, telephone, email, comments, pickedUp, dateIn, dateReady, totalPrice, deposit, tailorName);
+            return TicketFactory.CreateTicket(ticketId, status, title, firstName, lastName, middleName, address, city, state, zip, telephone, email, comments, pickedUp, dateIn, dateReady, totalPrice, deposit, tailorName, orderId);
         }
     }
 }

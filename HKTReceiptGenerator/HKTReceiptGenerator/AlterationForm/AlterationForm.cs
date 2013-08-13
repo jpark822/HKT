@@ -82,6 +82,8 @@ namespace HKTReceiptGenerator
             PickedUpComboBox.Text = ticketResource.PickedUp ?? "n/a";
             DateInPicker.Value = ticketResource.DateIn;
             DateReadyPicker.Value = ticketResource.DateReady;
+            OrderIdTextBox.Text = ticketResource.OrderId ?? "";
+
             if (isNewAlteration)
             {
                 //cant add this above because it will just get overwritten down here, and it looks messy it the if logic is added below
@@ -376,7 +378,8 @@ namespace HKTReceiptGenerator
             double totalPrice = double.Parse(TotalPriceLabel.Text, NumberStyles.Currency);
             String pickedUp = PickedUpComboBox.Text;
             double deposit = Convert.ToDouble(DepositTextBox.Text == "" ? 0 : Convert.ToDouble(DepositTextBox.Text));
-            return TicketFactory.CreateTicket(ticketID, status, title, firstName, lastname, middleName, address, city, state, zip, telephone, email, comments, pickedUp, dateIn, dateReady, totalPrice, deposit, tailorName);
+            String orderId = OrderIdTextBox.Text;
+            return TicketFactory.CreateTicket(ticketID, status, title, firstName, lastname, middleName, address, city, state, zip, telephone, email, comments, pickedUp, dateIn, dateReady, totalPrice, deposit, tailorName, orderId);
         }
 
         private List<Dictionary<String, object>> CollectAlterationGridData()
@@ -705,6 +708,12 @@ namespace HKTReceiptGenerator
         {
             EmailTextBox.Text = EmailTextBox.Text.Trim();
         }
+
+        private void OrderIdTextBox_OnLeave(object sender, EventArgs e)
+        {
+            OrderIdTextBox.Text = OrderIdTextBox.Text.Trim();
+        }
+
  
     }
 }
