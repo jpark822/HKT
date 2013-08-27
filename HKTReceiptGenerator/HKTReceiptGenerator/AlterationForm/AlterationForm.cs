@@ -561,17 +561,17 @@ namespace HKTReceiptGenerator
         {
             PrintDocumentElement.PrintPage += printDoc_PrintPage;
             ReceiptStringBuilderArguments args = CollectDataForReceiptPrinting(isCustomerCopy);
-            String receiptText = ReceiptStringBulder.BuildStringFromArgs(args, isCustomerCopy, false);
-            string filePath = ReceiptWriter.WriteToFile(receiptText, DateInPicker.Value, FirstNameTextBox.Text);
+            stringToPrint = ReceiptStringBulder.BuildStringFromArgs(args, isCustomerCopy, false);
+            //string filePath = ReceiptWriter.WriteToFile(receiptText, DateInPicker.Value, FirstNameTextBox.Text);
 
-            string docName = "testPage.txt";
-            string docPath = filePath;
-            PrintDocumentElement.DocumentName = docName;
-            using (FileStream stream = new FileStream(docPath, FileMode.Open))
-            using (StreamReader reader = new StreamReader(stream))
-            {
-                stringToPrint = reader.ReadToEnd();
-            }
+            //string docName = "testPage.txt";
+            //string docPath = filePath;
+            //PrintDocumentElement.DocumentName = docName;
+            //using (FileStream stream = new FileStream(docPath, FileMode.Open))
+            //using (StreamReader reader = new StreamReader(stream))
+            //{
+            //    stringToPrint = reader.ReadToEnd();
+            //}
             PrintDocumentElement.Print();
         }
 

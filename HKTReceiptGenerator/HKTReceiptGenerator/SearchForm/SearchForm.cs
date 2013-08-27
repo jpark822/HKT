@@ -85,6 +85,10 @@ namespace HKTReceiptGenerator
             {
                 searchArguments.Add(TicketRepository.TicketProperty.TailorName, TailorComboBox.Text);
             }
+            if (OrderIdTextBox.Text != "")
+            {
+                searchArguments.Add(TicketRepository.TicketProperty.OrderId, OrderIdTextBox.Text);
+            }
 
             try
             {
@@ -123,7 +127,8 @@ namespace HKTReceiptGenerator
                 TelephoneTextBox.Text == "" &&
                 EmailTextBox.Text == "" &&
                 PickedUpComboBox.Text == "" &&
-                StatusComboBox.Text == "")
+                StatusComboBox.Text == "" &&
+                OrderIdTextBox.Text == "")
             {
                 return false;
             }
