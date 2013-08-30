@@ -196,8 +196,11 @@ namespace DomainModel.Ticket
 
         public List<String> GetDistinctEmailAddressBetweenDates(DateTime startDate, DateTime endDate)
         {
+            String convertedStartDate = string.Format("{0:yyyy-MM-dd}", startDate);
+            String convertedEndDate = string.Format("{0:yyyy-MM-dd}", endDate.AddDays(1)); //add 1 date possibly because of 00:00:00 time
+
             SQLiteDatabase db = new SQLiteDatabase();
-            string sql = String.Format(@"select distinct email from Tickets where date_in >= '{0}' AND date_in <= '{1}'", startDate, endDate);
+            string sql = String.Format(@"select distinct email from Tickets where date_in >= '{0}' AND date_in <= '{1}'", convertedStartDate, convertedEndDate);
             DataTable resultTicketTable = db.GetDataTable(sql);
 
             List<String> emails = new List<String>();
