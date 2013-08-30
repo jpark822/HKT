@@ -235,6 +235,7 @@ namespace DomainModel.Ticket
             ticketArgs.Add("picked_up", ticket.PickedUp);
             ticketArgs.Add("deposit", ticket.Deposit);
             ticketArgs.Add("order_id", ticket.OrderId);
+            ticketArgs.Add("completed_date", string.Format("{0:yyyy-MM-dd HH:mm:ss}", ticket.CompletedDate));
 
             return ticketArgs;
         }
@@ -260,10 +261,22 @@ namespace DomainModel.Ticket
             DateTime dateIn = (DateTime)dataRow["date_in"];
             DateTime dateReady = (DateTime)dataRow["date_ready"];
             DateTime lastModifiedTimestamp = (DateTime)dataRow["last_modified_timestamp"];
+            DateTime? completedDate;
+            //we have to convert from string because its stored in the sqllite database that way in order to accomodate null dateTimes
+            String rawDate = (String)dataRow["completed_date"];
+            if (String.IsNullOrEmpty(rawDate))
+            {
+                completedDate = null;
+            }
+            else
+            {
+                completedDate = DateTime.Parse(rawDate);
+            }
+
             String tailorName = dataRow["tailor_name"] is DBNull ? "" : (String)dataRow["tailor_name"];
             String orderId = dataRow["order_id"] is DBNull ? "" : (String)dataRow["order_id"];
 
-            return TicketFactory.CreateTicket(ticketId, status, title, firstName, lastName, middleName, address, city, state, zip, telephone, email, comments, pickedUp, dateIn, dateReady, totalPrice, deposit, tailorName, orderId);
+            return TicketFactory.CreateTicket(ticketId, status, title, firstName, lastName, middleName, address, city, state, zip, telephone, email, comments, pickedUp, dateIn, dateReady, totalPrice, deposit, tailorName, orderId, completedDate);
         }
     }
 }

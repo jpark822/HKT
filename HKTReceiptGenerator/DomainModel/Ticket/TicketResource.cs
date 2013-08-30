@@ -29,5 +29,6 @@ namespace DomainModel.Ticket
         public double Deposit { get; set; }
         public String TailorName { get; set; }
         public String OrderId { get; set; }
+        public DateTime? CompletedDate { get; set; }
     }
 }

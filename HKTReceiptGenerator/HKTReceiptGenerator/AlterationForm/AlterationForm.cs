@@ -28,6 +28,7 @@ namespace HKTReceiptGenerator
         private bool isNewAlteration;
         private const double taxPercentage = 1.07;
         private int ticketID;
+        private String previousStatus;
 
         public delegate void ClothingSelectedCallback(TypeOfClothing choice);
         public delegate void ArticleSelectedCallback(AlterationModalCallbackArguments args);
@@ -50,6 +51,7 @@ namespace HKTReceiptGenerator
             TicketNumberLabel.Hide();
             DateInPicker.Value = DateTime.Today;
             DateReadyPicker.Value = DateTime.Today.AddDays(7);
+            previousStatus = "a";
         }
 
         public AlterationForm(TicketResource ticketResource)
@@ -59,12 +61,14 @@ namespace HKTReceiptGenerator
             {
                 isNewAlteration = true;
                 TicketNumberLabel.Hide();
+                previousStatus = "a";
             }
             else
             {
                 isNewAlteration = false;
                 ticketID = ticketResource.TicketId;
                 TicketNumberLabel.Text = ticketResource.TicketId.ToString();
+                previousStatus = ticketResource.Status ?? "a";
             }
 
             TitleComboBox.Text = ticketResource.Title ?? "";
@@ -379,7 +383,13 @@ namespace HKTReceiptGenerator
             String pickedUp = PickedUpComboBox.Text;
             double deposit = Convert.ToDouble(DepositTextBox.Text == "" ? 0 : Convert.ToDouble(DepositTextBox.Text));
             String orderId = OrderIdTextBox.Text;
-            return TicketFactory.CreateTicket(ticketID, status, title, firstName, lastname, middleName, address, city, state, zip, telephone, email, comments, pickedUp, dateIn, dateReady, totalPrice, deposit, tailorName, orderId);
+            DateTime? completedDate = null;
+            if (StatusComboBox.Text == "d" && previousStatus != "d")
+            {
+                completedDate = DateTime.Now;
+            }
+
+            return TicketFactory.CreateTicket(ticketID, status, title, firstName, lastname, middleName, address, city, state, zip, telephone, email, comments, pickedUp, dateIn, dateReady, totalPrice, deposit, tailorName, orderId, completedDate);
         }
 
         private List<Dictionary<String, object>> CollectAlterationGridData()
