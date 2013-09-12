@@ -8,13 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DomainModel.Ticket;
+using DomainModel.AdminStatsRepo;
 
 namespace HKTReceiptGenerator.AdminStats
 {
     //TODO: completely overhaul this class to use ticket repository
     public partial class AdminStatsForm : Form
     {
-        private const double taxRatePlusOne = 1.07;
+        
         public AdminStatsForm()
         {
             InitializeComponent();
@@ -26,137 +27,7 @@ namespace HKTReceiptGenerator.AdminStats
             EndingDatePicker.Value = DateTime.Today;
         }
 
-        private double getTotalBilled(String startDate, String endDate)
-        {
-            SQLiteDatabase db = new SQLiteDatabase();
-            DataTable results = db.GetDataTable(string.Format(@"select price
-                                                from Tickets tix
-                                                join ticket_alterations ta
-                                                on tix.ticket_id = ta.ticket_id
-                                                AND date_in >= '{0}'
-                                                AND date_in <= '{1}'", startDate, endDate));
-            return getPriceTotalFromDatatable(results);
-        }
-
-        private double GetTotalRetail(String startDate, String endDate)
-        {
-            SQLiteDatabase db = new SQLiteDatabase();
-            DataTable results = db.GetDataTable(string.Format(@"select price
-                                                from Tickets tix
-                                                join ticket_alterations ta
-                                                on tix.ticket_id = ta.ticket_id
-                                                AND date_in >= '{0}'
-                                                AND date_in <= '{1}'
-                                                AND taxable = 1
-                                                AND status = 'd'", startDate, endDate));
-            double total = getPriceTotalFromDatatable(results);
-            return total * taxRatePlusOne;
-        }
-        private double GetTotalAlterations(String startDate, String endDate)
-        {
-            SQLiteDatabase db = new SQLiteDatabase();
-            DataTable results = db.GetDataTable(string.Format(@"select price
-                                                from Tickets tix
-                                                join ticket_alterations ta
-                                                on tix.ticket_id = ta.ticket_id
-                                                AND date_in >= '{0}'
-                                                AND date_in <= '{1}'
-                                                AND taxable = 0
-                                                AND status = 'd'", startDate, endDate));
-            return getPriceTotalFromDatatable(results);
-        }
-
-        private double getTotalBilledOrders(String startDate, String endDate)
-        {
-            SQLiteDatabase db = new SQLiteDatabase();
-            DataTable results = db.GetDataTable(string.Format(@"select price
-                                                from Tickets tix
-                                                join ticket_alterations ta
-                                                on tix.ticket_id = ta.ticket_id
-                                                AND date_in >= '{0}'
-                                                AND date_in <= '{1}'
-                                                AND order_id != ''
-                                                AND order_id NOT NULL", startDate, endDate));
-            return getPriceTotalFromDatatable(results);
-        }
-
-        private double getTotalPaidTaxableFromOrders(String startDate, String endDate)
-        {
-            SQLiteDatabase db = new SQLiteDatabase();
-            DataTable results = db.GetDataTable(string.Format(@"select price
-                                                from Tickets tix
-                                                join ticket_alterations ta
-                                                on tix.ticket_id = ta.ticket_id
-                                                AND date_in >= '{0}'
-                                                AND date_in <= '{1}'
-                                                AND taxable = 1
-                                                AND status = 'd'
-                                                AND order_id != ''
-                                                AND order_id NOT NULL", startDate, endDate));
-            return getPriceTotalFromDatatable(results);
-        }
-
-        private double getTotalPaidNonTaxableFromOrders(String startDate, String endDate)
-        {
-            SQLiteDatabase db = new SQLiteDatabase();
-            DataTable results = db.GetDataTable(string.Format(@"select price
-                                                from Tickets tix
-                                                join ticket_alterations ta
-                                                on tix.ticket_id = ta.ticket_id
-                                                AND date_in >= '{0}'
-                                                AND date_in <= '{1}'
-                                                AND taxable = 0
-                                                AND status = 'd'
-                                                AND order_id != ''
-                                                AND order_id NOT NULL", startDate, endDate));
-            return getPriceTotalFromDatatable(results);
-        }
-
-        private double getTotalBilledNonOrders(String startDate, String endDate)
-        {
-            SQLiteDatabase db = new SQLiteDatabase();
-            DataTable results = db.GetDataTable(string.Format(@"select price
-                                                from Tickets tix
-                                                join ticket_alterations ta
-                                                on tix.ticket_id = ta.ticket_id
-                                                AND date_in >= '{0}'
-                                                AND date_in <= '{1}'
-                                                AND (order_id = ''
-                                                or order_id IS NULL)", startDate, endDate));
-            return getPriceTotalFromDatatable(results);
-        }
-
-        private double getTotalPaidTaxableFromNonOrders(String startDate, String endDate)
-        {
-            SQLiteDatabase db = new SQLiteDatabase();
-            DataTable results = db.GetDataTable(string.Format(@"select price
-                                                from Tickets tix
-                                                join ticket_alterations ta
-                                                on tix.ticket_id = ta.ticket_id
-                                                AND date_in >= '{0}'
-                                                AND date_in <= '{1}'
-                                                AND taxable = 1
-                                                AND status = 'd'
-                                                AND (order_id = ''
-                                                or order_id IS NULL)", startDate, endDate));
-            return getPriceTotalFromDatatable(results);
-        }
-
-        private double getTotalPaidNonTaxableFromNonOrders(String startDate, String endDate)
-        {
-            SQLiteDatabase db = new SQLiteDatabase();
-            DataTable results = db.GetDataTable(string.Format(@"select price
-                                                from Tickets tix
-                                                join ticket_alterations ta
-                                                on tix.ticket_id = ta.ticket_id
-                                                AND date_in >= '{0}'
-                                                AND date_in <= '{1}'
-                                                AND taxable = 0
-                                                AND status = 'd'
-                                                AND (order_id = ''
-                                                or order_id IS NULL)", startDate, endDate));
-            return getPriceTotalFromDatatable(results);
-        }
+        
 
         private double getPriceTotalFromDatatable(DataTable table)
         {
@@ -171,31 +42,33 @@ namespace HKTReceiptGenerator.AdminStats
 
         private void GetStatsButton_Click(object sender, EventArgs e)
         {
-            String startDate = string.Format("{0:yyyy-MM-dd}", StartingDatePicker.Value);
-            String endDate = string.Format("{0:yyyy-MM-dd}", EndingDatePicker.Value.AddDays(1)); //add 1 date possibly because of 00:00:00 time
+            DateTime startDate = StartingDatePicker.Value;
+            DateTime endDate = EndingDatePicker.Value;
+
+            AdminStatsRepo repo = new AdminStatsRepo();
 
             //Non-Orders
-            double billedNonOrders = getTotalBilledNonOrders(startDate, endDate);
-            double paidAlterations = getTotalPaidNonTaxableFromNonOrders(startDate, endDate);
-            double paidRetail = getTotalPaidTaxableFromNonOrders(startDate, endDate);
+            double billedNonOrders = repo.getTotalBilled(startDate, endDate, false);
+            double paidAlterations = repo.GetTotalPaidNonOrdersBetweenDates(startDate, endDate, false);
+            double paidRetail = repo.GetTotalPaidNonOrdersBetweenDates(startDate, endDate, true);
             TotalTicketsBilledLabel.Text = String.Format("{0:C}", billedNonOrders);
             AlterationsLabel.Text = String.Format("{0:C}", paidAlterations);
             RetailLabel.Text = String.Format("{0:C}", paidRetail);
             AlterationsPlusRetailLabel.Text = String.Format("{0:C}", paidAlterations + paidRetail);
 
             //Orders
-            double totalPaidTaxableFromOrders = getTotalPaidTaxableFromOrders(startDate, endDate);
-            double totalPaidNonTaxableFromOrders = getTotalPaidNonTaxableFromOrders(startDate, endDate);
-            double totalOrdersBilled = getTotalBilledOrders(startDate, endDate);
+            double totalPaidTaxableFromOrders = repo.GetTotalPaidOrdersBetweenDates(startDate, endDate, true);
+            double totalPaidNonTaxableFromOrders = repo.GetTotalPaidOrdersBetweenDates(startDate, endDate, false);
+            double billedOrders = repo.getTotalBilled(startDate, endDate, true);
             TotalPaidTaxableFromOrdersLabel.Text = String.Format("{0:C}", totalPaidTaxableFromOrders);
             TotalPaidNonTaxableFromOrdersLabel.Text = String.Format("{0:C}",totalPaidNonTaxableFromOrders);
-            TotalOrdersBilledLabel.Text = String.Format("{0:C}", totalOrdersBilled);
+            TotalOrdersBilledLabel.Text = String.Format("{0:C}", billedOrders);
             TaxablePlusNonTaxableOrdersLabel.Text = String.Format("{0:C}", totalPaidTaxableFromOrders + totalPaidNonTaxableFromOrders);
 
             //totals
-            TotalBilledLabel.Text = String.Format("{0:C}", getTotalBilled(startDate, endDate));
-            double totalRetail = GetTotalRetail(startDate, endDate);
-            double totalAlterations = GetTotalAlterations(startDate, endDate);
+            TotalBilledLabel.Text = String.Format("{0:C}", billedOrders + billedNonOrders);
+            double totalRetail = paidRetail + totalPaidTaxableFromOrders;
+            double totalAlterations = paidAlterations + totalPaidNonTaxableFromOrders;
             TotalTaxableLabel.Text = String.Format("{0:C}", totalRetail);
             TotalNonTaxableLabel.Text = String.Format("{0:C}", totalAlterations);
             TotalClosedLabel.Text = String.Format("{0:C}", totalRetail + totalAlterations);

@@ -58,24 +58,22 @@ namespace DomainModel.Ticket
             db.Update("Tickets", itemsToInsert, "ticket_id = " + ticket.TicketId.ToString());
         }
 
-        public void MarkTicketAsDone(int ticketId)
-        {
-            SQLiteDatabase db = new SQLiteDatabase();
-            Dictionary<String, object> arguments = new Dictionary<String, object>();
-            arguments.Add("status", "d");
-            db.Update("Tickets", arguments, "ticket_id = " + ticketId);
-        }
+        //public void MarkTicketAsDone(int ticketId)
+        //{
+        //    SQLiteDatabase db = new SQLiteDatabase();
+        //    Dictionary<String, object> arguments = new Dictionary<String, object>();
+        //    arguments.Add("status", "d");
+        //    db.Update("Tickets", arguments, "ticket_id = " + ticketId);
+        //}
 
         public void MarkTicketAsDonePaidAndPickedUp(int ticketId)
         {
             TicketResource ticket = GetTicketByTicketID(ticketId);
-
-            SQLiteDatabase db = new SQLiteDatabase();
-            Dictionary<String, object> arguments = new Dictionary<String, object>();
-            arguments.Add("status", "d");
-            arguments.Add("deposit", ticket.TotalPrice);
-            arguments.Add("picked_up", "y");
-            db.Update("Tickets", arguments, "ticket_id = " + ticketId);
+            ticket.Status = "d";
+            ticket.Deposit = ticket.TotalPrice;
+            ticket.PickedUp = "y";
+            ticket.CompletedDate = DateTime.Today;
+            UpdateTicket(ticket);
         }
 
         public TicketResource GetTicketByTicketID(int ticketId)
@@ -235,7 +233,7 @@ namespace DomainModel.Ticket
             ticketArgs.Add("picked_up", ticket.PickedUp);
             ticketArgs.Add("deposit", ticket.Deposit);
             ticketArgs.Add("order_id", ticket.OrderId);
-            ticketArgs.Add("completed_date", string.Format("{0:yyyy-MM-dd HH:mm:ss}", ticket.CompletedDate));
+            ticketArgs.Add("completed_date", string.Format("{0:yyyy-MM-dd}", ticket.CompletedDate));
 
             return ticketArgs;
         }
@@ -263,7 +261,7 @@ namespace DomainModel.Ticket
             DateTime lastModifiedTimestamp = (DateTime)dataRow["last_modified_timestamp"];
             DateTime? completedDate;
             //we have to convert from string because its stored in the sqllite database that way in order to accomodate null dateTimes
-            String rawDate = (String)dataRow["completed_date"];
+            String rawDate = dataRow["completed_date"] is DBNull ? "" : (String)dataRow["completed_date"];
             if (String.IsNullOrEmpty(rawDate))
             {
                 completedDate = null;

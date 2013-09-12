@@ -2,3 +2,8 @@ C:\Users\Jay\Documents\Visual Studio 2012\Projects\HKTReceiptGenerator\CustomCon
 C:\Users\Jay\Documents\Visual Studio 2012\Projects\HKTReceiptGenerator\CustomControls\bin\Debug\CustomControls.pdb
 C:\Users\Jay\Documents\Visual Studio 2012\Projects\HKTReceiptGenerator\CustomControls\obj\Debug\CustomControls.dll
 C:\Users\Jay\Documents\Visual Studio 2012\Projects\HKTReceiptGenerator\CustomControls\obj\Debug\CustomControls.pdb
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\CustomControls\bin\Debug\CustomControls.dll
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\CustomControls\bin\Debug\CustomControls.pdb
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\CustomControls\obj\Debug\CustomControls.csprojResolveAssemblyReference.cache
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\CustomControls\obj\Debug\CustomControls.dll
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\CustomControls\obj\Debug\CustomControls.pdb

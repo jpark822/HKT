@@ -32,7 +32,7 @@ namespace HKTReceiptGenerator
 
         void backupDbTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            if (DateTime.Now.Hour == 5)
+            if (DateTime.Now.Hour == 20)
             {
                 Emailer.SendBackupToEmail();
             }

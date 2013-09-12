@@ -30,22 +30,22 @@ namespace HKTReceiptGenerator.AddAlterationModal
 
         private void TaperSidesButton_Click(object sender, EventArgs e)
         {
-            AlterationChosen("Taper Sides ($25.00)", 25.00);
+            AlterationChosen("S Taper Sides ($25.00)", 25.00);
         }
 
         private void ShortenSleevesButton_Click(object sender, EventArgs e)
         {
-            AlterationChosen("Shorten Sleeves ($15.00)", 15);
+            AlterationChosen("S Shorten Sleeves ($15.00)", 15);
         }
 
         private void ShortenLengthButton_Click(object sender, EventArgs e)
         {
-            AlterationChosen("Shorten Length ($15.00)", 15);
+            AlterationChosen("S Shorten Length ($15.00)", 15);
         }
 
         private void DartsButton_Click(object sender, EventArgs e)
         {
-            AlterationChosen("Darts ($10.00)", 10);
+            AlterationChosen("S Darts ($10.00)", 10);
         }
 
         private void AddShirtModal_Load(object sender, EventArgs e)
