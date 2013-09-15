@@ -29,8 +29,12 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AlterationForm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,10 +54,6 @@
             this.DateInPicker = new System.Windows.Forms.DateTimePicker();
             this.DateReadyPicker = new System.Windows.Forms.DateTimePicker();
             this.AlterationGrid = new System.Windows.Forms.DataGridView();
-            this.quantityCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.taxableCol = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.SubmitButton = new CustomControls.HKTStandardButton();
             this.SaveBttn = new CustomControls.HKTStandardButton();
             this.label18 = new System.Windows.Forms.Label();
@@ -85,156 +85,160 @@
             this.TitleComboBox = new System.Windows.Forms.ComboBox();
             this.OrderIdTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.quantityCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.taxableCol = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.AlterationGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(83, 47);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 19);
+            this.label1.Size = new System.Drawing.Size(90, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "First Name";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(10, 80);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 19);
+            this.label2.Size = new System.Drawing.Size(70, 21);
             this.label2.TabIndex = 1;
             this.label2.Text = "Address";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(10, 113);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 19);
+            this.label3.Size = new System.Drawing.Size(38, 21);
             this.label3.TabIndex = 2;
             this.label3.Text = "City";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(372, 113);
+            this.label4.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(365, 113);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 19);
+            this.label4.Size = new System.Drawing.Size(48, 21);
             this.label4.TabIndex = 3;
             this.label4.Text = "State";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(605, 113);
+            this.label5.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(594, 113);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(34, 19);
+            this.label5.Size = new System.Drawing.Size(33, 21);
             this.label5.TabIndex = 4;
             this.label5.Text = "Zip";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(10, 147);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(97, 19);
+            this.label6.Size = new System.Drawing.Size(88, 21);
             this.label6.TabIndex = 5;
             this.label6.Text = "Telephone";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(402, 218);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(102, 19);
+            this.label8.Size = new System.Drawing.Size(95, 21);
             this.label8.TabIndex = 7;
             this.label8.Text = "Date Ready";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(10, 218);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(72, 19);
+            this.label9.Size = new System.Drawing.Size(63, 21);
             this.label9.TabIndex = 8;
             this.label9.Text = "Date In";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(10, 181);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(63, 19);
+            this.label10.Size = new System.Drawing.Size(56, 21);
             this.label10.TabIndex = 9;
             this.label10.Text = "E-Mail";
             // 
             // FirstNameTextBox
             // 
             this.FirstNameTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.FirstNameTextBox.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FirstNameTextBox.Location = new System.Drawing.Point(190, 44);
+            this.FirstNameTextBox.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FirstNameTextBox.Location = new System.Drawing.Point(177, 44);
             this.FirstNameTextBox.Name = "FirstNameTextBox";
-            this.FirstNameTextBox.Size = new System.Drawing.Size(215, 26);
+            this.FirstNameTextBox.Size = new System.Drawing.Size(228, 29);
             this.FirstNameTextBox.TabIndex = 1;
             this.FirstNameTextBox.Leave += new System.EventHandler(this.FirstNameTextBox_OnLeave);
             // 
             // AddressTextBox
             // 
             this.AddressTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.AddressTextBox.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddressTextBox.Location = new System.Drawing.Point(99, 77);
+            this.AddressTextBox.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddressTextBox.Location = new System.Drawing.Point(83, 77);
             this.AddressTextBox.Name = "AddressTextBox";
-            this.AddressTextBox.Size = new System.Drawing.Size(718, 26);
+            this.AddressTextBox.Size = new System.Drawing.Size(734, 29);
             this.AddressTextBox.TabIndex = 4;
             this.AddressTextBox.Leave += new System.EventHandler(this.AddressTextBox_OnLeave);
             // 
             // CityTextBox
             // 
             this.CityTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.CityTextBox.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CityTextBox.Location = new System.Drawing.Point(63, 110);
+            this.CityTextBox.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CityTextBox.Location = new System.Drawing.Point(54, 110);
             this.CityTextBox.Name = "CityTextBox";
-            this.CityTextBox.Size = new System.Drawing.Size(296, 26);
+            this.CityTextBox.Size = new System.Drawing.Size(305, 29);
             this.CityTextBox.TabIndex = 5;
             this.CityTextBox.Leave += new System.EventHandler(this.CityTextBox_OnLeave);
             // 
             // StateTextBox
             // 
             this.StateTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.StateTextBox.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StateTextBox.Location = new System.Drawing.Point(428, 110);
+            this.StateTextBox.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StateTextBox.Location = new System.Drawing.Point(415, 110);
             this.StateTextBox.Name = "StateTextBox";
-            this.StateTextBox.Size = new System.Drawing.Size(160, 26);
+            this.StateTextBox.Size = new System.Drawing.Size(173, 29);
             this.StateTextBox.TabIndex = 6;
             this.StateTextBox.Leave += new System.EventHandler(this.StateTextBox_OnLeave);
             // 
             // ZipTextBox
             // 
             this.ZipTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.ZipTextBox.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ZipTextBox.Location = new System.Drawing.Point(645, 110);
+            this.ZipTextBox.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ZipTextBox.Location = new System.Drawing.Point(632, 110);
             this.ZipTextBox.Name = "ZipTextBox";
-            this.ZipTextBox.Size = new System.Drawing.Size(172, 26);
+            this.ZipTextBox.Size = new System.Drawing.Size(185, 29);
             this.ZipTextBox.TabIndex = 7;
             this.ZipTextBox.Leave += new System.EventHandler(this.ZipTextBox_OnLeave);
             // 
             // PhoneTextBox
             // 
             this.PhoneTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.PhoneTextBox.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PhoneTextBox.Location = new System.Drawing.Point(121, 144);
+            this.PhoneTextBox.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PhoneTextBox.Location = new System.Drawing.Point(101, 144);
             this.PhoneTextBox.Name = "PhoneTextBox";
-            this.PhoneTextBox.Size = new System.Drawing.Size(696, 26);
+            this.PhoneTextBox.Size = new System.Drawing.Size(716, 29);
             this.PhoneTextBox.TabIndex = 8;
             this.PhoneTextBox.TextChanged += new System.EventHandler(this.PhoneTextBox_TextChanged);
             this.PhoneTextBox.Leave += new System.EventHandler(this.TelephoneTextBox_OnLeave);
@@ -242,28 +246,28 @@
             // EmailTextBox
             // 
             this.EmailTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.EmailTextBox.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmailTextBox.Location = new System.Drawing.Point(85, 178);
+            this.EmailTextBox.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmailTextBox.Location = new System.Drawing.Point(72, 178);
             this.EmailTextBox.Name = "EmailTextBox";
-            this.EmailTextBox.Size = new System.Drawing.Size(732, 26);
+            this.EmailTextBox.Size = new System.Drawing.Size(745, 29);
             this.EmailTextBox.TabIndex = 9;
             this.EmailTextBox.Leave += new System.EventHandler(this.EmailTextBox_OnLeave);
             // 
             // DateInPicker
             // 
-            this.DateInPicker.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DateInPicker.Location = new System.Drawing.Point(83, 212);
+            this.DateInPicker.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DateInPicker.Location = new System.Drawing.Point(79, 212);
             this.DateInPicker.Name = "DateInPicker";
-            this.DateInPicker.Size = new System.Drawing.Size(308, 26);
+            this.DateInPicker.Size = new System.Drawing.Size(312, 29);
             this.DateInPicker.TabIndex = 10;
             this.DateInPicker.Value = new System.DateTime(2013, 2, 12, 0, 0, 0, 0);
             // 
             // DateReadyPicker
             // 
-            this.DateReadyPicker.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DateReadyPicker.Location = new System.Drawing.Point(505, 212);
+            this.DateReadyPicker.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DateReadyPicker.Location = new System.Drawing.Point(501, 212);
             this.DateReadyPicker.Name = "DateReadyPicker";
-            this.DateReadyPicker.Size = new System.Drawing.Size(312, 26);
+            this.DateReadyPicker.Size = new System.Drawing.Size(316, 29);
             this.DateReadyPicker.TabIndex = 11;
             this.DateReadyPicker.Value = new System.DateTime(2013, 2, 12, 10, 19, 56, 0);
             // 
@@ -272,7 +276,7 @@
             this.AlterationGrid.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -285,14 +289,14 @@
             this.priceCol,
             this.taxableCol});
             this.AlterationGrid.Cursor = System.Windows.Forms.Cursors.IBeam;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("HelveticaNeueLT Pro 55 Roman", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.AlterationGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.AlterationGrid.DefaultCellStyle = dataGridViewCellStyle6;
             this.AlterationGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.AlterationGrid.Location = new System.Drawing.Point(14, 253);
             this.AlterationGrid.MultiSelect = false;
@@ -304,30 +308,6 @@
             this.AlterationGrid.ShowRowErrors = false;
             this.AlterationGrid.Size = new System.Drawing.Size(514, 487);
             this.AlterationGrid.TabIndex = 12;
-            // 
-            // quantityCol
-            // 
-            this.quantityCol.HeaderText = "#";
-            this.quantityCol.Name = "quantityCol";
-            this.quantityCol.Width = 40;
-            // 
-            // descriptionCol
-            // 
-            this.descriptionCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.descriptionCol.HeaderText = "Description";
-            this.descriptionCol.Name = "descriptionCol";
-            // 
-            // priceCol
-            // 
-            this.priceCol.HeaderText = "Price";
-            this.priceCol.Name = "priceCol";
-            this.priceCol.Width = 55;
-            // 
-            // taxableCol
-            // 
-            this.taxableCol.HeaderText = "Tax";
-            this.taxableCol.Name = "taxableCol";
-            this.taxableCol.Width = 50;
             // 
             // SubmitButton
             // 
@@ -358,61 +338,61 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(494, 47);
+            this.label18.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(489, 47);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(94, 19);
+            this.label18.Size = new System.Drawing.Size(88, 21);
             this.label18.TabIndex = 29;
             this.label18.Text = "Last Name";
             // 
             // LastNameTextBox
             // 
             this.LastNameTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.LastNameTextBox.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LastNameTextBox.Location = new System.Drawing.Point(591, 44);
+            this.LastNameTextBox.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LastNameTextBox.Location = new System.Drawing.Point(584, 44);
             this.LastNameTextBox.Name = "LastNameTextBox";
-            this.LastNameTextBox.Size = new System.Drawing.Size(226, 26);
+            this.LastNameTextBox.Size = new System.Drawing.Size(233, 29);
             this.LastNameTextBox.TabIndex = 3;
             this.LastNameTextBox.Leave += new System.EventHandler(this.LastNameTextBox_OnLeave);
             // 
             // MiddleNameTextBox
             // 
             this.MiddleNameTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.MiddleNameTextBox.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MiddleNameTextBox.Location = new System.Drawing.Point(457, 44);
+            this.MiddleNameTextBox.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MiddleNameTextBox.Location = new System.Drawing.Point(452, 44);
             this.MiddleNameTextBox.Name = "MiddleNameTextBox";
-            this.MiddleNameTextBox.Size = new System.Drawing.Size(31, 26);
+            this.MiddleNameTextBox.Size = new System.Drawing.Size(31, 29);
             this.MiddleNameTextBox.TabIndex = 2;
             this.MiddleNameTextBox.Leave += new System.EventHandler(this.MiddleNameTextBox_OnLeave);
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(411, 47);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(40, 19);
+            this.label19.Size = new System.Drawing.Size(37, 21);
             this.label19.TabIndex = 31;
             this.label19.Text = "M.I.";
             // 
             // TotalPriceTextLabel
             // 
             this.TotalPriceTextLabel.AutoSize = true;
-            this.TotalPriceTextLabel.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalPriceTextLabel.Font = new System.Drawing.Font("HelveticaNeueLT Pro 55 Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TotalPriceTextLabel.Location = new System.Drawing.Point(539, 747);
             this.TotalPriceTextLabel.Name = "TotalPriceTextLabel";
-            this.TotalPriceTextLabel.Size = new System.Drawing.Size(53, 16);
+            this.TotalPriceTextLabel.Size = new System.Drawing.Size(46, 17);
             this.TotalPriceTextLabel.TabIndex = 32;
             this.TotalPriceTextLabel.Text = "Total:";
             // 
             // TotalPriceLabel
             // 
             this.TotalPriceLabel.AutoSize = true;
-            this.TotalPriceLabel.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalPriceLabel.Font = new System.Drawing.Font("HelveticaNeueLT Pro 55 Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TotalPriceLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.TotalPriceLabel.Location = new System.Drawing.Point(590, 747);
+            this.TotalPriceLabel.Location = new System.Drawing.Point(581, 747);
             this.TotalPriceLabel.Name = "TotalPriceLabel";
-            this.TotalPriceLabel.Size = new System.Drawing.Size(39, 16);
+            this.TotalPriceLabel.Size = new System.Drawing.Size(44, 17);
             this.TotalPriceLabel.TabIndex = 33;
             this.TotalPriceLabel.Text = "$0.00";
             this.TotalPriceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -420,26 +400,26 @@
             // TicketNumberTextLabel
             // 
             this.TicketNumberTextLabel.AutoSize = true;
-            this.TicketNumberTextLabel.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TicketNumberTextLabel.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TicketNumberTextLabel.Location = new System.Drawing.Point(10, 15);
             this.TicketNumberTextLabel.Name = "TicketNumberTextLabel";
-            this.TicketNumberTextLabel.Size = new System.Drawing.Size(84, 19);
+            this.TicketNumberTextLabel.Size = new System.Drawing.Size(75, 21);
             this.TicketNumberTextLabel.TabIndex = 34;
             this.TicketNumberTextLabel.Text = "Ticket #:";
             // 
             // TicketNumberLabel
             // 
             this.TicketNumberLabel.AutoSize = true;
-            this.TicketNumberLabel.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TicketNumberLabel.Location = new System.Drawing.Point(90, 15);
+            this.TicketNumberLabel.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TicketNumberLabel.Location = new System.Drawing.Point(83, 15);
             this.TicketNumberLabel.Name = "TicketNumberLabel";
-            this.TicketNumberLabel.Size = new System.Drawing.Size(33, 19);
+            this.TicketNumberLabel.Size = new System.Drawing.Size(31, 21);
             this.TicketNumberLabel.TabIndex = 35;
             this.TicketNumberLabel.Text = "???";
             // 
             // CommentBox
             // 
-            this.CommentBox.Font = new System.Drawing.Font("HelveticaNeueLT Pro 55 Roman", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CommentBox.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CommentBox.Location = new System.Drawing.Point(12, 746);
             this.CommentBox.Multiline = true;
             this.CommentBox.Name = "CommentBox";
@@ -475,16 +455,16 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Trajan Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(567, 601);
+            this.label21.Font = new System.Drawing.Font("HelveticaNeueLT Pro 55 Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(572, 601);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(72, 14);
+            this.label21.Size = new System.Drawing.Size(65, 13);
             this.label21.TabIndex = 38;
             this.label21.Text = "Picked Up?";
             // 
             // PickedUpComboBox
             // 
-            this.PickedUpComboBox.Font = new System.Drawing.Font("Trajan Pro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PickedUpComboBox.Font = new System.Drawing.Font("HelveticaNeueLT Pro 55 Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PickedUpComboBox.FormattingEnabled = true;
             this.PickedUpComboBox.Items.AddRange(new object[] {
             "n/a",
@@ -511,7 +491,7 @@
             // 
             // StatusComboBox
             // 
-            this.StatusComboBox.Font = new System.Drawing.Font("Trajan Pro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StatusComboBox.Font = new System.Drawing.Font("HelveticaNeueLT Pro 55 Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StatusComboBox.FormattingEnabled = true;
             this.StatusComboBox.Items.AddRange(new object[] {
             "a",
@@ -527,21 +507,21 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Trajan Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(578, 549);
+            this.label22.Font = new System.Drawing.Font("HelveticaNeueLT Pro 55 Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(581, 550);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(47, 14);
+            this.label22.Size = new System.Drawing.Size(38, 13);
             this.label22.TabIndex = 41;
             this.label22.Text = "Status";
             // 
             // BalanceLabel
             // 
             this.BalanceLabel.AutoSize = true;
-            this.BalanceLabel.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BalanceLabel.Font = new System.Drawing.Font("HelveticaNeueLT Pro 55 Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BalanceLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BalanceLabel.Location = new System.Drawing.Point(607, 797);
+            this.BalanceLabel.Location = new System.Drawing.Point(600, 796);
             this.BalanceLabel.Name = "BalanceLabel";
-            this.BalanceLabel.Size = new System.Drawing.Size(39, 16);
+            this.BalanceLabel.Size = new System.Drawing.Size(44, 17);
             this.BalanceLabel.TabIndex = 44;
             this.BalanceLabel.Text = "$0.00";
             this.BalanceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -549,29 +529,29 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(540, 797);
+            this.label17.Font = new System.Drawing.Font("HelveticaNeueLT Pro 55 Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(539, 796);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(70, 16);
+            this.label17.Size = new System.Drawing.Size(65, 17);
             this.label17.TabIndex = 43;
             this.label17.Text = "Balance:";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Font = new System.Drawing.Font("HelveticaNeueLT Pro 55 Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.Location = new System.Drawing.Point(539, 771);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(80, 16);
+            this.label20.Size = new System.Drawing.Size(77, 17);
             this.label20.TabIndex = 45;
             this.label20.Text = "Deposit: $";
             // 
             // DepositTextBox
             // 
-            this.DepositTextBox.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DepositTextBox.Location = new System.Drawing.Point(605, 768);
+            this.DepositTextBox.Font = new System.Drawing.Font("HelveticaNeueLT Pro 55 Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DepositTextBox.Location = new System.Drawing.Point(615, 768);
             this.DepositTextBox.Name = "DepositTextBox";
-            this.DepositTextBox.Size = new System.Drawing.Size(65, 24);
+            this.DepositTextBox.Size = new System.Drawing.Size(65, 25);
             this.DepositTextBox.TabIndex = 46;
             this.DepositTextBox.TextChanged += new System.EventHandler(this.DepositTextBox_TextChanged);
             // 
@@ -588,16 +568,16 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Trajan Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(565, 649);
+            this.label16.Font = new System.Drawing.Font("HelveticaNeueLT Pro 55 Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(572, 650);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(84, 14);
+            this.label16.Size = new System.Drawing.Size(65, 13);
             this.label16.TabIndex = 47;
             this.label16.Text = "Tailor Name";
             // 
             // TailorComboBox
             // 
-            this.TailorComboBox.Font = new System.Drawing.Font("Trajan Pro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TailorComboBox.Font = new System.Drawing.Font("HelveticaNeueLT Pro 55 Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TailorComboBox.FormattingEnabled = true;
             this.TailorComboBox.Items.AddRange(new object[] {
             "In House",
@@ -616,26 +596,26 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("HelveticaNeueLT Pro 55 Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(540, 724);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(51, 16);
+            this.label11.Size = new System.Drawing.Size(50, 17);
             this.label11.TabIndex = 49;
             this.label11.Text = "Items:";
             // 
             // NumItemsLabel
             // 
             this.NumItemsLabel.AutoSize = true;
-            this.NumItemsLabel.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NumItemsLabel.Location = new System.Drawing.Point(589, 724);
+            this.NumItemsLabel.Font = new System.Drawing.Font("HelveticaNeueLT Pro 55 Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NumItemsLabel.Location = new System.Drawing.Point(586, 724);
             this.NumItemsLabel.Name = "NumItemsLabel";
-            this.NumItemsLabel.Size = new System.Drawing.Size(15, 16);
+            this.NumItemsLabel.Size = new System.Drawing.Size(16, 17);
             this.NumItemsLabel.TabIndex = 50;
             this.NumItemsLabel.Text = "0";
             // 
             // TitleComboBox
             // 
-            this.TitleComboBox.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TitleComboBox.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TitleComboBox.FormattingEnabled = true;
             this.TitleComboBox.Items.AddRange(new object[] {
             "",
@@ -645,27 +625,61 @@
             "Dr."});
             this.TitleComboBox.Location = new System.Drawing.Point(14, 44);
             this.TitleComboBox.Name = "TitleComboBox";
-            this.TitleComboBox.Size = new System.Drawing.Size(63, 27);
+            this.TitleComboBox.Size = new System.Drawing.Size(63, 29);
             this.TitleComboBox.TabIndex = 51;
             // 
             // OrderIdTextBox
             // 
-            this.OrderIdTextBox.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OrderIdTextBox.Location = new System.Drawing.Point(540, 12);
+            this.OrderIdTextBox.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OrderIdTextBox.Location = new System.Drawing.Point(532, 12);
             this.OrderIdTextBox.Name = "OrderIdTextBox";
-            this.OrderIdTextBox.Size = new System.Drawing.Size(279, 26);
+            this.OrderIdTextBox.Size = new System.Drawing.Size(287, 29);
             this.OrderIdTextBox.TabIndex = 52;
             this.OrderIdTextBox.Leave += new System.EventHandler(this.OrderIdTextBox_OnLeave);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Trajan Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(453, 15);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(81, 19);
+            this.label7.Size = new System.Drawing.Size(73, 21);
             this.label7.TabIndex = 53;
             this.label7.Text = "Order #:";
+            // 
+            // quantityCol
+            // 
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quantityCol.DefaultCellStyle = dataGridViewCellStyle2;
+            this.quantityCol.HeaderText = "#";
+            this.quantityCol.Name = "quantityCol";
+            this.quantityCol.Width = 40;
+            // 
+            // descriptionCol
+            // 
+            this.descriptionCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descriptionCol.DefaultCellStyle = dataGridViewCellStyle3;
+            this.descriptionCol.HeaderText = "Description";
+            this.descriptionCol.Name = "descriptionCol";
+            // 
+            // priceCol
+            // 
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.priceCol.DefaultCellStyle = dataGridViewCellStyle4;
+            this.priceCol.HeaderText = "Price";
+            this.priceCol.Name = "priceCol";
+            this.priceCol.Width = 55;
+            // 
+            // taxableCol
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.NullValue = false;
+            this.taxableCol.DefaultCellStyle = dataGridViewCellStyle5;
+            this.taxableCol.HeaderText = "Tax";
+            this.taxableCol.Name = "taxableCol";
+            this.taxableCol.Width = 50;
             // 
             // AlterationForm
             // 
@@ -722,6 +736,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Font = new System.Drawing.Font("HelveticaNeueLT Pro 55 Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -782,12 +797,12 @@
         private System.Windows.Forms.ComboBox TailorComboBox;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label NumItemsLabel;
+        private System.Windows.Forms.ComboBox TitleComboBox;
+        private System.Windows.Forms.TextBox OrderIdTextBox;
+        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantityCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceCol;
         private System.Windows.Forms.DataGridViewCheckBoxColumn taxableCol;
-        private System.Windows.Forms.ComboBox TitleComboBox;
-        private System.Windows.Forms.TextBox OrderIdTextBox;
-        private System.Windows.Forms.Label label7;
     }
 }
