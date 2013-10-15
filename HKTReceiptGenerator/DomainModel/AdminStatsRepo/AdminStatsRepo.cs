@@ -18,7 +18,7 @@ namespace DomainModel.AdminStatsRepo
         public double getTotalBilled(DateTime startDate, DateTime endDate, Boolean isOrder)
         {
             String convertedStartDate = string.Format(shortDateFormatString, startDate);
-            String convertedEndDate = string.Format(shortDateFormatString, endDate);
+            String convertedEndDate = string.Format(shortDateFormatString, endDate.AddDays(1));
 
             String sqlToAdd = "";
             if (isOrder)
@@ -33,24 +33,25 @@ namespace DomainModel.AdminStatsRepo
             }
 
             SQLiteDatabase db = new SQLiteDatabase();
-            DataTable results = db.GetDataTable(string.Format(@"select price
+            String sql = string.Format(@"select price, taxable
                                                 from Tickets tix
                                                 join ticket_alterations ta
                                                 on tix.ticket_id = ta.ticket_id
                                                 AND date_in >= '{0}'
-                                                AND date_in <= '{1}' " + sqlToAdd, convertedStartDate, convertedEndDate));
+                                                AND date_in <= '{1}' " + sqlToAdd, convertedStartDate, convertedEndDate);
+            DataTable results = db.GetDataTable(sql);
             return getPriceTotalFromDatatable(results);
         }
 
         public double GetTotalPaidOrdersBetweenDates(DateTime startDate, DateTime endDate, Boolean taxable)
         {
             String convertedStartDate = string.Format(shortDateFormatString, startDate);
-            String convertedEndDate = string.Format(shortDateFormatString, endDate);
+            String convertedEndDate = string.Format(shortDateFormatString, endDate.AddDays(1));
 
             int taxableInt = taxable == true ? 1 : 0;
 
             SQLiteDatabase db = new SQLiteDatabase();
-            string sql = String.Format(@"select price
+            string sql = String.Format(@"select price, taxable
                                             from Tickets tix
                                             join ticket_alterations ta
                                             on tix.ticket_id = ta.ticket_id
@@ -68,12 +69,12 @@ namespace DomainModel.AdminStatsRepo
         public double GetTotalPaidNonOrdersBetweenDates(DateTime startDate, DateTime endDate, Boolean taxable)
         {
             String convertedStartDate = string.Format(shortDateFormatString, startDate);
-            String convertedEndDate = string.Format(shortDateFormatString, endDate); 
+            String convertedEndDate = string.Format(shortDateFormatString, endDate.AddDays(1)); 
 
             int taxableInt = taxable == true ? 1 : 0;
 
             SQLiteDatabase db = new SQLiteDatabase();
-            string sql = String.Format(@"select price
+            string sql = String.Format(@"select price, taxable
                                             from Tickets tix
                                             join ticket_alterations ta
                                             on tix.ticket_id = ta.ticket_id
@@ -94,7 +95,7 @@ namespace DomainModel.AdminStatsRepo
             for (int i = 0; i < table.Rows.Count; i++)
             {
                 DataRow row = table.Rows[i];
-                total += (double)row["price"];
+                total += Convert.ToInt32(row["taxable"]) == 0 ? (double)row["price"] : (double)row["price"] * 1.07;
             }
             return total;
         }

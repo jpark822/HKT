@@ -52,6 +52,7 @@ namespace HKTReceiptGenerator
             DateInPicker.Value = DateTime.Today;
             DateReadyPicker.Value = DateTime.Today.AddDays(7);
             previousStatus = "a";
+            NewTicketWithCustomerBttn.Enabled = false;
         }
 
         public AlterationForm(TicketResource ticketResource)
@@ -62,6 +63,7 @@ namespace HKTReceiptGenerator
                 isNewAlteration = true;
                 TicketNumberLabel.Hide();
                 previousStatus = "a";
+                NewTicketWithCustomerBttn.Enabled = false;
             }
             else
             {
@@ -155,10 +157,6 @@ namespace HKTReceiptGenerator
 
             var oldValue = AlterationGrid[e.ColumnIndex, e.RowIndex].Value;
             var newValue = e.FormattedValue;
-
-
-                
-            
         }
 
 
@@ -264,6 +262,20 @@ namespace HKTReceiptGenerator
             }
         }
 
+        private void NewTicketWithCustomerBttn_Click(object sender, EventArgs e)
+        {
+            if (ticketID == 0)
+            {
+                MessageBox.Show("You need to save this ticket before you can create a new ticket with this customer!");
+                return;
+            }
+
+            TicketRepository ticketRepo = new TicketRepository();
+            TicketResource resource = ticketRepo.GetCustomerInfoBasedOnTicketId(ticketID);
+            AlterationForm alterationForm = new AlterationForm(resource);
+            alterationForm.Show();
+        }
+
 
 
         private void SaveBttn_Click(object sender, EventArgs e)
@@ -299,6 +311,8 @@ namespace HKTReceiptGenerator
                 alterationRepo.DeleteAndReinsertAlterations(alterationResource, ticketID);
 
                 MessageBox.Show("Your alteration was successfully Updated.");
+                NewTicketWithCustomerBttn.Enabled = true;
+
                 return true;
             }
             catch (Exception ex)
@@ -326,6 +340,8 @@ namespace HKTReceiptGenerator
                 TicketNumberLabel.Show();
                 MessageBox.Show("Your alteration was successfully saved. The ticket ID is " + ticketID.ToString());
                 isNewAlteration = false;
+                NewTicketWithCustomerBttn.Enabled = true;
+
                 return true;
             }
             catch (Exception ex)
@@ -723,6 +739,8 @@ namespace HKTReceiptGenerator
         {
             OrderIdTextBox.Text = OrderIdTextBox.Text.Trim();
         }
+
+        
 
  
     }

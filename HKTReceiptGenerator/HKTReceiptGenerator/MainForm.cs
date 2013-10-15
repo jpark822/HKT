@@ -142,7 +142,14 @@ namespace HKTReceiptGenerator
 
         void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Idle -= Application_Idle;
+            if (MessageBox.Show("Are you sure you want to exit the program?", "Quit", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+            else
+            {
+                Application.Idle -= Application_Idle;
+            }
         }
     }
 }

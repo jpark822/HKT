@@ -29,12 +29,11 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AlterationForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AlterationForm));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,6 +53,10 @@
             this.DateInPicker = new System.Windows.Forms.DateTimePicker();
             this.DateReadyPicker = new System.Windows.Forms.DateTimePicker();
             this.AlterationGrid = new System.Windows.Forms.DataGridView();
+            this.quantityCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.taxableCol = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.SubmitButton = new CustomControls.HKTStandardButton();
             this.SaveBttn = new CustomControls.HKTStandardButton();
             this.label18 = new System.Windows.Forms.Label();
@@ -85,10 +88,7 @@
             this.TitleComboBox = new System.Windows.Forms.ComboBox();
             this.OrderIdTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.quantityCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.taxableCol = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.NewTicketWithCustomerBttn = new CustomControls.HKTStandardButton();
             ((System.ComponentModel.ISupportInitialize)(this.AlterationGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -276,7 +276,7 @@
             this.AlterationGrid.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("HelveticaNeueLT Pro 55 Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -289,14 +289,6 @@
             this.priceCol,
             this.taxableCol});
             this.AlterationGrid.Cursor = System.Windows.Forms.Cursors.IBeam;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.AlterationGrid.DefaultCellStyle = dataGridViewCellStyle6;
             this.AlterationGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.AlterationGrid.Location = new System.Drawing.Point(14, 253);
             this.AlterationGrid.MultiSelect = false;
@@ -309,14 +301,48 @@
             this.AlterationGrid.Size = new System.Drawing.Size(514, 487);
             this.AlterationGrid.TabIndex = 12;
             // 
+            // quantityCol
+            // 
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quantityCol.DefaultCellStyle = dataGridViewCellStyle2;
+            this.quantityCol.HeaderText = "#";
+            this.quantityCol.Name = "quantityCol";
+            this.quantityCol.Width = 40;
+            // 
+            // descriptionCol
+            // 
+            this.descriptionCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descriptionCol.DefaultCellStyle = dataGridViewCellStyle3;
+            this.descriptionCol.HeaderText = "Description";
+            this.descriptionCol.Name = "descriptionCol";
+            // 
+            // priceCol
+            // 
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.priceCol.DefaultCellStyle = dataGridViewCellStyle4;
+            this.priceCol.HeaderText = "Price";
+            this.priceCol.Name = "priceCol";
+            this.priceCol.Width = 55;
+            // 
+            // taxableCol
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.NullValue = false;
+            this.taxableCol.DefaultCellStyle = dataGridViewCellStyle5;
+            this.taxableCol.HeaderText = "Tax";
+            this.taxableCol.Name = "taxableCol";
+            this.taxableCol.Width = 50;
+            // 
             // SubmitButton
             // 
             this.SubmitButton.BackColor = System.Drawing.Color.Maroon;
             this.SubmitButton.Font = new System.Drawing.Font("Trajan Pro", 14F);
             this.SubmitButton.ForeColor = System.Drawing.Color.White;
-            this.SubmitButton.Location = new System.Drawing.Point(686, 401);
+            this.SubmitButton.Location = new System.Drawing.Point(686, 368);
             this.SubmitButton.Name = "SubmitButton";
-            this.SubmitButton.Size = new System.Drawing.Size(131, 128);
+            this.SubmitButton.Size = new System.Drawing.Size(131, 102);
             this.SubmitButton.TabIndex = 15;
             this.SubmitButton.Text = "Save and Email";
             this.SubmitButton.UseVisualStyleBackColor = false;
@@ -329,7 +355,7 @@
             this.SaveBttn.ForeColor = System.Drawing.Color.White;
             this.SaveBttn.Location = new System.Drawing.Point(686, 253);
             this.SaveBttn.Name = "SaveBttn";
-            this.SaveBttn.Size = new System.Drawing.Size(131, 128);
+            this.SaveBttn.Size = new System.Drawing.Size(131, 102);
             this.SaveBttn.TabIndex = 14;
             this.SaveBttn.Text = "Save and Close";
             this.SaveBttn.UseVisualStyleBackColor = false;
@@ -431,9 +457,9 @@
             this.PrintCustomerBttn.BackColor = System.Drawing.Color.Maroon;
             this.PrintCustomerBttn.Font = new System.Drawing.Font("Trajan Pro", 14F);
             this.PrintCustomerBttn.ForeColor = System.Drawing.Color.White;
-            this.PrintCustomerBttn.Location = new System.Drawing.Point(686, 547);
+            this.PrintCustomerBttn.Location = new System.Drawing.Point(686, 597);
             this.PrintCustomerBttn.Name = "PrintCustomerBttn";
-            this.PrintCustomerBttn.Size = new System.Drawing.Size(131, 128);
+            this.PrintCustomerBttn.Size = new System.Drawing.Size(131, 102);
             this.PrintCustomerBttn.TabIndex = 36;
             this.PrintCustomerBttn.Text = "Print Customer Copy";
             this.PrintCustomerBttn.UseVisualStyleBackColor = false;
@@ -481,9 +507,9 @@
             this.PrintEmployeeBttn.BackColor = System.Drawing.Color.Maroon;
             this.PrintEmployeeBttn.Font = new System.Drawing.Font("Trajan Pro", 14F);
             this.PrintEmployeeBttn.ForeColor = System.Drawing.Color.White;
-            this.PrintEmployeeBttn.Location = new System.Drawing.Point(686, 691);
+            this.PrintEmployeeBttn.Location = new System.Drawing.Point(686, 711);
             this.PrintEmployeeBttn.Name = "PrintEmployeeBttn";
-            this.PrintEmployeeBttn.Size = new System.Drawing.Size(131, 128);
+            this.PrintEmployeeBttn.Size = new System.Drawing.Size(131, 102);
             this.PrintEmployeeBttn.TabIndex = 40;
             this.PrintEmployeeBttn.Text = "Print Employee Copy";
             this.PrintEmployeeBttn.UseVisualStyleBackColor = false;
@@ -647,39 +673,18 @@
             this.label7.TabIndex = 53;
             this.label7.Text = "Order #:";
             // 
-            // quantityCol
+            // NewTicketWithCustomerBttn
             // 
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quantityCol.DefaultCellStyle = dataGridViewCellStyle2;
-            this.quantityCol.HeaderText = "#";
-            this.quantityCol.Name = "quantityCol";
-            this.quantityCol.Width = 40;
-            // 
-            // descriptionCol
-            // 
-            this.descriptionCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descriptionCol.DefaultCellStyle = dataGridViewCellStyle3;
-            this.descriptionCol.HeaderText = "Description";
-            this.descriptionCol.Name = "descriptionCol";
-            // 
-            // priceCol
-            // 
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.priceCol.DefaultCellStyle = dataGridViewCellStyle4;
-            this.priceCol.HeaderText = "Price";
-            this.priceCol.Name = "priceCol";
-            this.priceCol.Width = 55;
-            // 
-            // taxableCol
-            // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.NullValue = false;
-            this.taxableCol.DefaultCellStyle = dataGridViewCellStyle5;
-            this.taxableCol.HeaderText = "Tax";
-            this.taxableCol.Name = "taxableCol";
-            this.taxableCol.Width = 50;
+            this.NewTicketWithCustomerBttn.BackColor = System.Drawing.Color.Maroon;
+            this.NewTicketWithCustomerBttn.Font = new System.Drawing.Font("Trajan Pro", 14F);
+            this.NewTicketWithCustomerBttn.ForeColor = System.Drawing.Color.White;
+            this.NewTicketWithCustomerBttn.Location = new System.Drawing.Point(686, 483);
+            this.NewTicketWithCustomerBttn.Name = "NewTicketWithCustomerBttn";
+            this.NewTicketWithCustomerBttn.Size = new System.Drawing.Size(131, 102);
+            this.NewTicketWithCustomerBttn.TabIndex = 54;
+            this.NewTicketWithCustomerBttn.Text = "New Ticket w/ Customer";
+            this.NewTicketWithCustomerBttn.UseVisualStyleBackColor = false;
+            this.NewTicketWithCustomerBttn.Click += new System.EventHandler(this.NewTicketWithCustomerBttn_Click);
             // 
             // AlterationForm
             // 
@@ -688,6 +693,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(832, 827);
+            this.Controls.Add(this.NewTicketWithCustomerBttn);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.OrderIdTextBox);
             this.Controls.Add(this.TitleComboBox);
@@ -804,5 +810,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceCol;
         private System.Windows.Forms.DataGridViewCheckBoxColumn taxableCol;
+        private CustomControls.HKTStandardButton NewTicketWithCustomerBttn;
     }
 }

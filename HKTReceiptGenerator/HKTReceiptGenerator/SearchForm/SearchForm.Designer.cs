@@ -253,7 +253,7 @@
             this.SearchButton.BackColor = System.Drawing.Color.Maroon;
             this.SearchButton.Font = new System.Drawing.Font("Trajan Pro", 14F);
             this.SearchButton.ForeColor = System.Drawing.Color.White;
-            this.SearchButton.Location = new System.Drawing.Point(12, 425);
+            this.SearchButton.Location = new System.Drawing.Point(12, 432);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(286, 56);
             this.SearchButton.TabIndex = 12;
@@ -381,7 +381,7 @@
             this.OpenTicketButton.BackColor = System.Drawing.Color.Maroon;
             this.OpenTicketButton.Font = new System.Drawing.Font("Trajan Pro", 14F);
             this.OpenTicketButton.ForeColor = System.Drawing.Color.White;
-            this.OpenTicketButton.Location = new System.Drawing.Point(339, 425);
+            this.OpenTicketButton.Location = new System.Drawing.Point(339, 432);
             this.OpenTicketButton.Name = "OpenTicketButton";
             this.OpenTicketButton.Size = new System.Drawing.Size(272, 56);
             this.OpenTicketButton.TabIndex = 23;
@@ -421,7 +421,7 @@
             this.DeleteTicketButton.BackColor = System.Drawing.Color.Maroon;
             this.DeleteTicketButton.Font = new System.Drawing.Font("Trajan Pro", 14F);
             this.DeleteTicketButton.ForeColor = System.Drawing.Color.White;
-            this.DeleteTicketButton.Location = new System.Drawing.Point(1209, 425);
+            this.DeleteTicketButton.Location = new System.Drawing.Point(1209, 432);
             this.DeleteTicketButton.Name = "DeleteTicketButton";
             this.DeleteTicketButton.Size = new System.Drawing.Size(275, 56);
             this.DeleteTicketButton.TabIndex = 26;
@@ -460,7 +460,7 @@
             this.CreateTicketWithUserBttn.BackColor = System.Drawing.Color.Maroon;
             this.CreateTicketWithUserBttn.Font = new System.Drawing.Font("Trajan Pro", 14F);
             this.CreateTicketWithUserBttn.ForeColor = System.Drawing.Color.White;
-            this.CreateTicketWithUserBttn.Location = new System.Drawing.Point(630, 425);
+            this.CreateTicketWithUserBttn.Location = new System.Drawing.Point(630, 432);
             this.CreateTicketWithUserBttn.Name = "CreateTicketWithUserBttn";
             this.CreateTicketWithUserBttn.Size = new System.Drawing.Size(272, 56);
             this.CreateTicketWithUserBttn.TabIndex = 30;
@@ -502,7 +502,7 @@
             this.MarkAsDonePaidPickedUpBttn.BackColor = System.Drawing.Color.Maroon;
             this.MarkAsDonePaidPickedUpBttn.Font = new System.Drawing.Font("Trajan Pro", 14F);
             this.MarkAsDonePaidPickedUpBttn.ForeColor = System.Drawing.Color.White;
-            this.MarkAsDonePaidPickedUpBttn.Location = new System.Drawing.Point(920, 425);
+            this.MarkAsDonePaidPickedUpBttn.Location = new System.Drawing.Point(920, 432);
             this.MarkAsDonePaidPickedUpBttn.Name = "MarkAsDonePaidPickedUpBttn";
             this.MarkAsDonePaidPickedUpBttn.Size = new System.Drawing.Size(272, 56);
             this.MarkAsDonePaidPickedUpBttn.TabIndex = 33;
@@ -533,7 +533,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1496, 539);
+            this.ClientSize = new System.Drawing.Size(1496, 528);
             this.Controls.Add(this.OrderIdTextBox);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.MarkAsDonePaidPickedUpBttn);
