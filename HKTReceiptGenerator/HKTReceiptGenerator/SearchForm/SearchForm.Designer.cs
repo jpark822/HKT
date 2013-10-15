@@ -74,6 +74,7 @@
             this.MarkAsDonePaidPickedUpBttn = new CustomControls.HKTStandardButton();
             this.OrderIdTextBox = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.ExportToExcelButton = new CustomControls.HKTStandardButton();
             ((System.ComponentModel.ISupportInitialize)(this.ResultGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -527,13 +528,27 @@
             this.label14.TabIndex = 35;
             this.label14.Text = "Order #";
             // 
+            // ExportToExcelButton
+            // 
+            this.ExportToExcelButton.BackColor = System.Drawing.Color.Maroon;
+            this.ExportToExcelButton.Font = new System.Drawing.Font("Trajan Pro", 14F);
+            this.ExportToExcelButton.ForeColor = System.Drawing.Color.White;
+            this.ExportToExcelButton.Location = new System.Drawing.Point(810, 511);
+            this.ExportToExcelButton.Name = "ExportToExcelButton";
+            this.ExportToExcelButton.Size = new System.Drawing.Size(207, 54);
+            this.ExportToExcelButton.TabIndex = 36;
+            this.ExportToExcelButton.Text = "Export to Excel";
+            this.ExportToExcelButton.UseVisualStyleBackColor = false;
+            this.ExportToExcelButton.Click += new System.EventHandler(this.ExportToExcelButton_Click);
+            // 
             // SearchForm
             // 
             this.AcceptButton = this.SearchButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1496, 528);
+            this.ClientSize = new System.Drawing.Size(1496, 584);
+            this.Controls.Add(this.ExportToExcelButton);
             this.Controls.Add(this.OrderIdTextBox);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.MarkAsDonePaidPickedUpBttn);
@@ -623,5 +638,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn BalanceCol;
         private System.Windows.Forms.TextBox OrderIdTextBox;
         private System.Windows.Forms.Label label14;
+        private CustomControls.HKTStandardButton ExportToExcelButton;
     }
 }

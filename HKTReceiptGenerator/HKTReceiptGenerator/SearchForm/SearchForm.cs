@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DomainModel.TicketAlterations;
 using DomainModel.Ticket;
+using Microsoft.Office.Interop.Excel;
 
 namespace HKTReceiptGenerator
 {
@@ -206,7 +207,7 @@ namespace HKTReceiptGenerator
             {
                 String sql = "select distinct first_name from tickets";
                 SQLiteDatabase db = new SQLiteDatabase();
-                DataTable searchResultTable = db.GetDataTable(sql);
+                System.Data.DataTable searchResultTable = db.GetDataTable(sql);
                 foreach (DataRow row in searchResultTable.Rows)
                 {
                     names.Add(row["first_name"].ToString());
@@ -237,7 +238,7 @@ namespace HKTReceiptGenerator
             {
                 String sql = "select distinct last_name from tickets";
                 SQLiteDatabase db = new SQLiteDatabase();
-                DataTable searchResultTable = db.GetDataTable(sql);
+                System.Data.DataTable searchResultTable = db.GetDataTable(sql);
 
                 foreach (DataRow row in searchResultTable.Rows)
                 {
@@ -317,6 +318,45 @@ namespace HKTReceiptGenerator
                 MessageBox.Show("There was an error. Please contact Jay with this message: " + ex.Message);
             }
             EnableButtonsBasedOnGrid();
+        }
+
+        private void ExportToExcelButton_Click(object sender, EventArgs e)
+        {
+            Microsoft.Office.Interop.Excel.Application excelApp = new Microsoft.Office.Interop.Excel.Application();
+            excelApp.Visible = true;
+
+            _Workbook workbook = (_Workbook)(excelApp.Workbooks.Add(Type.Missing));
+            _Worksheet worksheet = (_Worksheet)workbook.ActiveSheet;
+
+            //generate header columns
+            worksheet.Cells[1, "A"] = "Ticket ID";
+            worksheet.Cells[1, "B"] = "First Name";
+            worksheet.Cells[1, "C"] = "Last Name";
+            worksheet.Cells[1, "D"] = "Date In";
+            worksheet.Cells[1, "E"] = "Date Ready";
+            worksheet.Cells[1, "F"] = "Status";
+            worksheet.Cells[1, "G"] = "Tailor Name";
+            worksheet.Cells[1, "H"] = "Total Price";
+            worksheet.Cells[1, "I"] = "Deposit";
+            worksheet.Cells[1, "J"] = "Balance";
+
+            //row 1 is headers and excel starts on row 1
+            for (int i = 1; i < ResultGrid.Rows.Count; i++)
+            {
+                int row = i + 1;
+                worksheet.Cells[row, "A"] = Convert.ToString(ResultGrid.Rows[i].Cells["TicketIdCol"].Value);
+                worksheet.Cells[row, "B"] = Convert.ToString(ResultGrid.Rows[i].Cells["FirstNameCol"].Value);
+                worksheet.Cells[row, "C"] = Convert.ToString(ResultGrid.Rows[i].Cells["LastNameCol"].Value);
+                worksheet.Cells[row, "D"] = Convert.ToString(ResultGrid.Rows[i].Cells["DateInCol"].Value);
+                worksheet.Cells[row, "E"] = Convert.ToString(ResultGrid.Rows[i].Cells["DateReadyCol"].Value);
+                worksheet.Cells[row, "F"] = Convert.ToString(ResultGrid.Rows[i].Cells["StatusCol"].Value);
+                worksheet.Cells[row, "G"] = Convert.ToString(ResultGrid.Rows[i].Cells["TailorCol"].Value);
+                worksheet.Cells[row, "H"] = Convert.ToString(ResultGrid.Rows[i].Cells["TotalPriceCol"].Value);
+                worksheet.Cells[row, "I"] = Convert.ToString(ResultGrid.Rows[i].Cells["DepositCol"].Value);
+                worksheet.Cells[row, "J"] = Convert.ToString(ResultGrid.Rows[i].Cells["BalanceCol"].Value);
+            }
+
+            worksheet.Columns["A:J"].AutoFit();
         }
     }
 }
