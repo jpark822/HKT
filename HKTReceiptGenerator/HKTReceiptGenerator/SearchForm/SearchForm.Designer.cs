@@ -305,7 +305,7 @@
             this.ResultGrid.ShowCellToolTips = false;
             this.ResultGrid.ShowEditingIcon = false;
             this.ResultGrid.ShowRowErrors = false;
-            this.ResultGrid.Size = new System.Drawing.Size(1145, 397);
+            this.ResultGrid.Size = new System.Drawing.Size(1145, 466);
             this.ResultGrid.TabIndex = 22;
             // 
             // TicketIdCol
@@ -382,7 +382,7 @@
             this.OpenTicketButton.BackColor = System.Drawing.Color.Maroon;
             this.OpenTicketButton.Font = new System.Drawing.Font("Trajan Pro", 14F);
             this.OpenTicketButton.ForeColor = System.Drawing.Color.White;
-            this.OpenTicketButton.Location = new System.Drawing.Point(339, 432);
+            this.OpenTicketButton.Location = new System.Drawing.Point(339, 502);
             this.OpenTicketButton.Name = "OpenTicketButton";
             this.OpenTicketButton.Size = new System.Drawing.Size(272, 56);
             this.OpenTicketButton.TabIndex = 23;
@@ -422,7 +422,7 @@
             this.DeleteTicketButton.BackColor = System.Drawing.Color.Maroon;
             this.DeleteTicketButton.Font = new System.Drawing.Font("Trajan Pro", 14F);
             this.DeleteTicketButton.ForeColor = System.Drawing.Color.White;
-            this.DeleteTicketButton.Location = new System.Drawing.Point(1209, 432);
+            this.DeleteTicketButton.Location = new System.Drawing.Point(1209, 502);
             this.DeleteTicketButton.Name = "DeleteTicketButton";
             this.DeleteTicketButton.Size = new System.Drawing.Size(275, 56);
             this.DeleteTicketButton.TabIndex = 26;
@@ -461,7 +461,7 @@
             this.CreateTicketWithUserBttn.BackColor = System.Drawing.Color.Maroon;
             this.CreateTicketWithUserBttn.Font = new System.Drawing.Font("Trajan Pro", 14F);
             this.CreateTicketWithUserBttn.ForeColor = System.Drawing.Color.White;
-            this.CreateTicketWithUserBttn.Location = new System.Drawing.Point(630, 432);
+            this.CreateTicketWithUserBttn.Location = new System.Drawing.Point(630, 502);
             this.CreateTicketWithUserBttn.Name = "CreateTicketWithUserBttn";
             this.CreateTicketWithUserBttn.Size = new System.Drawing.Size(272, 56);
             this.CreateTicketWithUserBttn.TabIndex = 30;
@@ -503,7 +503,7 @@
             this.MarkAsDonePaidPickedUpBttn.BackColor = System.Drawing.Color.Maroon;
             this.MarkAsDonePaidPickedUpBttn.Font = new System.Drawing.Font("Trajan Pro", 14F);
             this.MarkAsDonePaidPickedUpBttn.ForeColor = System.Drawing.Color.White;
-            this.MarkAsDonePaidPickedUpBttn.Location = new System.Drawing.Point(920, 432);
+            this.MarkAsDonePaidPickedUpBttn.Location = new System.Drawing.Point(920, 502);
             this.MarkAsDonePaidPickedUpBttn.Name = "MarkAsDonePaidPickedUpBttn";
             this.MarkAsDonePaidPickedUpBttn.Size = new System.Drawing.Size(272, 56);
             this.MarkAsDonePaidPickedUpBttn.TabIndex = 33;
@@ -533,9 +533,9 @@
             this.ExportToExcelButton.BackColor = System.Drawing.Color.Maroon;
             this.ExportToExcelButton.Font = new System.Drawing.Font("Trajan Pro", 14F);
             this.ExportToExcelButton.ForeColor = System.Drawing.Color.White;
-            this.ExportToExcelButton.Location = new System.Drawing.Point(810, 511);
+            this.ExportToExcelButton.Location = new System.Drawing.Point(12, 504);
             this.ExportToExcelButton.Name = "ExportToExcelButton";
-            this.ExportToExcelButton.Size = new System.Drawing.Size(207, 54);
+            this.ExportToExcelButton.Size = new System.Drawing.Size(286, 54);
             this.ExportToExcelButton.TabIndex = 36;
             this.ExportToExcelButton.Text = "Export to Excel";
             this.ExportToExcelButton.UseVisualStyleBackColor = false;
@@ -547,7 +547,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1496, 584);
+            this.ClientSize = new System.Drawing.Size(1496, 572);
             this.Controls.Add(this.ExportToExcelButton);
             this.Controls.Add(this.OrderIdTextBox);
             this.Controls.Add(this.label14);

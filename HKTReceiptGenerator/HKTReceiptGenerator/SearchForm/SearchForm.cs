@@ -322,6 +322,10 @@ namespace HKTReceiptGenerator
 
         private void ExportToExcelButton_Click(object sender, EventArgs e)
         {
+            if (ResultGrid.Rows.Count == 0)
+            {
+                return;
+            }
             Microsoft.Office.Interop.Excel.Application excelApp = new Microsoft.Office.Interop.Excel.Application();
             excelApp.Visible = true;
 

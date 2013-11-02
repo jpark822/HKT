@@ -98,6 +98,7 @@ namespace DomainModel.Ticket
             ticketRes.TotalPrice = 0;
             ticketRes.Deposit = 0;
             ticketRes.TicketId = 0;
+            ticketRes.OrderId = "";
 
             return ticketRes;
         }
