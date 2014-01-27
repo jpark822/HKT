@@ -193,22 +193,51 @@ namespace DomainModel.Ticket
             return ticketResources;
         }
 
-        public List<String> GetDistinctEmailAddressBetweenDates(DateTime startDate, DateTime endDate)
+        public List<TicketResource> GetDistinctEmailAddressBetweenDates(DateTime startDate, DateTime endDate)
         {
             String convertedStartDate = string.Format("{0:yyyy-MM-dd}", startDate);
             String convertedEndDate = string.Format("{0:yyyy-MM-dd}", endDate.AddDays(1)); //add 1 date possibly because of 00:00:00 time
 
             SQLiteDatabase db = new SQLiteDatabase();
-            string sql = String.Format(@"select distinct email from Tickets where date_in >= '{0}' AND date_in <= '{1}'", convertedStartDate, convertedEndDate);
+            string sql = String.Format(@"select distinct email, first_name, last_name from Tickets where date_in >= '{0}' AND date_in <= '{1}'", convertedStartDate, convertedEndDate);
             DataTable resultTicketTable = db.GetDataTable(sql);
 
-            List<String> emails = new List<String>();
+            List<TicketResource> tickets = new List<TicketResource>();
             foreach (DataRow row in resultTicketTable.Rows)
             {
-                emails.Add(Convert.ToString(row["email"]));
+                TicketResource resource = new TicketResource();
+                resource.FirstName = Convert.ToString(row["first_name"]);
+                resource.LastName = Convert.ToString(row["last_name"]);
+                resource.Email = Convert.ToString(row["email"]);
+                tickets.Add(resource);
             }
 
-            return emails;
+            return tickets;
+        }
+
+        public List<TicketResource> GetDistinctMailingAddressBetweenDates(DateTime startDate, DateTime endDate)
+        {
+            String convertedStartDate = string.Format("{0:yyyy-MM-dd}", startDate);
+            String convertedEndDate = string.Format("{0:yyyy-MM-dd}", endDate.AddDays(1)); //add 1 date possibly because of 00:00:00 time
+
+            SQLiteDatabase db = new SQLiteDatabase();
+            string sql = String.Format(@"select distinct Address, first_name, last_name, city, state, zip from Tickets where date_in >= '{0}' AND date_in <= '{1}'", convertedStartDate, convertedEndDate);
+            DataTable resultTicketTable = db.GetDataTable(sql);
+
+            List<TicketResource> tickets = new List<TicketResource>();
+            foreach (DataRow row in resultTicketTable.Rows)
+            {
+                TicketResource resource = new TicketResource();
+                resource.FirstName = Convert.ToString(row["first_name"]);
+                resource.LastName = Convert.ToString(row["last_name"]);
+                resource.Address = Convert.ToString(row["address"]);
+                resource.City = Convert.ToString(row["city"]);
+                resource.State = Convert.ToString(row["state"]);
+                resource.Zip = Convert.ToString(row["zip"]);
+                tickets.Add(resource);
+            }
+
+            return tickets;
         }
 
         private Dictionary<String, object> ConvertTicketIntoDictionary(TicketResource ticket)

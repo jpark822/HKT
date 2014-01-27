@@ -50,22 +50,17 @@ namespace HKTReceiptGenerator.AddAlterationModal
 
         private void HemNoCuffsBttn_Click(object sender, EventArgs e)
         {
-            AlterationChosen("P Hem No Cuffs ($10.00)", 10);
+            AlterationChosen("P Hem No Cuffs ($12.00)", 12);
         }
 
         private void HemWithCuffsBttn_Click(object sender, EventArgs e)
         {
-            AlterationChosen("P Hem With Cuffs ($12.00)", 12);
-        }
-
-        private void HemJeansBttn_Click(object sender, EventArgs e)
-        {
-            AlterationChosen("P Hem Jeans ($12.00)", 12);
+            AlterationChosen("P Hem With Cuffs ($15.00)", 15);
         }
 
         private void OriginalHemJeansBttn_Click(object sender, EventArgs e)
         {
-            AlterationChosen("P Original Hem Jeans ($30.00)", 30);
+            AlterationChosen("P Original Hem Jeans ($35.00)", 35);
         }
 
         private void NewLiningFront_Click(object sender, EventArgs e)
@@ -85,7 +80,7 @@ namespace HKTReceiptGenerator.AddAlterationModal
 
         private void LowerWaistBandBttn_Click(object sender, EventArgs e)
         {
-            AlterationChosen("P Lower Waist Band ($40.00)", 40);
+            AlterationChosen("P Lower Waist Band ($45.00)", 45);
         }
 
         private void WaistAndDartsBttn_Click(object sender, EventArgs e)

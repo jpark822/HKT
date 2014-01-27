@@ -61,6 +61,7 @@
             this.AlterationsPlusRetailLabel = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.TaxablePlusNonTaxableOrdersLabel = new System.Windows.Forms.Label();
+            this.getMailingAddressesButton = new CustomControls.HKTStandardButton();
             this.SuspendLayout();
             // 
             // label1
@@ -226,7 +227,7 @@
             this.CopyToClipboardButton.Name = "CopyToClipboardButton";
             this.CopyToClipboardButton.Size = new System.Drawing.Size(452, 80);
             this.CopyToClipboardButton.TabIndex = 21;
-            this.CopyToClipboardButton.Text = "Copy Addresses to Clipboard";
+            this.CopyToClipboardButton.Text = "Export List To Excel";
             this.CopyToClipboardButton.UseVisualStyleBackColor = false;
             this.CopyToClipboardButton.Click += new System.EventHandler(this.CopyToClipboardButton_Click);
             // 
@@ -403,12 +404,26 @@
             this.TaxablePlusNonTaxableOrdersLabel.TabIndex = 37;
             this.TaxablePlusNonTaxableOrdersLabel.Text = "$0.00";
             // 
+            // getMailingAddressesButton
+            // 
+            this.getMailingAddressesButton.BackColor = System.Drawing.Color.Maroon;
+            this.getMailingAddressesButton.Font = new System.Drawing.Font("Trajan Pro", 14F);
+            this.getMailingAddressesButton.ForeColor = System.Drawing.Color.White;
+            this.getMailingAddressesButton.Location = new System.Drawing.Point(1036, 127);
+            this.getMailingAddressesButton.Name = "getMailingAddressesButton";
+            this.getMailingAddressesButton.Size = new System.Drawing.Size(261, 80);
+            this.getMailingAddressesButton.TabIndex = 39;
+            this.getMailingAddressesButton.Text = "Get Mailing Addresses";
+            this.getMailingAddressesButton.UseVisualStyleBackColor = false;
+            this.getMailingAddressesButton.Click += new System.EventHandler(this.getMailingAddressesButton_Click);
+            // 
             // AdminStatsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1309, 606);
+            this.Controls.Add(this.getMailingAddressesButton);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.TaxablePlusNonTaxableOrdersLabel);
             this.Controls.Add(this.label11);
@@ -485,5 +500,6 @@
         private System.Windows.Forms.Label AlterationsPlusRetailLabel;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label TaxablePlusNonTaxableOrdersLabel;
+        private CustomControls.HKTStandardButton getMailingAddressesButton;
     }
 }

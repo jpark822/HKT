@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DomainModel.Ticket;
 using DomainModel.AdminStatsRepo;
+using Microsoft.Office.Interop.Excel;
 
 namespace HKTReceiptGenerator.AdminStats
 {
@@ -29,7 +30,7 @@ namespace HKTReceiptGenerator.AdminStats
 
         
 
-        private double getPriceTotalFromDatatable(DataTable table)
+        private double getPriceTotalFromDatatable(System.Data.DataTable table)
         {
             double total = 0;
             for (int i = 0; i < table.Rows.Count; i++)
@@ -77,18 +78,19 @@ namespace HKTReceiptGenerator.AdminStats
         private void GetEmailsButton_Click(object sender, EventArgs e)
         {
             TicketRepository ticketRepo = new TicketRepository();
-            List<String> listOfEmails = ticketRepo.GetDistinctEmailAddressBetweenDates(StartingDatePicker.Value, EndingDatePicker.Value);
+            List<TicketResource> listOfTickets = ticketRepo.GetDistinctEmailAddressBetweenDates(StartingDatePicker.Value, EndingDatePicker.Value);
 
             String emailString = "";
-            for (int i = 0; i < listOfEmails.Count; i++)
+            for (int i = 0; i < listOfTickets.Count; i++)
             {
+                TicketResource ticket = listOfTickets[i];
                 if (i == 0)
                 {
-                    emailString += listOfEmails[i];
+                    emailString += ticket.Email;
                 }
                 else
                 {
-                    emailString += ", " + listOfEmails[i];
+                    emailString += ", " + ticket.Email;
                 }
             }
 
@@ -97,13 +99,64 @@ namespace HKTReceiptGenerator.AdminStats
 
         private void CopyToClipboardButton_Click(object sender, EventArgs e)
         {
-            if (EmailResultTextBox.Text != "" && EmailResultTextBox.Text != null)
-            Clipboard.SetText(EmailResultTextBox.Text);
+            if (EmailResultTextBox.Text.Length == 0)
+            {
+                return;
+            }
+            Microsoft.Office.Interop.Excel.Application excelApp = new Microsoft.Office.Interop.Excel.Application();
+            excelApp.Visible = true;
+
+            _Workbook workbook = (_Workbook)(excelApp.Workbooks.Add(Type.Missing));
+            _Worksheet worksheet = (_Worksheet)workbook.ActiveSheet;
+
+            TicketRepository ticketRepo = new TicketRepository();
+            List<TicketResource> listOfTickets = ticketRepo.GetDistinctEmailAddressBetweenDates(StartingDatePicker.Value, EndingDatePicker.Value);
+
+            for (int i = 0; i < listOfTickets.Count; i++)
+            {
+                TicketResource ticket = listOfTickets[i];
+                int row = i + 1;
+                worksheet.Cells[row, "A"] = ticket.LastName;
+                worksheet.Cells[row, "B"] = ticket.FirstName;
+                worksheet.Cells[row, "C"] = ticket.Email;
+            }
+            worksheet.Columns["A:C"].AutoFit();
         }
 
         private void BackupButton_Click(object sender, EventArgs e)
         {
             Emailer.SendBackupToEmail();
+        }
+
+        private void getMailingAddressesButton_Click(object sender, EventArgs e)
+        {
+            Microsoft.Office.Interop.Excel.Application excelApp = new Microsoft.Office.Interop.Excel.Application();
+            excelApp.Visible = true;
+
+            _Workbook workbook = (_Workbook)(excelApp.Workbooks.Add(Type.Missing));
+            _Worksheet worksheet = (_Worksheet)workbook.ActiveSheet;
+
+            TicketRepository ticketRepo = new TicketRepository();
+            List<TicketResource> listOfTickets = ticketRepo.GetDistinctMailingAddressBetweenDates(StartingDatePicker.Value, EndingDatePicker.Value);
+
+            //change the getDistintMailing to not accept "" as a unique address. then we can remove this row checking
+            int row = 1;
+            for (int i = 0; i < listOfTickets.Count; i++)
+            {
+                TicketResource ticket = listOfTickets[i];
+                if (ticket.Address == "")
+                {
+                    continue;
+                }
+                worksheet.Cells[row, "A"] = ticket.LastName;
+                worksheet.Cells[row, "B"] = ticket.FirstName;
+                worksheet.Cells[row, "C"] = ticket.Address;
+                worksheet.Cells[row, "D"] = ticket.City;
+                worksheet.Cells[row, "E"] = ticket.State;
+                worksheet.Cells[row, "F"] = ticket.Zip;
+                row++;
+            }
+            worksheet.Columns["A:F"].AutoFit();
         }
     }
 }

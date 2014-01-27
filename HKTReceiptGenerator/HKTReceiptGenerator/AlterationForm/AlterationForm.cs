@@ -84,7 +84,27 @@ namespace HKTReceiptGenerator
             PhoneTextBox.Text = ticketResource.Telephone ?? "";
             EmailTextBox.Text = ticketResource.Email ?? "";
             CommentBox.Text = ticketResource.Comments ?? "";
-            StatusComboBox.Text = ticketResource.Status ?? "";
+            if (ticketResource.Status == "a")
+            {
+                StatusComboBox.Text = "Active";
+            }
+            else if (ticketResource.Status == "d")
+            {
+                StatusComboBox.Text = "Done";
+            }
+            else if (ticketResource.Status == "c")
+            {
+                StatusComboBox.Text = "Cancelled";
+            }
+            else if (ticketResource.Status == "i")
+            {
+                StatusComboBox.Text = "In Progress";
+            }
+            else
+            {
+                StatusComboBox.Text = "";
+            }
+
             PickedUpComboBox.Text = ticketResource.PickedUp ?? "n/a";
             DateInPicker.Value = ticketResource.DateIn;
             DateReadyPicker.Value = ticketResource.DateReady;
@@ -169,6 +189,8 @@ namespace HKTReceiptGenerator
         private void UpdateTotalDepositAndBalance()
         {
             double total = 0;
+            double subtotal = 0;
+            double tax = 0;
             //remove empty rows
             for (int i = AlterationGrid.Rows.Count - 2; i >=0 ; i--)
             {
@@ -189,10 +211,13 @@ namespace HKTReceiptGenerator
                     if (Convert.ToBoolean(AlterationGrid["TaxableCol", i].Value) == true)
                     {
                         total += price * taxPercentage;
+                        subtotal += price;
+                        tax += price * .07;
                     }
                     else
                     {
                         total += price;
+                        subtotal += price;
                     }
                 }
                 catch
@@ -233,6 +258,8 @@ namespace HKTReceiptGenerator
 
             //update all labels
             double balance = total - deposit;
+            subtotalLabel.Text = String.Format("{0:C}", subtotal);
+            taxLabel.Text = String.Format("{0:C}", tax);
             TotalPriceLabel.Text = String.Format("{0:C}", total);
             BalanceLabel.Text = String.Format("{0:C}", balance);
             NumItemsLabel.Text = numItems.ToString();
@@ -392,7 +419,24 @@ namespace HKTReceiptGenerator
             String email = EmailTextBox.Text;
             DateTime dateReady = DateReadyPicker.Value;
             DateTime dateIn = DateInPicker.Value;
-            String status = StatusComboBox.Text;
+            String status = "";
+            if (StatusComboBox.Text == "Active")
+            {
+                status = "a";
+            }
+            else if (StatusComboBox.Text == "Done")
+            {
+                status = "d";
+            }
+            else if (StatusComboBox.Text == "Cancelled")
+            {
+                status = "c";
+            }
+            else if (StatusComboBox.Text == "In Progress")
+            {
+                status = "i";
+            }
+
             String comments = CommentBox.Text;
             String tailorName = TailorComboBox.Text;
             double totalPrice = double.Parse(TotalPriceLabel.Text, NumberStyles.Currency);
@@ -400,7 +444,7 @@ namespace HKTReceiptGenerator
             double deposit = Convert.ToDouble(DepositTextBox.Text == "" ? 0 : Convert.ToDouble(DepositTextBox.Text));
             String orderId = OrderIdTextBox.Text;
             DateTime? completedDate = null;
-            if (StatusComboBox.Text == "d" && previousStatus != "d")
+            if (status == "d" && previousStatus != "d")
             {
                 completedDate = DateTime.Now;
             }

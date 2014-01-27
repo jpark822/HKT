@@ -80,7 +80,22 @@ namespace HKTReceiptGenerator
             }
             if (StatusComboBox.Text != "")
             {
-               searchArguments.Add(TicketRepository.TicketProperty.Status, StatusComboBox.Text);
+                if (StatusComboBox.Text == "Active")
+                {
+                    searchArguments.Add(TicketRepository.TicketProperty.Status, "a");
+                }
+                else if (StatusComboBox.Text == "Done")
+                {
+                    searchArguments.Add(TicketRepository.TicketProperty.Status, "d");
+                }
+                else if (StatusComboBox.Text == "Cancelled")
+                {
+                    searchArguments.Add(TicketRepository.TicketProperty.Status, "c");
+                }
+                else if (StatusComboBox.Text == "In Progress")
+                {
+                    searchArguments.Add(TicketRepository.TicketProperty.Status, "i");
+                }
             }
             if (TailorComboBox.Text != "")
             {
@@ -104,7 +119,24 @@ namespace HKTReceiptGenerator
                 {
                     for(int i=0; i<searchResults.Count; i++)
                     {
-                        ResultGrid.Rows.Add(searchResults[i].TicketId, searchResults[i].FirstName, searchResults[i].LastName,searchResults[i].DateIn.ToShortDateString(), searchResults[i].DateReady.ToShortDateString(), searchResults[i].Status, searchResults[i].TailorName, String.Format("{0:C}", searchResults[i].TotalPrice), String.Format("{0:C}", searchResults[i].Deposit), String.Format("{0:C}",searchResults[i].TotalPrice - searchResults[i].Deposit));
+                        String status = "";
+                        if (searchResults[i].Status == "a")
+                        {
+                            status = "Active";
+                        }
+                        else if (searchResults[i].Status == "d")
+                        {
+                            status = "Done";
+                        }
+                        else if (searchResults[i].Status == "c")
+                        {
+                            status = "Cancelled";
+                        }
+                        else if (searchResults[i].Status == "i")
+                        {
+                            status = "In Progress";
+                        }
+                        ResultGrid.Rows.Add(searchResults[i].TicketId, searchResults[i].FirstName, searchResults[i].LastName,searchResults[i].DateIn.ToShortDateString(), searchResults[i].DateReady.ToShortDateString(), status, searchResults[i].TailorName, String.Format("{0:C}", searchResults[i].TotalPrice), String.Format("{0:C}", searchResults[i].Deposit), String.Format("{0:C}",searchResults[i].TotalPrice - searchResults[i].Deposit));
                     }
                 }
             }
@@ -309,7 +341,7 @@ namespace HKTReceiptGenerator
                 ticketRepo.MarkTicketAsDonePaidAndPickedUp(ticketId);
 
                 DataGridViewRow row = ResultGrid.Rows[index];
-                row.Cells["StatusCol"].Value = "d";
+                row.Cells["StatusCol"].Value = "Done";
                 row.Cells["DepositCol"].Value = row.Cells["TotalPriceCol"].Value;
                 row.Cells["BalanceCol"].Value = String.Format("{0:C}", 0);
             }
@@ -361,6 +393,11 @@ namespace HKTReceiptGenerator
             }
 
             worksheet.Columns["A:J"].AutoFit();
+        }
+
+        private void StatusComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -89,6 +89,10 @@
             this.OrderIdTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.NewTicketWithCustomerBttn = new CustomControls.HKTStandardButton();
+            this.taxLabel = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.subtotalLabel = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.AlterationGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -472,7 +476,7 @@
             this.DisplayAddAlterationModalButton.ForeColor = System.Drawing.Color.White;
             this.DisplayAddAlterationModalButton.Location = new System.Drawing.Point(542, 253);
             this.DisplayAddAlterationModalButton.Name = "DisplayAddAlterationModalButton";
-            this.DisplayAddAlterationModalButton.Size = new System.Drawing.Size(128, 276);
+            this.DisplayAddAlterationModalButton.Size = new System.Drawing.Size(128, 255);
             this.DisplayAddAlterationModalButton.TabIndex = 37;
             this.DisplayAddAlterationModalButton.Text = "+";
             this.DisplayAddAlterationModalButton.UseVisualStyleBackColor = false;
@@ -482,7 +486,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("HelveticaNeueLT Pro 55 Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(572, 601);
+            this.label21.Location = new System.Drawing.Point(572, 567);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(65, 13);
             this.label21.TabIndex = 38;
@@ -496,7 +500,7 @@
             "n/a",
             "y",
             "n"});
-            this.PickedUpComboBox.Location = new System.Drawing.Point(570, 615);
+            this.PickedUpComboBox.Location = new System.Drawing.Point(570, 581);
             this.PickedUpComboBox.Name = "PickedUpComboBox";
             this.PickedUpComboBox.Size = new System.Drawing.Size(69, 32);
             this.PickedUpComboBox.TabIndex = 39;
@@ -520,21 +524,21 @@
             this.StatusComboBox.Font = new System.Drawing.Font("HelveticaNeueLT Pro 55 Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StatusComboBox.FormattingEnabled = true;
             this.StatusComboBox.Items.AddRange(new object[] {
-            "a",
-            "d",
-            "c",
-            "i"});
-            this.StatusComboBox.Location = new System.Drawing.Point(570, 566);
+            "Active",
+            "Done",
+            "Cancelled",
+            "In Progress"});
+            this.StatusComboBox.Location = new System.Drawing.Point(543, 532);
             this.StatusComboBox.Name = "StatusComboBox";
-            this.StatusComboBox.Size = new System.Drawing.Size(69, 32);
+            this.StatusComboBox.Size = new System.Drawing.Size(127, 32);
             this.StatusComboBox.TabIndex = 42;
-            this.StatusComboBox.Text = "a";
+            this.StatusComboBox.Text = "Active";
             // 
             // label22
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("HelveticaNeueLT Pro 55 Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(581, 550);
+            this.label22.Location = new System.Drawing.Point(581, 516);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(38, 13);
             this.label22.TabIndex = 41;
@@ -595,7 +599,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("HelveticaNeueLT Pro 55 Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(572, 650);
+            this.label16.Location = new System.Drawing.Point(572, 616);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(65, 13);
             this.label16.TabIndex = 47;
@@ -612,8 +616,9 @@
             "Ming",
             "Hong",
             "Felicia",
-            "Gloria"});
-            this.TailorComboBox.Location = new System.Drawing.Point(542, 666);
+            "Gloria",
+            "Measurements"});
+            this.TailorComboBox.Location = new System.Drawing.Point(542, 632);
             this.TailorComboBox.Name = "TailorComboBox";
             this.TailorComboBox.Size = new System.Drawing.Size(128, 32);
             this.TailorComboBox.TabIndex = 48;
@@ -623,7 +628,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("HelveticaNeueLT Pro 55 Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(540, 724);
+            this.label11.Location = new System.Drawing.Point(540, 677);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(50, 17);
             this.label11.TabIndex = 49;
@@ -633,7 +638,7 @@
             // 
             this.NumItemsLabel.AutoSize = true;
             this.NumItemsLabel.Font = new System.Drawing.Font("HelveticaNeueLT Pro 55 Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NumItemsLabel.Location = new System.Drawing.Point(586, 724);
+            this.NumItemsLabel.Location = new System.Drawing.Point(586, 677);
             this.NumItemsLabel.Name = "NumItemsLabel";
             this.NumItemsLabel.Size = new System.Drawing.Size(16, 17);
             this.NumItemsLabel.TabIndex = 50;
@@ -686,6 +691,50 @@
             this.NewTicketWithCustomerBttn.UseVisualStyleBackColor = false;
             this.NewTicketWithCustomerBttn.Click += new System.EventHandler(this.NewTicketWithCustomerBttn_Click);
             // 
+            // taxLabel
+            // 
+            this.taxLabel.AutoSize = true;
+            this.taxLabel.Font = new System.Drawing.Font("HelveticaNeueLT Pro 55 Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.taxLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.taxLabel.Location = new System.Drawing.Point(571, 723);
+            this.taxLabel.Name = "taxLabel";
+            this.taxLabel.Size = new System.Drawing.Size(44, 17);
+            this.taxLabel.TabIndex = 56;
+            this.taxLabel.Text = "$0.00";
+            this.taxLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("HelveticaNeueLT Pro 55 Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(539, 723);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(37, 17);
+            this.label13.TabIndex = 55;
+            this.label13.Text = "Tax:";
+            // 
+            // subtotalLabel
+            // 
+            this.subtotalLabel.AutoSize = true;
+            this.subtotalLabel.Font = new System.Drawing.Font("HelveticaNeueLT Pro 55 Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subtotalLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.subtotalLabel.Location = new System.Drawing.Point(603, 700);
+            this.subtotalLabel.Name = "subtotalLabel";
+            this.subtotalLabel.Size = new System.Drawing.Size(44, 17);
+            this.subtotalLabel.TabIndex = 58;
+            this.subtotalLabel.Text = "$0.00";
+            this.subtotalLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("HelveticaNeueLT Pro 55 Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(539, 700);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(69, 17);
+            this.label14.TabIndex = 57;
+            this.label14.Text = "Subtotal:";
+            // 
             // AlterationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -693,6 +742,10 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(832, 827);
+            this.Controls.Add(this.subtotalLabel);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.taxLabel);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.NewTicketWithCustomerBttn);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.OrderIdTextBox);
@@ -811,5 +864,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn priceCol;
         private System.Windows.Forms.DataGridViewCheckBoxColumn taxableCol;
         private CustomControls.HKTStandardButton NewTicketWithCustomerBttn;
+        private System.Windows.Forms.Label taxLabel;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label subtotalLabel;
+        private System.Windows.Forms.Label label14;
     }
 }

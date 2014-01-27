@@ -34,7 +34,6 @@
             this.TaperLegBttn = new CustomControls.HKTStandardButton();
             this.HemNoCuffsBttn = new CustomControls.HKTStandardButton();
             this.HemWithCuffsBttn = new CustomControls.HKTStandardButton();
-            this.HemJeansBttn = new CustomControls.HKTStandardButton();
             this.OriginalHemJeansBttn = new CustomControls.HKTStandardButton();
             this.NewLiningFront = new CustomControls.HKTStandardButton();
             this.NewLiningFrontBack = new CustomControls.HKTStandardButton();
@@ -128,25 +127,12 @@
             this.HemWithCuffsBttn.UseVisualStyleBackColor = false;
             this.HemWithCuffsBttn.Click += new System.EventHandler(this.HemWithCuffsBttn_Click);
             // 
-            // HemJeansBttn
-            // 
-            this.HemJeansBttn.BackColor = System.Drawing.Color.Maroon;
-            this.HemJeansBttn.Font = new System.Drawing.Font("Trajan Pro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HemJeansBttn.ForeColor = System.Drawing.Color.White;
-            this.HemJeansBttn.Location = new System.Drawing.Point(267, 22);
-            this.HemJeansBttn.Name = "HemJeansBttn";
-            this.HemJeansBttn.Size = new System.Drawing.Size(246, 130);
-            this.HemJeansBttn.TabIndex = 6;
-            this.HemJeansBttn.Text = "Hem Jeans";
-            this.HemJeansBttn.UseVisualStyleBackColor = false;
-            this.HemJeansBttn.Click += new System.EventHandler(this.HemJeansBttn_Click);
-            // 
             // OriginalHemJeansBttn
             // 
             this.OriginalHemJeansBttn.BackColor = System.Drawing.Color.Maroon;
             this.OriginalHemJeansBttn.Font = new System.Drawing.Font("Trajan Pro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OriginalHemJeansBttn.ForeColor = System.Drawing.Color.White;
-            this.OriginalHemJeansBttn.Location = new System.Drawing.Point(267, 158);
+            this.OriginalHemJeansBttn.Location = new System.Drawing.Point(267, 22);
             this.OriginalHemJeansBttn.Name = "OriginalHemJeansBttn";
             this.OriginalHemJeansBttn.Size = new System.Drawing.Size(246, 130);
             this.OriginalHemJeansBttn.TabIndex = 7;
@@ -223,7 +209,6 @@
             // 
             this.groupBox1.Controls.Add(this.HemNoCuffsBttn);
             this.groupBox1.Controls.Add(this.HemWithCuffsBttn);
-            this.groupBox1.Controls.Add(this.HemJeansBttn);
             this.groupBox1.Controls.Add(this.OriginalHemJeansBttn);
             this.groupBox1.Font = new System.Drawing.Font("Trajan Pro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
@@ -305,7 +290,6 @@
         private CustomControls.HKTStandardButton TaperLegBttn;
         private CustomControls.HKTStandardButton HemNoCuffsBttn;
         private CustomControls.HKTStandardButton HemWithCuffsBttn;
-        private CustomControls.HKTStandardButton HemJeansBttn;
         private CustomControls.HKTStandardButton OriginalHemJeansBttn;
         private CustomControls.HKTStandardButton NewLiningFront;
         private CustomControls.HKTStandardButton NewLiningFrontBack;

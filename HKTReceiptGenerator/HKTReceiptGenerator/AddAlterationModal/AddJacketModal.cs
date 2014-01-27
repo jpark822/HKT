@@ -65,12 +65,12 @@ namespace HKTReceiptGenerator.AddAlterationModal
 
         private void CollarInBttn_Click(object sender, EventArgs e)
         {
-            AlterationChosen("J Collar in ($50.00)", 50.00);
+            AlterationChosen("J Collar in ($60.00)", 60.00);
         }
 
         private void CollarInToWasitBttn_Click(object sender, EventArgs e)
         {
-            AlterationChosen("J Collar in to Waistline ($75.00)", 75.00);
+            AlterationChosen("J Collar in to Waistline ($85.00)", 85.00);
         }
 
         private void ShouldPadReplaceBttn_Click(object sender, EventArgs e)
@@ -100,7 +100,7 @@ namespace HKTReceiptGenerator.AddAlterationModal
 
         private void ShortenLengthBttn_Click(object sender, EventArgs e)
         {
-            AlterationChosen("J Shorten Length ($45.00)", 45);
+            AlterationChosen("J Shorten Length ($50.00)", 50);
         }
 
         private void CloseSingleVentsBttn_Click(object sender, EventArgs e)
