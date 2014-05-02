@@ -63,6 +63,7 @@ namespace HKTReceiptGenerator
                 text.AppendLine();
                 text.AppendLine("New, unused, unaltered merchandise can be exchanged or returned up to 15 days from date of purchase.");
                 text.AppendLine("No refunds or exchanges on custom clothing. ");
+                text.AppendLine("Custom orders are generally ready 4 to 6 weeks from order date. ");
                 text.AppendLine("Refunds will be issued in the original tender of the purchase, except cash refunds will be issued by check.");
                 text.AppendLine("Hong Kong Tailors reserves the right to modify its return and exchange policy");
                 text.AppendLine();
