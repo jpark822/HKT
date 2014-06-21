@@ -136,7 +136,7 @@ namespace HKTReceiptGenerator
                         {
                             status = "In Progress";
                         }
-                        ResultGrid.Rows.Add(searchResults[i].TicketId, searchResults[i].FirstName, searchResults[i].LastName,searchResults[i].DateIn, searchResults[i].DateReady.ToShortDateString(), status, searchResults[i].TailorName, String.Format("{0:C}", searchResults[i].TotalPrice), String.Format("{0:C}", searchResults[i].Deposit), String.Format("{0:C}",searchResults[i].TotalPrice - searchResults[i].Deposit));
+                        ResultGrid.Rows.Add(searchResults[i].TicketId, searchResults[i].FirstName, searchResults[i].LastName,searchResults[i].DateIn, searchResults[i].DateReady, status, searchResults[i].TailorName, String.Format("{0:C}", searchResults[i].TotalPrice), String.Format("{0:C}", searchResults[i].Deposit), String.Format("{0:C}",searchResults[i].TotalPrice - searchResults[i].Deposit));
                     }
                 }
             }
