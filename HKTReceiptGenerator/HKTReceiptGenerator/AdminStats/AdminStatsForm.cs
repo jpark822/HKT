@@ -26,6 +26,7 @@ namespace HKTReceiptGenerator.AdminStats
         {
             StartingDatePicker.Value = DateTime.Today;
             EndingDatePicker.Value = DateTime.Today;
+            TicketsForDatePicker.Value = DateTime.Today;
         }
 
         
@@ -157,6 +158,38 @@ namespace HKTReceiptGenerator.AdminStats
                 row++;
             }
             worksheet.Columns["A:F"].AutoFit();
+        }
+
+        private void GetTicketsForDateButton_Click(object sender, EventArgs e)
+        {
+            TicketRepository repo = new TicketRepository();
+            List<TicketResource> tickets = repo.GetActiveTicketsBetweenDates(TicketsForDatePicker.Value, TicketsForDatePicker.Value);
+
+            if (tickets.Count > 0)
+            {
+                Microsoft.Office.Interop.Excel.Application excelApp = new Microsoft.Office.Interop.Excel.Application();
+                excelApp.Visible = true;
+
+                _Workbook workbook = (_Workbook)(excelApp.Workbooks.Add(Type.Missing));
+                _Worksheet worksheet = (_Worksheet)workbook.ActiveSheet;
+
+                for (int i = 0; i < tickets.Count; i++)
+                {
+                    TicketResource ticket = tickets[i];
+                    int row = i + 1;
+                    worksheet.Cells[row, "A"] = ticket.TicketId;
+                    worksheet.Cells[row, "B"] = ticket.FirstName;
+                    worksheet.Cells[row, "C"] = ticket.LastName;
+                    worksheet.Cells[row, "D"] = ticket.TailorName;
+                    worksheet.Cells[row, "E"] = ticket.Telephone;
+                    worksheet.Cells[row, "F"] = "$" + ticket.TotalPrice;
+                }
+                worksheet.Columns["A:F"].AutoFit();
+            }
+            else
+            {
+                MessageBox.Show("There are no tickets due on that date.");
+            }
         }
     }
 }

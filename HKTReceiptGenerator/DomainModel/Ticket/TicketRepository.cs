@@ -240,6 +240,25 @@ namespace DomainModel.Ticket
             return tickets;
         }
 
+        public List<TicketResource> GetActiveTicketsBetweenDates(DateTime startDate, DateTime endDate)
+        {
+            String convertedStartDate = string.Format("{0:yyyy-MM-dd}", startDate);
+            String convertedEndDate = string.Format("{0:yyyy-MM-dd}", endDate.AddDays(1)); //add 1 date possibly because of 00:00:00 time
+
+            SQLiteDatabase db = new SQLiteDatabase();
+            string sql = String.Format(@"select * from Tickets where date_ready >= '{0}' AND date_ready <= '{1}' AND status = 'a'", convertedStartDate, convertedEndDate);
+            DataTable resultTicketTable = db.GetDataTable(sql);
+
+            List<TicketResource> tickets = new List<TicketResource>();
+            foreach (DataRow row in resultTicketTable.Rows)
+            {
+                TicketResource resource = ConvertDataRowToTicketResource(row);
+                tickets.Add(resource);
+            }
+
+            return tickets;
+        }
+
         private Dictionary<String, object> ConvertTicketIntoDictionary(TicketResource ticket)
         {
             Dictionary<String, object> ticketArgs = new Dictionary<string, object>();

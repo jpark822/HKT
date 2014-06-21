@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.FirstNameTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,16 +53,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.SearchButton = new CustomControls.HKTStandardButton();
             this.ResultGrid = new System.Windows.Forms.DataGridView();
-            this.TicketIdCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FirstNameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LastNameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateInCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateReadyCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StatusCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tailorcol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalPriceCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DepositCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BalanceCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OpenTicketButton = new CustomControls.HKTStandardButton();
             this.label11 = new System.Windows.Forms.Label();
             this.StatusComboBox = new System.Windows.Forms.ComboBox();
@@ -75,6 +66,16 @@
             this.OrderIdTextBox = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.ExportToExcelButton = new CustomControls.HKTStandardButton();
+            this.TicketIdCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FirstNameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LastNameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateInCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateReadyCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StatusCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tailorcol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalPriceCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DepositCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BalanceCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ResultGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -267,14 +268,14 @@
             this.ResultGrid.AllowUserToAddRows = false;
             this.ResultGrid.AllowUserToDeleteRows = false;
             this.ResultGrid.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ResultGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ResultGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.ResultGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ResultGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TicketIdCol,
@@ -287,14 +288,14 @@
             this.TotalPriceCol,
             this.DepositCol,
             this.BalanceCol});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ResultGrid.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ResultGrid.DefaultCellStyle = dataGridViewCellStyle3;
             this.ResultGrid.Location = new System.Drawing.Point(339, 22);
             this.ResultGrid.MultiSelect = false;
             this.ResultGrid.Name = "ResultGrid";
@@ -307,75 +308,6 @@
             this.ResultGrid.ShowRowErrors = false;
             this.ResultGrid.Size = new System.Drawing.Size(1145, 466);
             this.ResultGrid.TabIndex = 22;
-            // 
-            // TicketIdCol
-            // 
-            this.TicketIdCol.HeaderText = "Ticket #";
-            this.TicketIdCol.Name = "TicketIdCol";
-            this.TicketIdCol.ReadOnly = true;
-            this.TicketIdCol.Width = 90;
-            // 
-            // FirstNameCol
-            // 
-            this.FirstNameCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.FirstNameCol.HeaderText = "First Name";
-            this.FirstNameCol.Name = "FirstNameCol";
-            this.FirstNameCol.ReadOnly = true;
-            // 
-            // LastNameCol
-            // 
-            this.LastNameCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.LastNameCol.HeaderText = "Last Name";
-            this.LastNameCol.Name = "LastNameCol";
-            this.LastNameCol.ReadOnly = true;
-            // 
-            // DateInCol
-            // 
-            this.DateInCol.HeaderText = "Date In";
-            this.DateInCol.Name = "DateInCol";
-            this.DateInCol.ReadOnly = true;
-            this.DateInCol.Width = 120;
-            // 
-            // DateReadyCol
-            // 
-            this.DateReadyCol.HeaderText = "Date Ready";
-            this.DateReadyCol.Name = "DateReadyCol";
-            this.DateReadyCol.ReadOnly = true;
-            this.DateReadyCol.Width = 120;
-            // 
-            // StatusCol
-            // 
-            this.StatusCol.HeaderText = "Stat";
-            this.StatusCol.Name = "StatusCol";
-            this.StatusCol.ReadOnly = true;
-            this.StatusCol.Width = 50;
-            // 
-            // Tailorcol
-            // 
-            this.Tailorcol.FillWeight = 150F;
-            this.Tailorcol.HeaderText = "Tailor";
-            this.Tailorcol.MinimumWidth = 2;
-            this.Tailorcol.Name = "Tailorcol";
-            this.Tailorcol.ReadOnly = true;
-            this.Tailorcol.Width = 130;
-            // 
-            // TotalPriceCol
-            // 
-            this.TotalPriceCol.HeaderText = "Total";
-            this.TotalPriceCol.Name = "TotalPriceCol";
-            this.TotalPriceCol.ReadOnly = true;
-            // 
-            // DepositCol
-            // 
-            this.DepositCol.HeaderText = "Deposit";
-            this.DepositCol.Name = "DepositCol";
-            this.DepositCol.ReadOnly = true;
-            // 
-            // BalanceCol
-            // 
-            this.BalanceCol.HeaderText = "Balance";
-            this.BalanceCol.Name = "BalanceCol";
-            this.BalanceCol.ReadOnly = true;
             // 
             // OpenTicketButton
             // 
@@ -543,6 +475,78 @@
             this.ExportToExcelButton.UseVisualStyleBackColor = false;
             this.ExportToExcelButton.Click += new System.EventHandler(this.ExportToExcelButton_Click);
             // 
+            // TicketIdCol
+            // 
+            this.TicketIdCol.HeaderText = "Ticket #";
+            this.TicketIdCol.Name = "TicketIdCol";
+            this.TicketIdCol.ReadOnly = true;
+            this.TicketIdCol.Width = 90;
+            // 
+            // FirstNameCol
+            // 
+            this.FirstNameCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.FirstNameCol.HeaderText = "First Name";
+            this.FirstNameCol.Name = "FirstNameCol";
+            this.FirstNameCol.ReadOnly = true;
+            // 
+            // LastNameCol
+            // 
+            this.LastNameCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.LastNameCol.HeaderText = "Last Name";
+            this.LastNameCol.Name = "LastNameCol";
+            this.LastNameCol.ReadOnly = true;
+            // 
+            // DateInCol
+            // 
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.NullValue = null;
+            this.DateInCol.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DateInCol.HeaderText = "Date In";
+            this.DateInCol.Name = "DateInCol";
+            this.DateInCol.ReadOnly = true;
+            this.DateInCol.Width = 120;
+            // 
+            // DateReadyCol
+            // 
+            this.DateReadyCol.HeaderText = "Date Ready";
+            this.DateReadyCol.Name = "DateReadyCol";
+            this.DateReadyCol.ReadOnly = true;
+            this.DateReadyCol.Width = 120;
+            // 
+            // StatusCol
+            // 
+            this.StatusCol.HeaderText = "Status";
+            this.StatusCol.Name = "StatusCol";
+            this.StatusCol.ReadOnly = true;
+            this.StatusCol.Width = 75;
+            // 
+            // Tailorcol
+            // 
+            this.Tailorcol.FillWeight = 150F;
+            this.Tailorcol.HeaderText = "Tailor";
+            this.Tailorcol.MinimumWidth = 2;
+            this.Tailorcol.Name = "Tailorcol";
+            this.Tailorcol.ReadOnly = true;
+            this.Tailorcol.Width = 130;
+            // 
+            // TotalPriceCol
+            // 
+            this.TotalPriceCol.HeaderText = "Total";
+            this.TotalPriceCol.Name = "TotalPriceCol";
+            this.TotalPriceCol.ReadOnly = true;
+            // 
+            // DepositCol
+            // 
+            this.DepositCol.HeaderText = "Deposit";
+            this.DepositCol.Name = "DepositCol";
+            this.DepositCol.ReadOnly = true;
+            // 
+            // BalanceCol
+            // 
+            this.BalanceCol.HeaderText = "Balance";
+            this.BalanceCol.Name = "BalanceCol";
+            this.BalanceCol.ReadOnly = true;
+            // 
             // SearchForm
             // 
             this.AcceptButton = this.SearchButton;
@@ -628,6 +632,9 @@
         private System.Windows.Forms.ComboBox TailorComboBox;
         private System.Windows.Forms.Label label13;
         private CustomControls.HKTStandardButton MarkAsDonePaidPickedUpBttn;
+        private System.Windows.Forms.TextBox OrderIdTextBox;
+        private System.Windows.Forms.Label label14;
+        private CustomControls.HKTStandardButton ExportToExcelButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn TicketIdCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn FirstNameCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn LastNameCol;
@@ -638,8 +645,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalPriceCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn DepositCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn BalanceCol;
-        private System.Windows.Forms.TextBox OrderIdTextBox;
-        private System.Windows.Forms.Label label14;
-        private CustomControls.HKTStandardButton ExportToExcelButton;
     }
 }

@@ -17,10 +17,19 @@ namespace HKTReceiptGenerator
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            bool result;
+            var mutex = new System.Threading.Mutex(true, "UniqueAppId", out result);
 
-                Application.Run(new MainForm());
+            if (!result)
+            {
+                MessageBox.Show("You already have another instance open.");
+                return;
+            }
 
+            Application.Run(new MainForm());
+            GC.KeepAlive(mutex);  
 
         }
+
     }
 }

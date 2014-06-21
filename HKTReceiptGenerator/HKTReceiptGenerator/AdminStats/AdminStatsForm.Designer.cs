@@ -62,6 +62,8 @@
             this.label13 = new System.Windows.Forms.Label();
             this.TaxablePlusNonTaxableOrdersLabel = new System.Windows.Forms.Label();
             this.getMailingAddressesButton = new CustomControls.HKTStandardButton();
+            this.GetTicketsForDateButton = new CustomControls.HKTStandardButton();
+            this.TicketsForDatePicker = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
@@ -203,7 +205,7 @@
             this.GetEmailsButton.ForeColor = System.Drawing.Color.White;
             this.GetEmailsButton.Location = new System.Drawing.Point(538, 127);
             this.GetEmailsButton.Name = "GetEmailsButton";
-            this.GetEmailsButton.Size = new System.Drawing.Size(452, 80);
+            this.GetEmailsButton.Size = new System.Drawing.Size(402, 80);
             this.GetEmailsButton.TabIndex = 19;
             this.GetEmailsButton.Text = "Get Email Addresses";
             this.GetEmailsButton.UseVisualStyleBackColor = false;
@@ -215,7 +217,7 @@
             this.EmailResultTextBox.Multiline = true;
             this.EmailResultTextBox.Name = "EmailResultTextBox";
             this.EmailResultTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.EmailResultTextBox.Size = new System.Drawing.Size(452, 227);
+            this.EmailResultTextBox.Size = new System.Drawing.Size(743, 227);
             this.EmailResultTextBox.TabIndex = 20;
             // 
             // CopyToClipboardButton
@@ -223,9 +225,9 @@
             this.CopyToClipboardButton.BackColor = System.Drawing.Color.Maroon;
             this.CopyToClipboardButton.Font = new System.Drawing.Font("Trajan Pro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CopyToClipboardButton.ForeColor = System.Drawing.Color.White;
-            this.CopyToClipboardButton.Location = new System.Drawing.Point(538, 467);
+            this.CopyToClipboardButton.Location = new System.Drawing.Point(538, 462);
             this.CopyToClipboardButton.Name = "CopyToClipboardButton";
-            this.CopyToClipboardButton.Size = new System.Drawing.Size(452, 80);
+            this.CopyToClipboardButton.Size = new System.Drawing.Size(743, 80);
             this.CopyToClipboardButton.TabIndex = 21;
             this.CopyToClipboardButton.Text = "Export List To Excel";
             this.CopyToClipboardButton.UseVisualStyleBackColor = false;
@@ -236,7 +238,7 @@
             this.BackupButton.BackColor = System.Drawing.Color.Maroon;
             this.BackupButton.Font = new System.Drawing.Font("Trajan Pro", 14F);
             this.BackupButton.ForeColor = System.Drawing.Color.White;
-            this.BackupButton.Location = new System.Drawing.Point(1036, 467);
+            this.BackupButton.Location = new System.Drawing.Point(1036, 735);
             this.BackupButton.Name = "BackupButton";
             this.BackupButton.Size = new System.Drawing.Size(245, 80);
             this.BackupButton.TabIndex = 22;
@@ -409,20 +411,45 @@
             this.getMailingAddressesButton.BackColor = System.Drawing.Color.Maroon;
             this.getMailingAddressesButton.Font = new System.Drawing.Font("Trajan Pro", 14F);
             this.getMailingAddressesButton.ForeColor = System.Drawing.Color.White;
-            this.getMailingAddressesButton.Location = new System.Drawing.Point(1036, 127);
+            this.getMailingAddressesButton.Location = new System.Drawing.Point(946, 127);
             this.getMailingAddressesButton.Name = "getMailingAddressesButton";
-            this.getMailingAddressesButton.Size = new System.Drawing.Size(261, 80);
+            this.getMailingAddressesButton.Size = new System.Drawing.Size(335, 80);
             this.getMailingAddressesButton.TabIndex = 39;
             this.getMailingAddressesButton.Text = "Get Mailing Addresses";
             this.getMailingAddressesButton.UseVisualStyleBackColor = false;
             this.getMailingAddressesButton.Click += new System.EventHandler(this.getMailingAddressesButton_Click);
+            // 
+            // GetTicketsForDateButton
+            // 
+            this.GetTicketsForDateButton.BackColor = System.Drawing.Color.Maroon;
+            this.GetTicketsForDateButton.Font = new System.Drawing.Font("Trajan Pro", 14F);
+            this.GetTicketsForDateButton.ForeColor = System.Drawing.Color.White;
+            this.GetTicketsForDateButton.Location = new System.Drawing.Point(79, 732);
+            this.GetTicketsForDateButton.Name = "GetTicketsForDateButton";
+            this.GetTicketsForDateButton.Size = new System.Drawing.Size(453, 83);
+            this.GetTicketsForDateButton.TabIndex = 40;
+            this.GetTicketsForDateButton.Text = "Get Tickets For Date";
+            this.GetTicketsForDateButton.UseVisualStyleBackColor = false;
+            this.GetTicketsForDateButton.Click += new System.EventHandler(this.GetTicketsForDateButton_Click);
+            // 
+            // TicketsForDatePicker
+            // 
+            this.TicketsForDatePicker.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TicketsForDatePicker.Font = new System.Drawing.Font("Trajan Pro", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TicketsForDatePicker.Location = new System.Drawing.Point(79, 688);
+            this.TicketsForDatePicker.Name = "TicketsForDatePicker";
+            this.TicketsForDatePicker.Size = new System.Drawing.Size(452, 38);
+            this.TicketsForDatePicker.TabIndex = 41;
+            this.TicketsForDatePicker.Value = new System.DateTime(2013, 5, 6, 0, 0, 0, 0);
             // 
             // AdminStatsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1309, 606);
+            this.ClientSize = new System.Drawing.Size(1309, 831);
+            this.Controls.Add(this.TicketsForDatePicker);
+            this.Controls.Add(this.GetTicketsForDateButton);
             this.Controls.Add(this.getMailingAddressesButton);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.TaxablePlusNonTaxableOrdersLabel);
@@ -501,5 +528,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label TaxablePlusNonTaxableOrdersLabel;
         private CustomControls.HKTStandardButton getMailingAddressesButton;
+        private CustomControls.HKTStandardButton GetTicketsForDateButton;
+        private System.Windows.Forms.DateTimePicker TicketsForDatePicker;
     }
 }
