@@ -161,7 +161,8 @@ namespace HKTReceiptGenerator
                 EmailTextBox.Text == "" &&
                 PickedUpComboBox.Text == "" &&
                 StatusComboBox.Text == "" &&
-                OrderIdTextBox.Text == "")
+                OrderIdTextBox.Text == "" &&
+                TailorComboBox.Text == "")
             {
                 return false;
             }

@@ -68,6 +68,9 @@ namespace HKTReceiptGenerator
                 text.AppendLine("Hong Kong Tailors reserves the right to modify its return and exchange policy");
                 text.AppendLine();
                 text.AppendLine("Thank you for choosing Hong Kong Tailors!");
+                text.AppendLine("Like us on Facebook: www.facebook.com/HongKongTailorsAtlanta");
+                text.AppendLine("Follow us on Instagram: www.instagram.com/hongkongtailor");
+                text.AppendLine("Follow us on Twitter: www.twitter.com/HongKongTailors");
             }
             else if (!isCusomterCopy)
             {
