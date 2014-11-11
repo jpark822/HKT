@@ -55,7 +55,6 @@ namespace HKTReceiptGenerator
         {
             
             InitializeComponent();
-            backupDbTimer.Elapsed += backupDbTimer_Elapsed;
             backupDbTimer.Enabled = true;
             this.Shown += MainForm_Shown;
             Application.Idle += Application_Idle;
@@ -95,13 +94,6 @@ namespace HKTReceiptGenerator
             wentIdle = DateTime.Now;
         }
 
-        void backupDbTimer_Elapsed(object sender, ElapsedEventArgs e)
-        {
-            if (DateTime.Now.Hour == 20)
-            {
-                Emailer.SendBackupToEmail();
-            }
-        }
 
         void MainForm_Shown(object sender, EventArgs e)
         {

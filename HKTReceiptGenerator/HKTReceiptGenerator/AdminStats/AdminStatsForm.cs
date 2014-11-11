@@ -10,6 +10,11 @@ using System.Windows.Forms;
 using DomainModel.Ticket;
 using DomainModel.AdminStatsRepo;
 using Microsoft.Office.Interop.Excel;
+using DomainModel.Ticket;
+using System.CodeDom;
+using System.CodeDom.Compiler;
+using System.IO;
+using DomainModel.TicketAlterations;
 
 namespace HKTReceiptGenerator.AdminStats
 {
@@ -126,7 +131,8 @@ namespace HKTReceiptGenerator.AdminStats
 
         private void BackupButton_Click(object sender, EventArgs e)
         {
-            Emailer.SendBackupToEmail();
+            //TODO mysql backup 
+           //Emailer.SendBackupToEmail();
         }
 
         private void getMailingAddressesButton_Click(object sender, EventArgs e)
@@ -190,6 +196,80 @@ namespace HKTReceiptGenerator.AdminStats
             {
                 MessageBox.Show("There are no tickets due on that date.");
             }
+        }
+
+        private void hktStandardButton1_Click(object sender, EventArgs e)
+        {
+
+            //TicketRepository ticketRepo = new TicketRepository();
+            //List<TicketResource> allTickets = ticketRepo.GetAllTickets();
+
+            //foreach (TicketResource ticket in allTickets)
+            //{
+            //    /*string title = ticket.Title == null || ticket.Title == "" ? "''" : ticket.Title;
+            //    string firstName = ticket.FirstName == null || ticket.FirstName == "" ? "''" : ticket.FirstName;
+            //    string middleName = ticket.MiddleName == null || ticket.MiddleName == "" ? "''" : ticket.MiddleName;
+            //    string lastName = ticket.LastName == null || ticket.LastName == "" ? "''" : ticket.LastName;
+            //    string address = ticket.Address == null || ticket.Address == "" ? "''" : ticket.Address;
+            //    string city = ticket.City == null || ticket.City == "" ? "''" : ticket.City;
+            //    string state = ticket.State == null || ticket.State == "" ? "''" : ticket.State;
+            //    string zip = ticket.Zip == null || ticket.Zip == "" ? "''" : ticket.Zip;
+            //    string email = ticket.Email == null || ticket.Email == "" ? "''" : ticket.Email;
+            //    string comments = ticket.Comments == null || ticket.Comments == "" ? "''" : ticket.Comments;
+            //    string TailorName = ticket.TailorName == null || ticket.TailorName == "" ? "''" : ticket.TailorName;
+            //     * */
+            //    string PickedUp = ticket.PickedUp == null || ticket.PickedUp == "" ? "n/a" : ticket.PickedUp;
+            //    string OrderId = ticket.OrderId == null || ticket.OrderId == "" ? "" : ticket.OrderId;
+            //    string telephone = ticket.Telephone == null || ticket.Telephone == "" ? "''" : ticket.Telephone;
+            //    string comments = ticket.Comments.Replace("'", "\\'");
+            //    comments = comments.Replace("\"", "\\\"");
+                
+            //    Console.WriteLine(@"insert into Tickets (ticket_id, status, name_title, first_name, middle_name, last_name, address, city, state, zip, telephone, email, comments, picked_up, last_modified_timestamp, date_in, date_ready, total_price, deposit, tailor_name, order_id) " +
+            //        "values (" 
+            //        + ticket.TicketId + ",'"
+            //        + ticket.Status + "','"
+            //        + ticket.Title + "','"
+            //        + ticket.FirstName + "','"
+            //        + ticket.MiddleName + "','"
+            //        + ticket.LastName + "','"
+            //        + ticket.Address + "','"
+            //        + ticket.City + "','"
+            //        + ticket.State + "','"
+            //        + ticket.Zip + "','"
+            //        + ticket.Telephone + "','"
+            //        + ticket.Email + "','"
+            //        + comments + "','"
+            //        + PickedUp + "','"
+            //        + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "','"
+            //        + ticket.DateIn.ToString("yyyy-MM-dd HH:mm:ss") + "','"
+            //        + ticket.DateReady.ToString("yyyy-MM-dd HH:mm:ss") + "',"
+            //        + ticket.TotalPrice + ","
+            //        + ticket.Deposit + ",'"
+            //        + ticket.TailorName + "','"
+            //        + OrderId + "');");
+            //}
+        }
+
+        private void hktStandardButton2_Click(object sender, EventArgs e)
+        {
+            TicketAlterationRepository ticketAltRepo = new TicketAlterationRepository();
+            List<TicketAlterationResourceItem> allAlterations = ticketAltRepo.GetAllAlterationItems();
+
+
+            //foreach (TicketAlterationResourceItem alteration in allAlterations)
+            //{
+            //    string description = alteration.Description.Replace("'", "\\'");
+            //    description = description.Replace("\"", "\\\"");
+
+            //    Console.WriteLine(@"insert into Ticket_Alterations (ticket_alteration_id, ticket_id, quantity, description, price, taxable) values ("
+            //    + alteration.TicketAlterationID + ","
+            //    + alteration.TicketId + ","
+            //    + alteration.Quantity + ",'"
+            //    + description + "',"
+            //    + alteration.Price + ","
+            //    + alteration.Taxable + ");");
+            //}
+
         }
     }
 }

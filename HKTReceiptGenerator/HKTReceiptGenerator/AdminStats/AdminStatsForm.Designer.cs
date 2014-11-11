@@ -330,11 +330,11 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Trajan Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(271, 262);
+            this.label12.Location = new System.Drawing.Point(228, 262);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(121, 20);
+            this.label12.Size = new System.Drawing.Size(164, 20);
             this.label12.TabIndex = 32;
-            this.label12.Text = "Alterations:";
+            this.label12.Text = "Alterations Paid:";
             // 
             // AlterationsLabel
             // 
@@ -350,11 +350,11 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Trajan Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(324, 242);
+            this.label14.Location = new System.Drawing.Point(281, 242);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(68, 20);
+            this.label14.Size = new System.Drawing.Size(111, 20);
             this.label14.TabIndex = 30;
-            this.label14.Text = "Retail:";
+            this.label14.Text = "Retail Paid:";
             // 
             // RetailLabel
             // 
@@ -370,11 +370,11 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Trajan Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(198, 282);
+            this.label11.Location = new System.Drawing.Point(155, 282);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(194, 20);
+            this.label11.Size = new System.Drawing.Size(237, 20);
             this.label11.TabIndex = 36;
-            this.label11.Text = "Alterations + Retail:";
+            this.label11.Text = "Alterations + Retail Paid:";
             // 
             // AlterationsPlusRetailLabel
             // 

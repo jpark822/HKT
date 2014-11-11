@@ -7,95 +7,134 @@ using System.Windows.Forms;
 using System.Data;
 using System.Data.SQLite;
 using DomainModel.TicketAlterations;
+using MySql.Data.MySqlClient;
 
 namespace DomainModel.AdminStatsRepo
 {
-    public class AdminStatsRepo
+    public class AdminStatsRepo : BaseRepository
     {
         private const double taxRatePlusOne = 1.07;
         private const String shortDateFormatString = "{0:yyyy-MM-dd}";
 
         public double getTotalBilled(DateTime startDate, DateTime endDate, Boolean isOrder)
         {
-            String convertedStartDate = string.Format(shortDateFormatString, startDate);
-            String convertedEndDate = string.Format(shortDateFormatString, endDate.AddDays(1));
+            DBConnector connector = new DBConnector();
+            MySqlCommand getBilledCommand = new MySqlCommand();
+            getBilledCommand.Connection = connector.connection;
+            
+            string sql = @"SELECT price, taxable
+                                                from Tickets tix
+                                                join Ticket_Alterations ta
+                                                on tix.ticket_id = ta.ticket_id
+                                                AND date_in >= @start_date
+                                                AND date_in <= @end_date ";
 
-            String sqlToAdd = "";
             if (isOrder)
             {
-                sqlToAdd = @"AND order_id != ''
-                             AND order_id NOT NULL";
+                sql += @"AND order_id != ''
+                             AND order_id IS NOT NULL";
             }
             else
             {
-                sqlToAdd = @"AND (order_id = ''
+                sql += @"AND (order_id = ''
                             or order_id IS NULL)";
             }
 
-            SQLiteDatabase db = new SQLiteDatabase();
-            String sql = string.Format(@"select price, taxable
-                                                from Tickets tix
-                                                join ticket_alterations ta
-                                                on tix.ticket_id = ta.ticket_id
-                                                AND date_in >= '{0}'
-                                                AND date_in <= '{1}' " + sqlToAdd, convertedStartDate, convertedEndDate);
-            DataTable results = db.GetDataTable(sql);
-            return getPriceTotalFromDatatable(results);
+            getBilledCommand.CommandText = sql;
+            getBilledCommand.Parameters.AddWithValue("@start_date", ConvertDateTimeToUTCString(startDate));
+            getBilledCommand.Parameters.AddWithValue("@end_date", ConvertDateTimeToUTCString(endDate));
+
+            try
+            {
+                MySqlDataReader reader = getBilledCommand.ExecuteReader();
+                double total = getPriceTotalFromReader(reader);
+                reader.Close();
+                connector.CloseConnection();
+                return total;
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("There was an error. Contact Jay with this message: " + ex.Message + " error code: " + ex.Number);
+            }
+            return 0;
         }
 
         public double GetTotalPaidOrdersBetweenDates(DateTime startDate, DateTime endDate, Boolean taxable)
         {
-            String convertedStartDate = string.Format(shortDateFormatString, startDate);
-            String convertedEndDate = string.Format(shortDateFormatString, endDate.AddDays(1));
-
-            int taxableInt = taxable == true ? 1 : 0;
-
-            SQLiteDatabase db = new SQLiteDatabase();
-            string sql = String.Format(@"select price, taxable
+            DBConnector connector = new DBConnector();
+            MySqlCommand getPaidCommand = new MySqlCommand();
+            getPaidCommand.Connection = connector.connection;
+            getPaidCommand.CommandText = @"select price, taxable
                                             from Tickets tix
-                                            join ticket_alterations ta
+                                            join Ticket_Alterations ta
                                             on tix.ticket_id = ta.ticket_id
-                                            AND julianday(completed_date) >= julianday('{0}')
-                                            AND julianday(completed_date) <= julianday('{1}')
-                                            AND taxable = {2}
+                                            AND completed_date >= @start_date
+                                            AND completed_date <= @end_date
+                                            AND taxable = @taxable
                                             AND status = 'd'
                                             AND order_id != '' 
-                                            AND order_id NOT NULL", convertedStartDate, convertedEndDate, taxableInt);
-            DataTable resultTicketTable = db.GetDataTable(sql);
+                                            AND order_id IS NOT NULL";
+            getPaidCommand.Parameters.AddWithValue("@start_date", ConvertDateTimeToUTCString(startDate));
+            getPaidCommand.Parameters.AddWithValue("@end_date", ConvertDateTimeToUTCString(endDate));
+            int taxableInt = taxable == true ? 1 : 0;
+            getPaidCommand.Parameters.AddWithValue("@taxable", taxableInt);
 
-            return getPriceTotalFromDatatable(resultTicketTable);
+            try
+            {
+                MySqlDataReader reader = getPaidCommand.ExecuteReader();
+                double total = getPriceTotalFromReader(reader);
+                reader.Close();
+                connector.CloseConnection();
+                return total;
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("There was an error. Contact Jay with this message: " + ex.Message + " error code: " + ex.Number);
+            }
+            return 0;
         }
       
         public double GetTotalPaidNonOrdersBetweenDates(DateTime startDate, DateTime endDate, Boolean taxable)
         {
-            String convertedStartDate = string.Format(shortDateFormatString, startDate);
-            String convertedEndDate = string.Format(shortDateFormatString, endDate.AddDays(1)); 
-
-            int taxableInt = taxable == true ? 1 : 0;
-
-            SQLiteDatabase db = new SQLiteDatabase();
-            string sql = String.Format(@"select price, taxable
+            DBConnector connector = new DBConnector();
+            MySqlCommand getPaidCommand = new MySqlCommand();
+            getPaidCommand.Connection = connector.connection;
+            getPaidCommand.CommandText = @"select price, taxable
                                             from Tickets tix
-                                            join ticket_alterations ta
+                                            join Ticket_Alterations ta
                                             on tix.ticket_id = ta.ticket_id
-                                            AND julianday(completed_date) >= julianday('{0}')
-                                            AND julianday(completed_date) <= julianday('{1}')
-                                            AND taxable = {2}
+                                            AND completed_date >= @start_date
+                                            AND completed_date <= @end_date
+                                            AND taxable = @taxable
                                             AND status = 'd'
                                             AND (order_id = '' 
-                                            or order_id IS NULL)", convertedStartDate, convertedEndDate, taxableInt);
-            DataTable resultTicketTable = db.GetDataTable(sql);
+                                            or order_id IS NULL)";
+            getPaidCommand.Parameters.AddWithValue("@start_date", ConvertDateTimeToUTCString(startDate));
+            getPaidCommand.Parameters.AddWithValue("@end_date", ConvertDateTimeToUTCString(endDate));
+            int taxableInt = taxable == true ? 1 : 0;
+            getPaidCommand.Parameters.AddWithValue("@taxable", taxableInt);
 
-            return getPriceTotalFromDatatable(resultTicketTable);
+            try
+            {
+                MySqlDataReader reader = getPaidCommand.ExecuteReader();
+                double total = getPriceTotalFromReader(reader);
+                reader.Close();
+                connector.CloseConnection();
+                return total;
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("There was an error. Contact Jay with this message: " + ex.Message + " error code: " + ex.Number);
+            }
+            return 0;
         }
 
-        private double getPriceTotalFromDatatable(DataTable table)
+        private double getPriceTotalFromReader(MySqlDataReader reader)
         {
             double total = 0;
-            for (int i = 0; i < table.Rows.Count; i++)
+            while (reader.Read())
             {
-                DataRow row = table.Rows[i];
-                total += Convert.ToInt32(row["taxable"]) == 0 ? (double)row["price"] : (double)row["price"] * 1.07;
+                total += Convert.ToInt32(reader["taxable"]) == 0 ? Convert.ToDouble(reader["price"]) : Convert.ToDouble(reader["price"]) * 1.07;
             }
             return total;
         }

@@ -9,6 +9,7 @@ namespace DomainModel.TicketAlterations
     //TODO create a factory for this class
     public class TicketAlterationResourceItem
     {
+        public int TicketAlterationID { get; set; }
         public int TicketId { get; set; }
         public double Price { get; set; }
         public int Quantity { get; set; }

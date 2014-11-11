@@ -52,3 +52,4 @@ C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\HKTReceiptGenerator\obj\Debug\HKT
 C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\HKTReceiptGenerator\obj\Debug\HKTReceiptGenerator.pdb
 C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\HKTReceiptGenerator\obj\Debug\HKTReceiptGenerator.PasswordLockForm.PasswordLockForm.resources
 C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\HKTReceiptGenerator\obj\Debug\HKTReceiptGenerator.csproj.ResolveComReference.cache
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\HKTReceiptGenerator\bin\Debug\MySql.Data.dll

@@ -18,3 +18,4 @@ C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\DomainModel\obj\Debug\DomainModel
 C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\DomainModel\obj\Debug\DomainModel.dll
 C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\DomainModel\obj\Debug\DomainModel.pdb
 C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\DomainModel\obj\Debug\DomainModel.csprojResolveAssemblyReference.cache
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\DomainModel\bin\Debug\MySql.Data.dll

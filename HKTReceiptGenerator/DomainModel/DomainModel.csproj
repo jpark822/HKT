@@ -36,6 +36,9 @@
     </StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\..\Visual Studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SQLite">
@@ -52,6 +55,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminStatsRepo\AdminStatsRepo.cs" />
+    <Compile Include="BaseRepository.cs" />
+    <Compile Include="DBConnector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLiteDatabase.cs" />
     <Compile Include="TicketAlterations\TicketAlterationFactory.cs" />
