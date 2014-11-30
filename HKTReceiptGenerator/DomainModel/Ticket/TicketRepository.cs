@@ -244,28 +244,28 @@ namespace DomainModel.Ticket
                 }
                 if (entry.Key == TicketProperty.FirstName)
                 {
-                    sql += "first_name = @first_name";
-                    getTicketsCommand.Parameters.AddWithValue("@first_name", (String)entry.Value);
+                    sql += "first_name LIKE @first_name";
+                    getTicketsCommand.Parameters.AddWithValue("@first_name", "%" + (String)entry.Value + "%");
                 }
                 if (entry.Key == TicketProperty.MiddleName)
                 {
-                    sql += "middle_name = @middle_name";
-                    getTicketsCommand.Parameters.AddWithValue("@middle_name", (String)entry.Value);
+                    sql += "middle_name LIKE @middle_name";
+                    getTicketsCommand.Parameters.AddWithValue("@middle_name", "%" + (String)entry.Value + "%");
                 }
                 if (entry.Key == TicketProperty.LastName)
                 {
-                    sql += "last_name = @last_name";
-                    getTicketsCommand.Parameters.AddWithValue("@last_name", (String)entry.Value);
+                    sql += "last_name LIKE @last_name";
+                    getTicketsCommand.Parameters.AddWithValue("@last_name", "%" + (String)entry.Value + "%");
                 }
                 if (entry.Key == TicketProperty.Address)
                 {
-                    sql += "address = @address";
-                    getTicketsCommand.Parameters.AddWithValue("@address", (String)entry.Value);
+                    sql += "address LIKE @address";
+                    getTicketsCommand.Parameters.AddWithValue("@address", "%" + (String)entry.Value + "%");
                 }
                 if (entry.Key == TicketProperty.City)
                 {
-                    sql += "city = @city";
-                    getTicketsCommand.Parameters.AddWithValue("@city", (String)entry.Value);
+                    sql += "city LIKE @city";
+                    getTicketsCommand.Parameters.AddWithValue("@city", "%" + (String)entry.Value + "%");
                 }
                 if (entry.Key == TicketProperty.State)
                 {
@@ -284,8 +284,8 @@ namespace DomainModel.Ticket
                 }
                 if (entry.Key == TicketProperty.Email)
                 {
-                    sql += "email = @email";
-                    getTicketsCommand.Parameters.AddWithValue("@email", (String)entry.Value);
+                    sql += "email LIKE @email";
+                    getTicketsCommand.Parameters.AddWithValue("@email", "%" + (String)entry.Value + "%");
                 }
                 if (entry.Key == TicketProperty.PickedUp)
                 {

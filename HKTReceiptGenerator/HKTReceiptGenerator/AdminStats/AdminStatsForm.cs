@@ -253,7 +253,7 @@ namespace HKTReceiptGenerator.AdminStats
         private void hktStandardButton2_Click(object sender, EventArgs e)
         {
             TicketAlterationRepository ticketAltRepo = new TicketAlterationRepository();
-            List<TicketAlterationResourceItem> allAlterations = ticketAltRepo.GetAllAlterationItems();
+           // List<TicketAlterationResourceItem> allAlterations = ticketAltRepo.GetAllAlterationItems();
 
 
             //foreach (TicketAlterationResourceItem alteration in allAlterations)

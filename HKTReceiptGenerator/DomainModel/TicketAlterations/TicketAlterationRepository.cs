@@ -16,29 +16,28 @@ namespace DomainModel.TicketAlterations
         public void InsertAlterations(TicketAlterationResource alterationResource)
         {
             DBConnector connector = new DBConnector();
-            int count = 0;
+
+            int orderIndex = 0;
             foreach (TicketAlterationResourceItem alteration in alterationResource.Alterations)
             {
-                count++;
                 MySqlCommand insertCommand = new MySqlCommand();
                 insertCommand.Connection = connector.connection;
-                insertCommand.CommandText = @"INSERT into Ticket_Alterations (ticket_alteration_id, ticket_id, quantity, description, price, taxable) values (@ticket_alteration_id, @ticket_id, @quantity, @description, @price, @taxable)";
+                insertCommand.CommandText = @"INSERT into Ticket_Alterations (ticket_alteration_id, ticket_id, quantity, description, price, taxable, order_index) values (@ticket_alteration_id, @ticket_id, @quantity, @description, @price, @taxable, @order_index)";
                 insertCommand.Parameters.AddWithValue("@ticket_alteration_id", alteration.TicketAlterationID);
                 insertCommand.Parameters.AddWithValue("@ticket_id", alteration.TicketId);
                 insertCommand.Parameters.AddWithValue("@quantity", alteration.Quantity);
                 insertCommand.Parameters.AddWithValue("@description", alteration.Description);
                 insertCommand.Parameters.AddWithValue("@price", alteration.Price);
                 insertCommand.Parameters.AddWithValue("@taxable", alteration.Taxable);
-                if (count > 8577)
+                insertCommand.Parameters.AddWithValue("@order_index", orderIndex);
+                orderIndex++;
+                try
                 {
-                    try
-                    {
-                        insertCommand.ExecuteNonQuery();
-                    }
-                    catch (MySqlException ex)
-                    {
-                        MessageBox.Show("There was an error. Contact Jay with this message: " + ex.Message + " error code: " + ex.Number);
-                    }
+                    insertCommand.ExecuteNonQuery();
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("There was an error. Contact Jay with this message: " + ex.Message + " error code: " + ex.Number);
                 }
             }
             connector.CloseConnection();
@@ -69,7 +68,7 @@ namespace DomainModel.TicketAlterations
             DBConnector connector = new DBConnector();
             MySqlCommand getAlterationsCommand = new MySqlCommand();
             getAlterationsCommand.Connection = connector.connection;
-            getAlterationsCommand.CommandText = @"SELECT * from Ticket_Alterations where ticket_id = @ticket_id";
+            getAlterationsCommand.CommandText = @"SELECT * from Ticket_Alterations where ticket_id = @ticket_id ORDER BY order_index";
             getAlterationsCommand.Parameters.AddWithValue("@ticket_id", ticketId);
 
             List<TicketAlterationResourceItem> alterationItems = new List<TicketAlterationResourceItem>();
@@ -96,32 +95,6 @@ namespace DomainModel.TicketAlterations
 
             TicketAlterationResource alterationRes = TicketAlterationFactory.CreateTicketAlterationResource(alterationItems);
             return alterationRes;
-        }
-
-        //remove after data migration
-        public List<TicketAlterationResourceItem> GetAllAlterationItems()
-        {
-            SQLiteDatabase db = new SQLiteDatabase();
-            String sql = "select * from Ticket_alterations";
-            DataTable alterationsTable = db.GetDataTable(sql);
-
-            List<TicketAlterationResourceItem> alterationItems = new List<TicketAlterationResourceItem>();
-            foreach (DataRow row in alterationsTable.Rows)
-            {
-                alterationItems.Add(new TicketAlterationResourceItem
-                {
-                    TicketAlterationID = Convert.ToInt32(row["id"]),
-                    TicketId = Convert.ToInt32(row["ticket_id"]),
-                    Price = Convert.ToDouble(row["price"]),
-                    Quantity = Convert.ToInt32(row["quantity"]),
-                    Description = (String)row["description"],
-                    Taxable = Convert.ToInt32(row["taxable"])
-                });
-            }
-            TicketAlterationResource res = new TicketAlterationResource();
-            res.Alterations = alterationItems;
-            InsertAlterations(res);
-            return alterationItems;
         }
 
         public void DeleteAlterationsByTicketID(int ticketId)

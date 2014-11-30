@@ -15,8 +15,8 @@ namespace HKTReceiptGenerator
 {
     public partial class SearchForm : Form
     {
-        private List<String> firstNameSuggestions = new List<String>();
-        private List<String> lastNameSuggestions = new List<String>();
+        //private List<String> firstNameSuggestions = new List<String>();
+        //private List<String> lastNameSuggestions = new List<String>();
 
         public SearchForm()
         {
@@ -225,71 +225,71 @@ namespace HKTReceiptGenerator
             StatusComboBox.SelectedIndex = 1;
             EnableButtonsBasedOnGrid();
 
-            GetFirstNamesForAutocomplete();
-            GetLastNamesForAutocomplete();
+            //GetFirstNamesForAutocomplete();
+            //GetLastNamesForAutocomplete();
         }
 
         //TODO move querying into ticket REPO
-        private void GetFirstNamesForAutocomplete()
-        {
-            FirstNameTextBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            FirstNameTextBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+        //private void GetFirstNamesForAutocomplete()
+        //{
+        //    FirstNameTextBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+        //    FirstNameTextBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
 
-            List<String> names = new List<String>();
-            try
-            {
-                String sql = "select distinct first_name from tickets";
-                SQLiteDatabase db = new SQLiteDatabase();
-                System.Data.DataTable searchResultTable = db.GetDataTable(sql);
-                foreach (DataRow row in searchResultTable.Rows)
-                {
-                    names.Add(row["first_name"].ToString());
-                }
+        //    List<String> names = new List<String>();
+        //    try
+        //    {
+        //        String sql = "select distinct first_name from tickets";
+        //        SQLiteDatabase db = new SQLiteDatabase();
+        //        System.Data.DataTable searchResultTable = db.GetDataTable(sql);
+        //        foreach (DataRow row in searchResultTable.Rows)
+        //        {
+        //            names.Add(row["first_name"].ToString());
+        //        }
                 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("There was an error. Please contact Jay with this message: " + ex.Message);
-            }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("There was an error. Please contact Jay with this message: " + ex.Message);
+        //    }
 
-            firstNameSuggestions = names;
+        //    firstNameSuggestions = names;
 
-            //taken from change in text box event
-            AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
-            collection.AddRange(firstNameSuggestions.ToArray());
-            FirstNameTextBox.AutoCompleteCustomSource = collection;
-        }
+        //    //taken from change in text box event
+        //    AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
+        //    collection.AddRange(firstNameSuggestions.ToArray());
+        //    FirstNameTextBox.AutoCompleteCustomSource = collection;
+        //}
 
         //TODO move querying into ticket REPO
-        private void GetLastNamesForAutocomplete()
-        {
-            LastNameTextBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            LastNameTextBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+        //private void GetLastNamesForAutocomplete()
+        //{
+        //    LastNameTextBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+        //    LastNameTextBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
 
-            List<String> names = new List<String>();
-            try
-            {
-                String sql = "select distinct last_name from tickets";
-                SQLiteDatabase db = new SQLiteDatabase();
-                System.Data.DataTable searchResultTable = db.GetDataTable(sql);
+        //    List<String> names = new List<String>();
+        //    try
+        //    {
+        //        String sql = "select distinct last_name from tickets";
+        //        SQLiteDatabase db = new SQLiteDatabase();
+        //        System.Data.DataTable searchResultTable = db.GetDataTable(sql);
 
-                foreach (DataRow row in searchResultTable.Rows)
-                {
-                    names.Add(row["last_name"].ToString());
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("There was an error. Please contact Jay with this message: " + ex.Message);
-            }
+        //        foreach (DataRow row in searchResultTable.Rows)
+        //        {
+        //            names.Add(row["last_name"].ToString());
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("There was an error. Please contact Jay with this message: " + ex.Message);
+        //    }
 
-            lastNameSuggestions = names;
+        //    lastNameSuggestions = names;
 
-            //taken from lastname text box change event
-            AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
-            collection.AddRange(lastNameSuggestions.ToArray());
-            LastNameTextBox.AutoCompleteCustomSource = collection;
-        }
+        //    //taken from lastname text box change event
+        //    AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
+        //    collection.AddRange(lastNameSuggestions.ToArray());
+        //    LastNameTextBox.AutoCompleteCustomSource = collection;
+        //}
 
         private void EnableButtonsBasedOnGrid()
         {
