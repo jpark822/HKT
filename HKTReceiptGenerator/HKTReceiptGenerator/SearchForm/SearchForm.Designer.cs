@@ -54,19 +54,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.SearchButton = new CustomControls.HKTStandardButton();
             this.ResultGrid = new System.Windows.Forms.DataGridView();
-            this.OpenTicketButton = new CustomControls.HKTStandardButton();
-            this.label11 = new System.Windows.Forms.Label();
-            this.StatusComboBox = new System.Windows.Forms.ComboBox();
-            this.DeleteTicketButton = new CustomControls.HKTStandardButton();
-            this.label12 = new System.Windows.Forms.Label();
-            this.PickedUpComboBox = new System.Windows.Forms.ComboBox();
-            this.CreateTicketWithUserBttn = new CustomControls.HKTStandardButton();
-            this.TailorComboBox = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.MarkAsDonePaidPickedUpBttn = new CustomControls.HKTStandardButton();
-            this.OrderIdTextBox = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.ExportToExcelButton = new CustomControls.HKTStandardButton();
             this.TicketIdCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FirstNameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LastNameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,6 +64,18 @@
             this.TotalPriceCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DepositCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BalanceCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OpenTicketButton = new CustomControls.HKTStandardButton();
+            this.label11 = new System.Windows.Forms.Label();
+            this.StatusComboBox = new System.Windows.Forms.ComboBox();
+            this.DeleteTicketButton = new CustomControls.HKTStandardButton();
+            this.label12 = new System.Windows.Forms.Label();
+            this.PickedUpComboBox = new System.Windows.Forms.ComboBox();
+            this.TailorComboBox = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.MarkAsDonePaidPickedUpBttn = new CustomControls.HKTStandardButton();
+            this.OrderIdTextBox = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.ExportToExcelButton = new CustomControls.HKTStandardButton();
             ((System.ComponentModel.ISupportInitialize)(this.ResultGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -310,172 +309,6 @@
             this.ResultGrid.Size = new System.Drawing.Size(1145, 466);
             this.ResultGrid.TabIndex = 22;
             // 
-            // OpenTicketButton
-            // 
-            this.OpenTicketButton.BackColor = System.Drawing.Color.Maroon;
-            this.OpenTicketButton.Font = new System.Drawing.Font("Trajan Pro", 14F);
-            this.OpenTicketButton.ForeColor = System.Drawing.Color.White;
-            this.OpenTicketButton.Location = new System.Drawing.Point(339, 502);
-            this.OpenTicketButton.Name = "OpenTicketButton";
-            this.OpenTicketButton.Size = new System.Drawing.Size(272, 56);
-            this.OpenTicketButton.TabIndex = 23;
-            this.OpenTicketButton.Text = "Open Ticket";
-            this.OpenTicketButton.UseVisualStyleBackColor = false;
-            this.OpenTicketButton.Click += new System.EventHandler(this.OpenTicketButton_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(54, 355);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(54, 16);
-            this.label11.TabIndex = 24;
-            this.label11.Text = "Status";
-            // 
-            // StatusComboBox
-            // 
-            this.StatusComboBox.AllowDrop = true;
-            this.StatusComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.StatusComboBox.Font = new System.Drawing.Font("Trajan Pro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StatusComboBox.FormattingEnabled = true;
-            this.StatusComboBox.Items.AddRange(new object[] {
-            "",
-            "Active",
-            "Done",
-            "Cancelled",
-            "In Progress"});
-            this.StatusComboBox.Location = new System.Drawing.Point(114, 346);
-            this.StatusComboBox.Name = "StatusComboBox";
-            this.StatusComboBox.Size = new System.Drawing.Size(184, 32);
-            this.StatusComboBox.TabIndex = 11;
-            this.StatusComboBox.SelectedIndexChanged += new System.EventHandler(this.StatusComboBox_SelectedIndexChanged);
-            // 
-            // DeleteTicketButton
-            // 
-            this.DeleteTicketButton.BackColor = System.Drawing.Color.Maroon;
-            this.DeleteTicketButton.Font = new System.Drawing.Font("Trajan Pro", 14F);
-            this.DeleteTicketButton.ForeColor = System.Drawing.Color.White;
-            this.DeleteTicketButton.Location = new System.Drawing.Point(1209, 502);
-            this.DeleteTicketButton.Name = "DeleteTicketButton";
-            this.DeleteTicketButton.Size = new System.Drawing.Size(275, 56);
-            this.DeleteTicketButton.TabIndex = 26;
-            this.DeleteTicketButton.Text = "Delete Ticket";
-            this.DeleteTicketButton.UseVisualStyleBackColor = false;
-            this.DeleteTicketButton.Click += new System.EventHandler(this.DeleteTicketButton_Click);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(28, 318);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(80, 16);
-            this.label12.TabIndex = 28;
-            this.label12.Text = "Picked Up";
-            // 
-            // PickedUpComboBox
-            // 
-            this.PickedUpComboBox.AllowDrop = true;
-            this.PickedUpComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.PickedUpComboBox.Font = new System.Drawing.Font("Trajan Pro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PickedUpComboBox.FormattingEnabled = true;
-            this.PickedUpComboBox.Items.AddRange(new object[] {
-            "",
-            "n/a",
-            "y",
-            "n"});
-            this.PickedUpComboBox.Location = new System.Drawing.Point(114, 309);
-            this.PickedUpComboBox.Name = "PickedUpComboBox";
-            this.PickedUpComboBox.Size = new System.Drawing.Size(62, 32);
-            this.PickedUpComboBox.TabIndex = 29;
-            // 
-            // CreateTicketWithUserBttn
-            // 
-            this.CreateTicketWithUserBttn.BackColor = System.Drawing.Color.Maroon;
-            this.CreateTicketWithUserBttn.Font = new System.Drawing.Font("Trajan Pro", 14F);
-            this.CreateTicketWithUserBttn.ForeColor = System.Drawing.Color.White;
-            this.CreateTicketWithUserBttn.Location = new System.Drawing.Point(630, 502);
-            this.CreateTicketWithUserBttn.Name = "CreateTicketWithUserBttn";
-            this.CreateTicketWithUserBttn.Size = new System.Drawing.Size(272, 56);
-            this.CreateTicketWithUserBttn.TabIndex = 30;
-            this.CreateTicketWithUserBttn.Text = "New Ticket";
-            this.CreateTicketWithUserBttn.UseVisualStyleBackColor = false;
-            this.CreateTicketWithUserBttn.Click += new System.EventHandler(this.CreateTicketWithUserBttn_Click);
-            // 
-            // TailorComboBox
-            // 
-            this.TailorComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.TailorComboBox.Font = new System.Drawing.Font("Trajan Pro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TailorComboBox.FormattingEnabled = true;
-            this.TailorComboBox.Items.AddRange(new object[] {
-            "",
-            "In House",
-            "Tinoy",
-            "Marcel",
-            "Ming",
-            "Hong",
-            "Felicia",
-            "Gloria",
-            "Measurements"});
-            this.TailorComboBox.Location = new System.Drawing.Point(114, 382);
-            this.TailorComboBox.Name = "TailorComboBox";
-            this.TailorComboBox.Size = new System.Drawing.Size(184, 32);
-            this.TailorComboBox.TabIndex = 31;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(9, 391);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(99, 16);
-            this.label13.TabIndex = 32;
-            this.label13.Text = "Tailor Name";
-            // 
-            // MarkAsDonePaidPickedUpBttn
-            // 
-            this.MarkAsDonePaidPickedUpBttn.BackColor = System.Drawing.Color.Maroon;
-            this.MarkAsDonePaidPickedUpBttn.Font = new System.Drawing.Font("Trajan Pro", 14F);
-            this.MarkAsDonePaidPickedUpBttn.ForeColor = System.Drawing.Color.White;
-            this.MarkAsDonePaidPickedUpBttn.Location = new System.Drawing.Point(920, 502);
-            this.MarkAsDonePaidPickedUpBttn.Name = "MarkAsDonePaidPickedUpBttn";
-            this.MarkAsDonePaidPickedUpBttn.Size = new System.Drawing.Size(272, 56);
-            this.MarkAsDonePaidPickedUpBttn.TabIndex = 33;
-            this.MarkAsDonePaidPickedUpBttn.Text = "Done/Paid/Picked Up";
-            this.MarkAsDonePaidPickedUpBttn.UseVisualStyleBackColor = false;
-            this.MarkAsDonePaidPickedUpBttn.Click += new System.EventHandler(this.MarkAsDonePaidPickedUpBttn_Click);
-            // 
-            // OrderIdTextBox
-            // 
-            this.OrderIdTextBox.Location = new System.Drawing.Point(114, 283);
-            this.OrderIdTextBox.Name = "OrderIdTextBox";
-            this.OrderIdTextBox.Size = new System.Drawing.Size(184, 20);
-            this.OrderIdTextBox.TabIndex = 34;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(41, 284);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(67, 16);
-            this.label14.TabIndex = 35;
-            this.label14.Text = "Order #";
-            // 
-            // ExportToExcelButton
-            // 
-            this.ExportToExcelButton.BackColor = System.Drawing.Color.Maroon;
-            this.ExportToExcelButton.Font = new System.Drawing.Font("Trajan Pro", 14F);
-            this.ExportToExcelButton.ForeColor = System.Drawing.Color.White;
-            this.ExportToExcelButton.Location = new System.Drawing.Point(12, 504);
-            this.ExportToExcelButton.Name = "ExportToExcelButton";
-            this.ExportToExcelButton.Size = new System.Drawing.Size(286, 54);
-            this.ExportToExcelButton.TabIndex = 36;
-            this.ExportToExcelButton.Text = "Export to Excel";
-            this.ExportToExcelButton.UseVisualStyleBackColor = false;
-            this.ExportToExcelButton.Click += new System.EventHandler(this.ExportToExcelButton_Click);
-            // 
             // TicketIdCol
             // 
             this.TicketIdCol.HeaderText = "Ticket #";
@@ -551,6 +384,159 @@
             this.BalanceCol.Name = "BalanceCol";
             this.BalanceCol.ReadOnly = true;
             // 
+            // OpenTicketButton
+            // 
+            this.OpenTicketButton.BackColor = System.Drawing.Color.Maroon;
+            this.OpenTicketButton.Font = new System.Drawing.Font("Trajan Pro", 14F);
+            this.OpenTicketButton.ForeColor = System.Drawing.Color.White;
+            this.OpenTicketButton.Location = new System.Drawing.Point(339, 502);
+            this.OpenTicketButton.Name = "OpenTicketButton";
+            this.OpenTicketButton.Size = new System.Drawing.Size(368, 56);
+            this.OpenTicketButton.TabIndex = 23;
+            this.OpenTicketButton.Text = "Open Ticket";
+            this.OpenTicketButton.UseVisualStyleBackColor = false;
+            this.OpenTicketButton.Click += new System.EventHandler(this.OpenTicketButton_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(54, 355);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(54, 16);
+            this.label11.TabIndex = 24;
+            this.label11.Text = "Status";
+            // 
+            // StatusComboBox
+            // 
+            this.StatusComboBox.AllowDrop = true;
+            this.StatusComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.StatusComboBox.Font = new System.Drawing.Font("Trajan Pro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StatusComboBox.FormattingEnabled = true;
+            this.StatusComboBox.Items.AddRange(new object[] {
+            "",
+            "Active",
+            "Done",
+            "Cancelled",
+            "In Progress"});
+            this.StatusComboBox.Location = new System.Drawing.Point(114, 346);
+            this.StatusComboBox.Name = "StatusComboBox";
+            this.StatusComboBox.Size = new System.Drawing.Size(184, 32);
+            this.StatusComboBox.TabIndex = 11;
+            this.StatusComboBox.SelectedIndexChanged += new System.EventHandler(this.StatusComboBox_SelectedIndexChanged);
+            // 
+            // DeleteTicketButton
+            // 
+            this.DeleteTicketButton.BackColor = System.Drawing.Color.Maroon;
+            this.DeleteTicketButton.Font = new System.Drawing.Font("Trajan Pro", 14F);
+            this.DeleteTicketButton.ForeColor = System.Drawing.Color.White;
+            this.DeleteTicketButton.Location = new System.Drawing.Point(1113, 504);
+            this.DeleteTicketButton.Name = "DeleteTicketButton";
+            this.DeleteTicketButton.Size = new System.Drawing.Size(371, 56);
+            this.DeleteTicketButton.TabIndex = 26;
+            this.DeleteTicketButton.Text = "Delete Ticket";
+            this.DeleteTicketButton.UseVisualStyleBackColor = false;
+            this.DeleteTicketButton.Click += new System.EventHandler(this.DeleteTicketButton_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(28, 318);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(80, 16);
+            this.label12.TabIndex = 28;
+            this.label12.Text = "Picked Up";
+            // 
+            // PickedUpComboBox
+            // 
+            this.PickedUpComboBox.AllowDrop = true;
+            this.PickedUpComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.PickedUpComboBox.Font = new System.Drawing.Font("Trajan Pro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PickedUpComboBox.FormattingEnabled = true;
+            this.PickedUpComboBox.Items.AddRange(new object[] {
+            "",
+            "n/a",
+            "y",
+            "n"});
+            this.PickedUpComboBox.Location = new System.Drawing.Point(114, 309);
+            this.PickedUpComboBox.Name = "PickedUpComboBox";
+            this.PickedUpComboBox.Size = new System.Drawing.Size(62, 32);
+            this.PickedUpComboBox.TabIndex = 29;
+            // 
+            // TailorComboBox
+            // 
+            this.TailorComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TailorComboBox.Font = new System.Drawing.Font("Trajan Pro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TailorComboBox.FormattingEnabled = true;
+            this.TailorComboBox.Items.AddRange(new object[] {
+            "",
+            "In House",
+            "Tinoy",
+            "Marcel",
+            "Ming",
+            "Hong",
+            "Felicia",
+            "Gloria",
+            "Measurements"});
+            this.TailorComboBox.Location = new System.Drawing.Point(114, 382);
+            this.TailorComboBox.Name = "TailorComboBox";
+            this.TailorComboBox.Size = new System.Drawing.Size(184, 32);
+            this.TailorComboBox.TabIndex = 31;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(9, 391);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(99, 16);
+            this.label13.TabIndex = 32;
+            this.label13.Text = "Tailor Name";
+            // 
+            // MarkAsDonePaidPickedUpBttn
+            // 
+            this.MarkAsDonePaidPickedUpBttn.BackColor = System.Drawing.Color.Maroon;
+            this.MarkAsDonePaidPickedUpBttn.Font = new System.Drawing.Font("Trajan Pro", 14F);
+            this.MarkAsDonePaidPickedUpBttn.ForeColor = System.Drawing.Color.White;
+            this.MarkAsDonePaidPickedUpBttn.Location = new System.Drawing.Point(726, 502);
+            this.MarkAsDonePaidPickedUpBttn.Name = "MarkAsDonePaidPickedUpBttn";
+            this.MarkAsDonePaidPickedUpBttn.Size = new System.Drawing.Size(368, 56);
+            this.MarkAsDonePaidPickedUpBttn.TabIndex = 33;
+            this.MarkAsDonePaidPickedUpBttn.Text = "Done/Paid/Picked Up";
+            this.MarkAsDonePaidPickedUpBttn.UseVisualStyleBackColor = false;
+            this.MarkAsDonePaidPickedUpBttn.Click += new System.EventHandler(this.MarkAsDonePaidPickedUpBttn_Click);
+            // 
+            // OrderIdTextBox
+            // 
+            this.OrderIdTextBox.Location = new System.Drawing.Point(114, 283);
+            this.OrderIdTextBox.Name = "OrderIdTextBox";
+            this.OrderIdTextBox.Size = new System.Drawing.Size(184, 20);
+            this.OrderIdTextBox.TabIndex = 34;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(41, 284);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(67, 16);
+            this.label14.TabIndex = 35;
+            this.label14.Text = "Order #";
+            // 
+            // ExportToExcelButton
+            // 
+            this.ExportToExcelButton.BackColor = System.Drawing.Color.Maroon;
+            this.ExportToExcelButton.Font = new System.Drawing.Font("Trajan Pro", 14F);
+            this.ExportToExcelButton.ForeColor = System.Drawing.Color.White;
+            this.ExportToExcelButton.Location = new System.Drawing.Point(12, 504);
+            this.ExportToExcelButton.Name = "ExportToExcelButton";
+            this.ExportToExcelButton.Size = new System.Drawing.Size(286, 54);
+            this.ExportToExcelButton.TabIndex = 36;
+            this.ExportToExcelButton.Text = "Export to Excel";
+            this.ExportToExcelButton.UseVisualStyleBackColor = false;
+            this.ExportToExcelButton.Click += new System.EventHandler(this.ExportToExcelButton_Click);
+            // 
             // SearchForm
             // 
             this.AcceptButton = this.SearchButton;
@@ -564,7 +550,6 @@
             this.Controls.Add(this.MarkAsDonePaidPickedUpBttn);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.TailorComboBox);
-            this.Controls.Add(this.CreateTicketWithUserBttn);
             this.Controls.Add(this.PickedUpComboBox);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.DeleteTicketButton);
@@ -632,7 +617,6 @@
         private CustomControls.HKTStandardButton DeleteTicketButton;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox PickedUpComboBox;
-        private CustomControls.HKTStandardButton CreateTicketWithUserBttn;
         private System.Windows.Forms.ComboBox TailorComboBox;
         private System.Windows.Forms.Label label13;
         private CustomControls.HKTStandardButton MarkAsDonePaidPickedUpBttn;

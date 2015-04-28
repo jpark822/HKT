@@ -111,8 +111,8 @@ namespace HKTReceiptGenerator
 
         private void NewTicketBttn_Click(object sender, EventArgs e)
         {
-            AlterationForm altForm = new AlterationForm();
-            altForm.Show();
+            Customer.CustomerSearch customerForm = new Customer.CustomerSearch();
+            customerForm.Show();
         }
 
         private void MainForm_Load(object sender, EventArgs e)

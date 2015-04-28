@@ -1,0 +1,5 @@
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\CustomControls\bin\Release\CustomControls.dll
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\CustomControls\bin\Release\CustomControls.pdb
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\CustomControls\obj\Release\CustomControls.csprojResolveAssemblyReference.cache
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\CustomControls\obj\Release\CustomControls.dll
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\CustomControls\obj\Release\CustomControls.pdb

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.NewTicketBttn = new CustomControls.HKTStandardButton();
+            this.CustomerButton = new CustomControls.HKTStandardButton();
             this.SearchButton = new CustomControls.HKTStandardButton();
             this.AdminStatsButton = new CustomControls.HKTStandardButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -38,18 +38,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // NewTicketBttn
+            // CustomerButton
             // 
-            this.NewTicketBttn.BackColor = System.Drawing.Color.Maroon;
-            this.NewTicketBttn.Font = new System.Drawing.Font("Trajan Pro", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NewTicketBttn.ForeColor = System.Drawing.Color.White;
-            this.NewTicketBttn.Location = new System.Drawing.Point(45, 445);
-            this.NewTicketBttn.Name = "NewTicketBttn";
-            this.NewTicketBttn.Size = new System.Drawing.Size(197, 100);
-            this.NewTicketBttn.TabIndex = 0;
-            this.NewTicketBttn.Text = "New Ticket";
-            this.NewTicketBttn.UseVisualStyleBackColor = false;
-            this.NewTicketBttn.Click += new System.EventHandler(this.NewTicketBttn_Click);
+            this.CustomerButton.BackColor = System.Drawing.Color.Maroon;
+            this.CustomerButton.Font = new System.Drawing.Font("Trajan Pro", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CustomerButton.ForeColor = System.Drawing.Color.White;
+            this.CustomerButton.Location = new System.Drawing.Point(45, 445);
+            this.CustomerButton.Name = "CustomerButton";
+            this.CustomerButton.Size = new System.Drawing.Size(197, 100);
+            this.CustomerButton.TabIndex = 0;
+            this.CustomerButton.Text = "Customers";
+            this.CustomerButton.UseVisualStyleBackColor = false;
+            this.CustomerButton.Click += new System.EventHandler(this.NewTicketBttn_Click);
             // 
             // SearchButton
             // 
@@ -60,7 +60,7 @@
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(197, 100);
             this.SearchButton.TabIndex = 1;
-            this.SearchButton.Text = "Search";
+            this.SearchButton.Text = "Ticket Search";
             this.SearchButton.UseVisualStyleBackColor = false;
             this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
@@ -106,7 +106,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.AdminStatsButton);
             this.Controls.Add(this.SearchButton);
-            this.Controls.Add(this.NewTicketBttn);
+            this.Controls.Add(this.CustomerButton);
             this.Controls.Add(this.pictureBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -121,7 +121,7 @@
 
         #endregion
 
-        private CustomControls.HKTStandardButton NewTicketBttn;
+        private CustomControls.HKTStandardButton CustomerButton;
         private CustomControls.HKTStandardButton SearchButton;
         private CustomControls.HKTStandardButton AdminStatsButton;
         private System.Windows.Forms.PictureBox pictureBox1;

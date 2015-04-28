@@ -297,14 +297,12 @@ namespace HKTReceiptGenerator
             {
                 OpenTicketButton.Enabled = false;
                 DeleteTicketButton.Enabled = false;
-                CreateTicketWithUserBttn.Enabled = false;
                 MarkAsDonePaidPickedUpBttn.Enabled = false;
             }
             else
             {
                 OpenTicketButton.Enabled = true;
                 DeleteTicketButton.Enabled = true;
-                CreateTicketWithUserBttn.Enabled = true;
                 MarkAsDonePaidPickedUpBttn.Enabled = true;
             }
         }

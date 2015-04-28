@@ -24,11 +24,11 @@ namespace DomainModel
 
         private void Initialize()
         {
-            server = "hktickets.promorpheus.com";
-            database = "hktickets";
-            uid = "hktickets";
-            password = "hkticketspwd";
-            port = "3306";
+            server = "74.117.152.136";
+            database = "wasd_jay";
+            uid = "wasd_admin";
+            password = "daniel12";
+            port = "";
             string connectionString;
             connectionString = "Server=" + server + ";" + "Database=" + database + ";" + "Uid=" + uid + ";" + "Pwd=" + password + ";" + "Port=" + port + ";";
 

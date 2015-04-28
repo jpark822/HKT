@@ -93,6 +93,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.subtotalLabel = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.EditCustomerButton = new CustomControls.HKTStandardButton();
             ((System.ComponentModel.ISupportInitialize)(this.AlterationGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -189,6 +190,7 @@
             // FirstNameTextBox
             // 
             this.FirstNameTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.FirstNameTextBox.Enabled = false;
             this.FirstNameTextBox.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FirstNameTextBox.Location = new System.Drawing.Point(177, 44);
             this.FirstNameTextBox.Name = "FirstNameTextBox";
@@ -199,6 +201,7 @@
             // AddressTextBox
             // 
             this.AddressTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.AddressTextBox.Enabled = false;
             this.AddressTextBox.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddressTextBox.Location = new System.Drawing.Point(83, 77);
             this.AddressTextBox.Name = "AddressTextBox";
@@ -209,6 +212,7 @@
             // CityTextBox
             // 
             this.CityTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.CityTextBox.Enabled = false;
             this.CityTextBox.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CityTextBox.Location = new System.Drawing.Point(54, 110);
             this.CityTextBox.Name = "CityTextBox";
@@ -219,6 +223,7 @@
             // StateTextBox
             // 
             this.StateTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.StateTextBox.Enabled = false;
             this.StateTextBox.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StateTextBox.Location = new System.Drawing.Point(415, 110);
             this.StateTextBox.Name = "StateTextBox";
@@ -229,6 +234,7 @@
             // ZipTextBox
             // 
             this.ZipTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.ZipTextBox.Enabled = false;
             this.ZipTextBox.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ZipTextBox.Location = new System.Drawing.Point(632, 110);
             this.ZipTextBox.Name = "ZipTextBox";
@@ -239,6 +245,7 @@
             // PhoneTextBox
             // 
             this.PhoneTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.PhoneTextBox.Enabled = false;
             this.PhoneTextBox.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PhoneTextBox.Location = new System.Drawing.Point(101, 144);
             this.PhoneTextBox.Name = "PhoneTextBox";
@@ -250,6 +257,7 @@
             // EmailTextBox
             // 
             this.EmailTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.EmailTextBox.Enabled = false;
             this.EmailTextBox.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmailTextBox.Location = new System.Drawing.Point(72, 178);
             this.EmailTextBox.Name = "EmailTextBox";
@@ -378,6 +386,7 @@
             // LastNameTextBox
             // 
             this.LastNameTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.LastNameTextBox.Enabled = false;
             this.LastNameTextBox.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LastNameTextBox.Location = new System.Drawing.Point(584, 44);
             this.LastNameTextBox.Name = "LastNameTextBox";
@@ -388,6 +397,7 @@
             // MiddleNameTextBox
             // 
             this.MiddleNameTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.MiddleNameTextBox.Enabled = false;
             this.MiddleNameTextBox.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MiddleNameTextBox.Location = new System.Drawing.Point(452, 44);
             this.MiddleNameTextBox.Name = "MiddleNameTextBox";
@@ -431,7 +441,7 @@
             // 
             this.TicketNumberTextLabel.AutoSize = true;
             this.TicketNumberTextLabel.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TicketNumberTextLabel.Location = new System.Drawing.Point(10, 15);
+            this.TicketNumberTextLabel.Location = new System.Drawing.Point(10, 14);
             this.TicketNumberTextLabel.Name = "TicketNumberTextLabel";
             this.TicketNumberTextLabel.Size = new System.Drawing.Size(75, 21);
             this.TicketNumberTextLabel.TabIndex = 34;
@@ -441,7 +451,7 @@
             // 
             this.TicketNumberLabel.AutoSize = true;
             this.TicketNumberLabel.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TicketNumberLabel.Location = new System.Drawing.Point(83, 15);
+            this.TicketNumberLabel.Location = new System.Drawing.Point(83, 14);
             this.TicketNumberLabel.Name = "TicketNumberLabel";
             this.TicketNumberLabel.Size = new System.Drawing.Size(31, 21);
             this.TicketNumberLabel.TabIndex = 35;
@@ -646,6 +656,7 @@
             // 
             // TitleComboBox
             // 
+            this.TitleComboBox.Enabled = false;
             this.TitleComboBox.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TitleComboBox.FormattingEnabled = true;
             this.TitleComboBox.Items.AddRange(new object[] {
@@ -662,9 +673,9 @@
             // OrderIdTextBox
             // 
             this.OrderIdTextBox.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OrderIdTextBox.Location = new System.Drawing.Point(532, 12);
+            this.OrderIdTextBox.Location = new System.Drawing.Point(210, 11);
             this.OrderIdTextBox.Name = "OrderIdTextBox";
-            this.OrderIdTextBox.Size = new System.Drawing.Size(287, 29);
+            this.OrderIdTextBox.Size = new System.Drawing.Size(366, 29);
             this.OrderIdTextBox.TabIndex = 52;
             this.OrderIdTextBox.Leave += new System.EventHandler(this.OrderIdTextBox_OnLeave);
             // 
@@ -672,7 +683,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(453, 15);
+            this.label7.Location = new System.Drawing.Point(131, 14);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(73, 21);
             this.label7.TabIndex = 53;
@@ -735,6 +746,19 @@
             this.label14.TabIndex = 57;
             this.label14.Text = "Subtotal:";
             // 
+            // EditCustomerButton
+            // 
+            this.EditCustomerButton.BackColor = System.Drawing.Color.Maroon;
+            this.EditCustomerButton.Font = new System.Drawing.Font("Trajan Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditCustomerButton.ForeColor = System.Drawing.Color.White;
+            this.EditCustomerButton.Location = new System.Drawing.Point(584, 11);
+            this.EditCustomerButton.Name = "EditCustomerButton";
+            this.EditCustomerButton.Size = new System.Drawing.Size(233, 29);
+            this.EditCustomerButton.TabIndex = 59;
+            this.EditCustomerButton.Text = "Edit Customer";
+            this.EditCustomerButton.UseVisualStyleBackColor = false;
+            this.EditCustomerButton.Click += new System.EventHandler(this.EditCustomerButton_Click);
+            // 
             // AlterationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -742,6 +766,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(832, 827);
+            this.Controls.Add(this.EditCustomerButton);
             this.Controls.Add(this.subtotalLabel);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.taxLabel);
@@ -868,5 +893,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label subtotalLabel;
         private System.Windows.Forms.Label label14;
+        private CustomControls.HKTStandardButton EditCustomerButton;
     }
 }

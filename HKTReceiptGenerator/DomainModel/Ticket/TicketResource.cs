@@ -30,5 +30,6 @@ namespace DomainModel.Ticket
         public String TailorName { get; set; }
         public String OrderId { get; set; }
         public DateTime? CompletedDate { get; set; }
+        public int CustomerID { get; set; }
     }
 }

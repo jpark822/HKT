@@ -19,7 +19,8 @@ using System.Drawing.Printing;
 using HKTReceiptGenerator.AddAlterationModal;
 using DomainModel.Ticket;
 using DomainModel.TicketAlterations;
-
+using DomainModel.Customer;
+using HKTReceiptGenerator.Customer;
 
 namespace HKTReceiptGenerator
 {
@@ -29,6 +30,8 @@ namespace HKTReceiptGenerator
         private const double taxPercentage = 1.07;
         private int ticketID;
         private String previousStatus;
+        private CustomerResource customer;
+        private int customerId = 0;
 
         public delegate void ClothingSelectedCallback(TypeOfClothing choice);
         public delegate void ArticleSelectedCallback(AlterationModalCallbackArguments args);
@@ -44,15 +47,29 @@ namespace HKTReceiptGenerator
             Other
         }
 
-        public AlterationForm()
+        public AlterationForm(CustomerResource customer)
         {
             SetupForm();
+            this.customer = customer;
+            customerId = customer.CustomerId;
             isNewAlteration = true;
             TicketNumberLabel.Hide();
             DateInPicker.Value = DateTime.Today;
             DateReadyPicker.Value = DateTime.Today.AddDays(7);
             previousStatus = "a";
             NewTicketWithCustomerBttn.Enabled = false;
+
+            TitleComboBox.Text = customer.Title;
+            FirstNameTextBox.Text = customer.FirstName;
+            MiddleNameTextBox.Text = customer.MiddleName;
+            LastNameTextBox.Text = customer.LastName;
+            AddressTextBox.Text = customer.Address;
+            CityTextBox.Text = customer.City;
+            StateTextBox.Text = customer.State;
+            ZipTextBox.Text = customer.Zip;
+            PhoneTextBox.Text = customer.Telephone;
+            EmailTextBox.Text = customer.Email; 
+
         }
 
         public AlterationForm(TicketResource ticketResource)
@@ -72,6 +89,8 @@ namespace HKTReceiptGenerator
                 TicketNumberLabel.Text = ticketResource.TicketId.ToString();
                 previousStatus = ticketResource.Status ?? "a";
             }
+
+            customerId = ticketResource.CustomerID;
 
             TitleComboBox.Text = ticketResource.Title ?? "";
             FirstNameTextBox.Text = ticketResource.FirstName ?? "";
@@ -296,11 +315,10 @@ namespace HKTReceiptGenerator
                 MessageBox.Show("You need to save this ticket before you can create a new ticket with this customer!");
                 return;
             }
-
-            TicketRepository ticketRepo = new TicketRepository();
-            TicketResource resource = ticketRepo.GetCustomerInfoBasedOnTicketId(ticketID);
-            AlterationForm alterationForm = new AlterationForm(resource);
-            alterationForm.Show();
+            CustomerRepository repo = new CustomerRepository();
+            CustomerResource resource = repo.getCustomerById(customerId);
+            AlterationForm form = new AlterationForm(resource);
+            form.Show();
         }
 
 
@@ -449,7 +467,7 @@ namespace HKTReceiptGenerator
                 completedDate = DateTime.Now;
             }
 
-            return TicketFactory.CreateTicket(ticketID, status, title, firstName, lastname, middleName, address, city, state, zip, telephone, email, comments, pickedUp, dateIn, dateReady, totalPrice, deposit, tailorName, orderId, completedDate);
+            return TicketFactory.CreateTicket(ticketID, status, title, firstName, lastname, middleName, address, city, state, zip, telephone, email, comments, pickedUp, dateIn, dateReady, totalPrice, deposit, tailorName, orderId, completedDate, customerId);
         }
 
         private List<Dictionary<String, object>> CollectAlterationGridData()
@@ -499,21 +517,21 @@ namespace HKTReceiptGenerator
 
         private bool validateForm()
         {
-            if (FirstNameTextBox.Text == "")
-            {
-                MessageBox.Show("You didn't specify a first name! Please enter one and try again");
-                return false;
-            }
-            else if (LastNameTextBox.Text == "")
-            {
-                MessageBox.Show("You didn't specify a last name! Please enter one and try again");
-                return false;
-            }
-            else if (EmailTextBox.Text == "")
-            {
-                MessageBox.Show("You didn't specify an email address! Please enter one and try again");
-                return false;
-            }
+            //if (FirstNameTextBox.Text == "")
+            //{
+            //    MessageBox.Show("You didn't specify a first name! Please enter one and try again");
+            //    return false;
+            //}
+            //else if (LastNameTextBox.Text == "")
+            //{
+            //    MessageBox.Show("You didn't specify a last name! Please enter one and try again");
+            //    return false;
+            //}
+            //else if (EmailTextBox.Text == "")
+            //{
+            //    MessageBox.Show("You didn't specify an email address! Please enter one and try again");
+            //    return false;
+            //}
             return true;
         }
 
@@ -782,6 +800,14 @@ namespace HKTReceiptGenerator
         private void OrderIdTextBox_OnLeave(object sender, EventArgs e)
         {
             OrderIdTextBox.Text = OrderIdTextBox.Text.Trim();
+        }
+
+        private void EditCustomerButton_Click(object sender, EventArgs e)
+        {
+            CustomerRepository repo = new CustomerRepository();
+            CustomerResource resource = repo.getCustomerById(customerId);
+            CustomerProfile profile = new CustomerProfile(resource);
+            profile.Show();
         }
 
         

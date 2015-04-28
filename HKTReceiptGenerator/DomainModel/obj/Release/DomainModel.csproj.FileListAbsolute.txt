@@ -1,0 +1,11 @@
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\DomainModel\bin\Release\DomainModel.dll.config
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\DomainModel\bin\Release\DomainModel.dll
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\DomainModel\bin\Release\DomainModel.pdb
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\DomainModel\bin\Release\MySql.Data.dll
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\DomainModel\bin\Release\System.Data.SQLite.dll
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\DomainModel\bin\Release\System.Data.SQLite.xml
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\DomainModel\obj\Release\DomainModel.csprojResolveAssemblyReference.cache
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\DomainModel\obj\Release\DomainModel.Properties.Resources.resources
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\DomainModel\obj\Release\DomainModel.csproj.GenerateResource.Cache
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\DomainModel\obj\Release\DomainModel.dll
+C:\Users\Jay\Documents\HKT\HKTReceiptGenerator\DomainModel\obj\Release\DomainModel.pdb
