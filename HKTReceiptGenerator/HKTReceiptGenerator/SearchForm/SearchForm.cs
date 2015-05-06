@@ -192,8 +192,7 @@ namespace HKTReceiptGenerator
             }
 
             //TODO get Neil's feedback on what behavior he prefers
-            //EnableButtonsBasedOnGrid();
-            this.Close();
+            //this.Close();
          }
 
         private void DeleteTicketButton_Click(object sender, EventArgs e)

@@ -13,7 +13,9 @@ namespace HKTReceiptGenerator.Customer
 {
     public partial class CustomerProfile : Form
     {
+        private AlterationForm.CustomerProfileDidFinishEditing alterationFormCallback;
         private CustomerResource customer;
+
         public CustomerProfile(CustomerResource customer)
         {
             InitializeComponent();
@@ -29,7 +31,11 @@ namespace HKTReceiptGenerator.Customer
             ZipTextBox.Text = customer.Zip;
             PhoneTextBox.Text = customer.Telephone;
             EmailTextBox.Text = customer.Email;
+        }
 
+        public CustomerProfile(CustomerResource customer, AlterationForm.CustomerProfileDidFinishEditing alterationCallback) : this(customer)
+        {
+            alterationFormCallback = alterationCallback;
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
@@ -52,6 +58,10 @@ namespace HKTReceiptGenerator.Customer
             try
             {
                 repo.UpdateCustomer(customer);
+                if (alterationFormCallback != null)
+                {
+                    alterationFormCallback(customer);
+                }
                 this.Close();
             }
             catch
@@ -66,6 +76,12 @@ namespace HKTReceiptGenerator.Customer
             form.Show();
             this.Close();
 
+        }
+
+        private void MeasurementsButton_Click(object sender, EventArgs e)
+        {
+            CustomerMeasurementsForm measurements = new CustomerMeasurementsForm(customer);
+            measurements.Show();
         }
     }
 }

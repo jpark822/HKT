@@ -52,6 +52,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.CreateTicketButton = new CustomControls.HKTStandardButton();
             this.SaveButton = new CustomControls.HKTStandardButton();
+            this.MeasurementsButton = new CustomControls.HKTStandardButton();
             this.SuspendLayout();
             // 
             // label8
@@ -274,9 +275,9 @@
             this.CreateTicketButton.BackColor = System.Drawing.Color.Maroon;
             this.CreateTicketButton.Font = new System.Drawing.Font("Trajan Pro", 14F);
             this.CreateTicketButton.ForeColor = System.Drawing.Color.White;
-            this.CreateTicketButton.Location = new System.Drawing.Point(461, 436);
+            this.CreateTicketButton.Location = new System.Drawing.Point(584, 425);
             this.CreateTicketButton.Name = "CreateTicketButton";
-            this.CreateTicketButton.Size = new System.Drawing.Size(383, 143);
+            this.CreateTicketButton.Size = new System.Drawing.Size(260, 116);
             this.CreateTicketButton.TabIndex = 78;
             this.CreateTicketButton.Text = "New Ticket";
             this.CreateTicketButton.UseVisualStyleBackColor = false;
@@ -287,20 +288,34 @@
             this.SaveButton.BackColor = System.Drawing.Color.Maroon;
             this.SaveButton.Font = new System.Drawing.Font("Trajan Pro", 14F);
             this.SaveButton.ForeColor = System.Drawing.Color.White;
-            this.SaveButton.Location = new System.Drawing.Point(37, 436);
+            this.SaveButton.Location = new System.Drawing.Point(23, 425);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(384, 143);
+            this.SaveButton.Size = new System.Drawing.Size(261, 116);
             this.SaveButton.TabIndex = 79;
             this.SaveButton.Text = "Save and Close";
             this.SaveButton.UseVisualStyleBackColor = false;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
+            // 
+            // MeasurementsButton
+            // 
+            this.MeasurementsButton.BackColor = System.Drawing.Color.Maroon;
+            this.MeasurementsButton.Font = new System.Drawing.Font("Trajan Pro", 14F);
+            this.MeasurementsButton.ForeColor = System.Drawing.Color.White;
+            this.MeasurementsButton.Location = new System.Drawing.Point(305, 425);
+            this.MeasurementsButton.Name = "MeasurementsButton";
+            this.MeasurementsButton.Size = new System.Drawing.Size(260, 116);
+            this.MeasurementsButton.TabIndex = 80;
+            this.MeasurementsButton.Text = "Measurements";
+            this.MeasurementsButton.UseVisualStyleBackColor = false;
+            this.MeasurementsButton.Click += new System.EventHandler(this.MeasurementsButton_Click);
             // 
             // CustomerProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(871, 628);
+            this.ClientSize = new System.Drawing.Size(871, 572);
+            this.Controls.Add(this.MeasurementsButton);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.CreateTicketButton);
             this.Controls.Add(this.label8);
@@ -358,5 +373,6 @@
         private System.Windows.Forms.Label label1;
         private CustomControls.HKTStandardButton CreateTicketButton;
         private CustomControls.HKTStandardButton SaveButton;
+        private CustomControls.HKTStandardButton MeasurementsButton;
     }
 }

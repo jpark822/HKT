@@ -117,6 +117,12 @@
     <Compile Include="Customer\AddCustomerForm.Designer.cs">
       <DependentUpon>AddCustomerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customer\CustomerMeasurementsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\CustomerMeasurementsForm.Designer.cs">
+      <DependentUpon>CustomerMeasurementsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customer\CustomerProfile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\AddCustomerForm.resx">
       <DependentUpon>AddCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\CustomerMeasurementsForm.resx">
+      <DependentUpon>CustomerMeasurementsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\CustomerProfile.resx">
       <DependentUpon>CustomerProfile.cs</DependentUpon>

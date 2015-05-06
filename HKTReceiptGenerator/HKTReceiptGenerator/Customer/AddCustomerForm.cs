@@ -31,22 +31,25 @@ namespace HKTReceiptGenerator.Customer
                 return;
             }
             CustomerResource customer = new CustomerResource();
-            customer.Title = TitleComboBox.Text;
-            customer.FirstName = FirstNameTextBox.Text;
-            customer.MiddleName = MiddleNameTextBox.Text;
-            customer.LastName = LastNameTextBox.Text;
-            customer.Address = AddressTextBox.Text;
-            customer.Address2 = Address2TextBox.Text;
-            customer.City = CityTextBox.Text;
-            customer.State = StateTextBox.Text;
+            customer.Title = TitleComboBox.Text ?? "";
+            customer.FirstName = FirstNameTextBox.Text ?? "";
+            customer.MiddleName = MiddleNameTextBox.Text ?? "";
+            customer.LastName = LastNameTextBox.Text ?? "";
+            customer.Address = AddressTextBox.Text ?? "";
+            customer.Address2 = Address2TextBox.Text ?? "";
+            customer.City = CityTextBox.Text ?? "";
+            customer.State = StateTextBox.Text ?? "";
             customer.Zip = ZipTextBox.Text;
-            customer.Telephone = PhoneTextBox.Text;
-            customer.Email = EmailTextBox.Text;
+            customer.Telephone = PhoneTextBox.Text ?? "";
+            customer.Email = EmailTextBox.Text ?? "";
 
             CustomerRepository repo = new CustomerRepository();
             try
             {
-                repo.InsertCustomer(customer);
+                int custId = repo.InsertCustomer(customer);
+                customer.CustomerId = custId;
+                CustomerProfile profile = new CustomerProfile(customer);
+                profile.Show();
                 this.Close();
             }
             catch

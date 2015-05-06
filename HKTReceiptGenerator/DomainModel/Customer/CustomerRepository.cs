@@ -53,7 +53,7 @@ namespace DomainModel.Customer
             return customerToReturn;
         }
 
-        public void InsertCustomer(CustomerResource customerResource)
+        public int InsertCustomer(CustomerResource customerResource)
         {
             DBConnector connector = new DBConnector();
 
@@ -74,16 +74,30 @@ namespace DomainModel.Customer
             insertCommand.Parameters.AddWithValue("@phone", customerResource.Telephone);
             insertCommand.Parameters.AddWithValue("@email", customerResource.Email);
             orderIndex++;
+
+            MySqlCommand getLastRowCommand = new MySqlCommand();
+            getLastRowCommand.Connection = connector.connection;
+            getLastRowCommand.CommandText = "SELECT id FROM Customer ORDER BY id DESC LIMIT 1;";
+
             try
             {
                 insertCommand.ExecuteNonQuery();
+                MySqlDataReader reader = getLastRowCommand.ExecuteReader();
+                int customerId = 0;
+                while (reader.Read())
+                {
+                    customerId = Convert.ToInt32(reader["id"]);
+                }
+                reader.Close();
+                connector.CloseConnection();
+                return customerId;
             }
             catch (MySqlException ex)
             {
                 MessageBox.Show("There was an error. Contact Jay with this message: " + ex.Message + " error code: " + ex.Number);
             }
-
-            connector.CloseConnection();
+            return -1;
+            
         }
 
         public void UpdateCustomer(CustomerResource customerResource)

@@ -62,19 +62,18 @@ namespace DomainModel.Ticket
             insertCommand.Parameters.AddWithValue("@CustomerId", ticket.CustomerID);
             insertCommand.Parameters.AddWithValue("@completed_date", ConvertDateTimeToUTCString(ticket.CompletedDate));
 
-            //DBConnector connector2 = new DBConnector();
-            MySqlCommand insertCustomerCommand = new MySqlCommand();
-            insertCustomerCommand.Connection = connector.connection;
-            insertCustomerCommand.CommandText = @"INSERT into Customer (first_name, middle_name, last_name, address, city, state, zip, phone, email) values (@first_name, @middle_name, @last_name, @address, @city, @state, @zip, @phone, @email)";
-            insertCustomerCommand.Parameters.AddWithValue("@first_name", ticket.FirstName);
-            insertCustomerCommand.Parameters.AddWithValue("@middle_name", ticket.MiddleName);
-            insertCustomerCommand.Parameters.AddWithValue("@last_name", ticket.LastName);
-            insertCustomerCommand.Parameters.AddWithValue("@address", ticket.Address);
-            insertCustomerCommand.Parameters.AddWithValue("@city", ticket.City);
-            insertCustomerCommand.Parameters.AddWithValue("@state", ticket.State);
-            insertCustomerCommand.Parameters.AddWithValue("@zip", ticket.Zip);
-            insertCustomerCommand.Parameters.AddWithValue("@phone", ticket.Telephone);
-            insertCustomerCommand.Parameters.AddWithValue("@email", ticket.Email);
+            //MySqlCommand insertCustomerCommand = new MySqlCommand();
+            //insertCustomerCommand.Connection = connector.connection;
+            //insertCustomerCommand.CommandText = @"INSERT into Customer (first_name, middle_name, last_name, address, city, state, zip, phone, email) values (@first_name, @middle_name, @last_name, @address, @city, @state, @zip, @phone, @email)";
+            //insertCustomerCommand.Parameters.AddWithValue("@first_name", ticket.FirstName);
+            //insertCustomerCommand.Parameters.AddWithValue("@middle_name", ticket.MiddleName);
+            //insertCustomerCommand.Parameters.AddWithValue("@last_name", ticket.LastName);
+            //insertCustomerCommand.Parameters.AddWithValue("@address", ticket.Address);
+            //insertCustomerCommand.Parameters.AddWithValue("@city", ticket.City);
+            //insertCustomerCommand.Parameters.AddWithValue("@state", ticket.State);
+            //insertCustomerCommand.Parameters.AddWithValue("@zip", ticket.Zip);
+            //insertCustomerCommand.Parameters.AddWithValue("@phone", ticket.Telephone);
+            //insertCustomerCommand.Parameters.AddWithValue("@email", ticket.Email);
 
             //race condition prone. First on list to convert to stored proc
             MySqlCommand getLastRowCommand = new MySqlCommand();
@@ -83,7 +82,7 @@ namespace DomainModel.Ticket
             try
             {
                 insertCommand.ExecuteNonQuery();
-                insertCustomerCommand.ExecuteNonQuery();
+                //insertCustomerCommand.ExecuteNonQuery();
                 MySqlDataReader reader = getLastRowCommand.ExecuteReader();
                 int ticketId = 0;
                 while (reader.Read())

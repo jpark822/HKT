@@ -35,6 +35,8 @@ namespace HKTReceiptGenerator
 
         public delegate void ClothingSelectedCallback(TypeOfClothing choice);
         public delegate void ArticleSelectedCallback(AlterationModalCallbackArguments args);
+        public delegate void CustomerProfileDidFinishEditing(CustomerResource customer);
+
         private String stringToPrint;
 
         public enum TypeOfClothing
@@ -806,12 +808,23 @@ namespace HKTReceiptGenerator
         {
             CustomerRepository repo = new CustomerRepository();
             CustomerResource resource = repo.getCustomerById(customerId);
-            CustomerProfile profile = new CustomerProfile(resource);
+            CustomerProfile profile = new CustomerProfile(resource, CustomerProfileFinishedEditing);
             profile.Show();
         }
 
+        private void CustomerProfileFinishedEditing(CustomerResource customerResource)
+        {
+            TitleComboBox.Text = customerResource.Title;
+            FirstNameTextBox.Text = customerResource.FirstName;
+            MiddleNameTextBox.Text = customerResource.MiddleName;
+            LastNameTextBox.Text = customerResource.LastName;
+            AddressTextBox.Text = customerResource.Address;
+            CityTextBox.Text = customerResource.City;
+            StateTextBox.Text = customerResource.State;
+            ZipTextBox.Text = customerResource.Zip;
+            PhoneTextBox.Text = customerResource.Telephone;
+            EmailTextBox.Text = customerResource.Email; 
+        }
         
-
- 
     }
 }
