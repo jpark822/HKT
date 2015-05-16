@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AlterationForm));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -94,6 +94,7 @@
             this.subtotalLabel = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.EditCustomerButton = new CustomControls.HKTStandardButton();
+            this.SaveButton = new CustomControls.HKTStandardButton();
             ((System.ComponentModel.ISupportInitialize)(this.AlterationGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -286,14 +287,14 @@
             // AlterationGrid
             // 
             this.AlterationGrid.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("HelveticaNeueLT Pro 55 Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AlterationGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("HelveticaNeueLT Pro 55 Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AlterationGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.AlterationGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AlterationGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.quantityCol,
@@ -315,8 +316,8 @@
             // 
             // quantityCol
             // 
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quantityCol.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quantityCol.DefaultCellStyle = dataGridViewCellStyle12;
             this.quantityCol.HeaderText = "#";
             this.quantityCol.Name = "quantityCol";
             this.quantityCol.Width = 40;
@@ -324,25 +325,25 @@
             // descriptionCol
             // 
             this.descriptionCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descriptionCol.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descriptionCol.DefaultCellStyle = dataGridViewCellStyle13;
             this.descriptionCol.HeaderText = "Description";
             this.descriptionCol.Name = "descriptionCol";
             // 
             // priceCol
             // 
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.priceCol.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.priceCol.DefaultCellStyle = dataGridViewCellStyle14;
             this.priceCol.HeaderText = "Price";
             this.priceCol.Name = "priceCol";
             this.priceCol.Width = 55;
             // 
             // taxableCol
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.NullValue = false;
-            this.taxableCol.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.NullValue = false;
+            this.taxableCol.DefaultCellStyle = dataGridViewCellStyle15;
             this.taxableCol.HeaderText = "Tax";
             this.taxableCol.Name = "taxableCol";
             this.taxableCol.Width = 50;
@@ -352,9 +353,9 @@
             this.SubmitButton.BackColor = System.Drawing.Color.Maroon;
             this.SubmitButton.Font = new System.Drawing.Font("Trajan Pro", 14F);
             this.SubmitButton.ForeColor = System.Drawing.Color.White;
-            this.SubmitButton.Location = new System.Drawing.Point(686, 368);
+            this.SubmitButton.Location = new System.Drawing.Point(688, 442);
             this.SubmitButton.Name = "SubmitButton";
-            this.SubmitButton.Size = new System.Drawing.Size(131, 102);
+            this.SubmitButton.Size = new System.Drawing.Size(141, 93);
             this.SubmitButton.TabIndex = 15;
             this.SubmitButton.Text = "Save and Email";
             this.SubmitButton.UseVisualStyleBackColor = false;
@@ -365,9 +366,9 @@
             this.SaveBttn.BackColor = System.Drawing.Color.Maroon;
             this.SaveBttn.Font = new System.Drawing.Font("Trajan Pro", 14F);
             this.SaveBttn.ForeColor = System.Drawing.Color.White;
-            this.SaveBttn.Location = new System.Drawing.Point(686, 253);
+            this.SaveBttn.Location = new System.Drawing.Point(688, 347);
             this.SaveBttn.Name = "SaveBttn";
-            this.SaveBttn.Size = new System.Drawing.Size(131, 102);
+            this.SaveBttn.Size = new System.Drawing.Size(141, 93);
             this.SaveBttn.TabIndex = 14;
             this.SaveBttn.Text = "Save and Close";
             this.SaveBttn.UseVisualStyleBackColor = false;
@@ -471,9 +472,9 @@
             this.PrintCustomerBttn.BackColor = System.Drawing.Color.Maroon;
             this.PrintCustomerBttn.Font = new System.Drawing.Font("Trajan Pro", 14F);
             this.PrintCustomerBttn.ForeColor = System.Drawing.Color.White;
-            this.PrintCustomerBttn.Location = new System.Drawing.Point(686, 597);
+            this.PrintCustomerBttn.Location = new System.Drawing.Point(688, 631);
             this.PrintCustomerBttn.Name = "PrintCustomerBttn";
-            this.PrintCustomerBttn.Size = new System.Drawing.Size(131, 102);
+            this.PrintCustomerBttn.Size = new System.Drawing.Size(141, 93);
             this.PrintCustomerBttn.TabIndex = 36;
             this.PrintCustomerBttn.Text = "Print Customer Copy";
             this.PrintCustomerBttn.UseVisualStyleBackColor = false;
@@ -521,9 +522,9 @@
             this.PrintEmployeeBttn.BackColor = System.Drawing.Color.Maroon;
             this.PrintEmployeeBttn.Font = new System.Drawing.Font("Trajan Pro", 14F);
             this.PrintEmployeeBttn.ForeColor = System.Drawing.Color.White;
-            this.PrintEmployeeBttn.Location = new System.Drawing.Point(686, 711);
+            this.PrintEmployeeBttn.Location = new System.Drawing.Point(688, 726);
             this.PrintEmployeeBttn.Name = "PrintEmployeeBttn";
-            this.PrintEmployeeBttn.Size = new System.Drawing.Size(131, 102);
+            this.PrintEmployeeBttn.Size = new System.Drawing.Size(141, 93);
             this.PrintEmployeeBttn.TabIndex = 40;
             this.PrintEmployeeBttn.Text = "Print Employee Copy";
             this.PrintEmployeeBttn.UseVisualStyleBackColor = false;
@@ -694,9 +695,9 @@
             this.NewTicketWithCustomerBttn.BackColor = System.Drawing.Color.Maroon;
             this.NewTicketWithCustomerBttn.Font = new System.Drawing.Font("Trajan Pro", 14F);
             this.NewTicketWithCustomerBttn.ForeColor = System.Drawing.Color.White;
-            this.NewTicketWithCustomerBttn.Location = new System.Drawing.Point(686, 483);
+            this.NewTicketWithCustomerBttn.Location = new System.Drawing.Point(688, 537);
             this.NewTicketWithCustomerBttn.Name = "NewTicketWithCustomerBttn";
-            this.NewTicketWithCustomerBttn.Size = new System.Drawing.Size(131, 102);
+            this.NewTicketWithCustomerBttn.Size = new System.Drawing.Size(141, 93);
             this.NewTicketWithCustomerBttn.TabIndex = 54;
             this.NewTicketWithCustomerBttn.Text = "New Ticket w/ Customer";
             this.NewTicketWithCustomerBttn.UseVisualStyleBackColor = false;
@@ -759,6 +760,19 @@
             this.EditCustomerButton.UseVisualStyleBackColor = false;
             this.EditCustomerButton.Click += new System.EventHandler(this.EditCustomerButton_Click);
             // 
+            // SaveButton
+            // 
+            this.SaveButton.BackColor = System.Drawing.Color.Maroon;
+            this.SaveButton.Font = new System.Drawing.Font("Trajan Pro", 14F);
+            this.SaveButton.ForeColor = System.Drawing.Color.White;
+            this.SaveButton.Location = new System.Drawing.Point(688, 253);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(141, 93);
+            this.SaveButton.TabIndex = 60;
+            this.SaveButton.Text = "Save";
+            this.SaveButton.UseVisualStyleBackColor = false;
+            this.SaveButton.Click += new System.EventHandler(this.hktStandardButton1_Click);
+            // 
             // AlterationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -766,6 +780,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(832, 827);
+            this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.EditCustomerButton);
             this.Controls.Add(this.subtotalLabel);
             this.Controls.Add(this.label14);
@@ -894,5 +909,6 @@
         private System.Windows.Forms.Label subtotalLabel;
         private System.Windows.Forms.Label label14;
         private CustomControls.HKTStandardButton EditCustomerButton;
+        private CustomControls.HKTStandardButton SaveButton;
     }
 }

@@ -825,6 +825,23 @@ namespace HKTReceiptGenerator
             PhoneTextBox.Text = customerResource.Telephone;
             EmailTextBox.Text = customerResource.Email; 
         }
+
+        private void hktStandardButton1_Click(object sender, EventArgs e)
+        {
+            if (!validateForm())
+            {
+                return;
+            }
+
+            if (isNewAlteration)
+            {
+                InsertAlterationIntoDatabase();
+            }
+            else if (!isNewAlteration)
+            {
+                UpdateAlterationInDatabase();
+            }
+        }
         
     }
 }
