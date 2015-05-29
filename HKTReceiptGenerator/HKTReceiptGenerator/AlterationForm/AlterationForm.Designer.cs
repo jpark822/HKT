@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AlterationForm));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -287,14 +287,14 @@
             // AlterationGrid
             // 
             this.AlterationGrid.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("HelveticaNeueLT Pro 55 Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AlterationGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("HelveticaNeueLT Pro 55 Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AlterationGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.AlterationGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AlterationGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.quantityCol,
@@ -316,8 +316,8 @@
             // 
             // quantityCol
             // 
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quantityCol.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quantityCol.DefaultCellStyle = dataGridViewCellStyle2;
             this.quantityCol.HeaderText = "#";
             this.quantityCol.Name = "quantityCol";
             this.quantityCol.Width = 40;
@@ -325,25 +325,25 @@
             // descriptionCol
             // 
             this.descriptionCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descriptionCol.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descriptionCol.DefaultCellStyle = dataGridViewCellStyle3;
             this.descriptionCol.HeaderText = "Description";
             this.descriptionCol.Name = "descriptionCol";
             // 
             // priceCol
             // 
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.priceCol.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.priceCol.DefaultCellStyle = dataGridViewCellStyle4;
             this.priceCol.HeaderText = "Price";
             this.priceCol.Name = "priceCol";
             this.priceCol.Width = 55;
             // 
             // taxableCol
             // 
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.NullValue = false;
-            this.taxableCol.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.NullValue = false;
+            this.taxableCol.DefaultCellStyle = dataGridViewCellStyle5;
             this.taxableCol.HeaderText = "Tax";
             this.taxableCol.Name = "taxableCol";
             this.taxableCol.Width = 50;
@@ -353,7 +353,7 @@
             this.SubmitButton.BackColor = System.Drawing.Color.Maroon;
             this.SubmitButton.Font = new System.Drawing.Font("Trajan Pro", 14F);
             this.SubmitButton.ForeColor = System.Drawing.Color.White;
-            this.SubmitButton.Location = new System.Drawing.Point(688, 442);
+            this.SubmitButton.Location = new System.Drawing.Point(679, 442);
             this.SubmitButton.Name = "SubmitButton";
             this.SubmitButton.Size = new System.Drawing.Size(141, 93);
             this.SubmitButton.TabIndex = 15;
@@ -366,7 +366,7 @@
             this.SaveBttn.BackColor = System.Drawing.Color.Maroon;
             this.SaveBttn.Font = new System.Drawing.Font("Trajan Pro", 14F);
             this.SaveBttn.ForeColor = System.Drawing.Color.White;
-            this.SaveBttn.Location = new System.Drawing.Point(688, 347);
+            this.SaveBttn.Location = new System.Drawing.Point(679, 347);
             this.SaveBttn.Name = "SaveBttn";
             this.SaveBttn.Size = new System.Drawing.Size(141, 93);
             this.SaveBttn.TabIndex = 14;
@@ -472,7 +472,7 @@
             this.PrintCustomerBttn.BackColor = System.Drawing.Color.Maroon;
             this.PrintCustomerBttn.Font = new System.Drawing.Font("Trajan Pro", 14F);
             this.PrintCustomerBttn.ForeColor = System.Drawing.Color.White;
-            this.PrintCustomerBttn.Location = new System.Drawing.Point(688, 631);
+            this.PrintCustomerBttn.Location = new System.Drawing.Point(679, 631);
             this.PrintCustomerBttn.Name = "PrintCustomerBttn";
             this.PrintCustomerBttn.Size = new System.Drawing.Size(141, 93);
             this.PrintCustomerBttn.TabIndex = 36;
@@ -522,7 +522,7 @@
             this.PrintEmployeeBttn.BackColor = System.Drawing.Color.Maroon;
             this.PrintEmployeeBttn.Font = new System.Drawing.Font("Trajan Pro", 14F);
             this.PrintEmployeeBttn.ForeColor = System.Drawing.Color.White;
-            this.PrintEmployeeBttn.Location = new System.Drawing.Point(688, 726);
+            this.PrintEmployeeBttn.Location = new System.Drawing.Point(679, 726);
             this.PrintEmployeeBttn.Name = "PrintEmployeeBttn";
             this.PrintEmployeeBttn.Size = new System.Drawing.Size(141, 93);
             this.PrintEmployeeBttn.TabIndex = 40;
@@ -695,7 +695,7 @@
             this.NewTicketWithCustomerBttn.BackColor = System.Drawing.Color.Maroon;
             this.NewTicketWithCustomerBttn.Font = new System.Drawing.Font("Trajan Pro", 14F);
             this.NewTicketWithCustomerBttn.ForeColor = System.Drawing.Color.White;
-            this.NewTicketWithCustomerBttn.Location = new System.Drawing.Point(688, 537);
+            this.NewTicketWithCustomerBttn.Location = new System.Drawing.Point(679, 537);
             this.NewTicketWithCustomerBttn.Name = "NewTicketWithCustomerBttn";
             this.NewTicketWithCustomerBttn.Size = new System.Drawing.Size(141, 93);
             this.NewTicketWithCustomerBttn.TabIndex = 54;
@@ -765,7 +765,7 @@
             this.SaveButton.BackColor = System.Drawing.Color.Maroon;
             this.SaveButton.Font = new System.Drawing.Font("Trajan Pro", 14F);
             this.SaveButton.ForeColor = System.Drawing.Color.White;
-            this.SaveButton.Location = new System.Drawing.Point(688, 253);
+            this.SaveButton.Location = new System.Drawing.Point(679, 253);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(141, 93);
             this.SaveButton.TabIndex = 60;

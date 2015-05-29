@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label10 = new System.Windows.Forms.Label();
             this.EmailTextBox = new System.Windows.Forms.TextBox();
             this.TelephoneTextBox = new System.Windows.Forms.TextBox();
@@ -56,6 +56,7 @@
             this.SearchButton = new CustomControls.HKTStandardButton();
             this.SelectCustomerButton = new CustomControls.HKTStandardButton();
             this.NewCustomerButton = new CustomControls.HKTStandardButton();
+            this.NewTicketButton = new CustomControls.HKTStandardButton();
             ((System.ComponentModel.ISupportInitialize)(this.ResultGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -217,28 +218,28 @@
             this.ResultGrid.AllowUserToAddRows = false;
             this.ResultGrid.AllowUserToDeleteRows = false;
             this.ResultGrid.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ResultGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ResultGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.ResultGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ResultGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FirstNameCol,
             this.LastNameCol,
             this.Email,
             this.Telephone});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ResultGrid.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ResultGrid.DefaultCellStyle = dataGridViewCellStyle6;
             this.ResultGrid.Location = new System.Drawing.Point(352, 21);
             this.ResultGrid.MultiSelect = false;
             this.ResultGrid.Name = "ResultGrid";
@@ -303,7 +304,7 @@
             this.SelectCustomerButton.ForeColor = System.Drawing.Color.White;
             this.SelectCustomerButton.Location = new System.Drawing.Point(352, 368);
             this.SelectCustomerButton.Name = "SelectCustomerButton";
-            this.SelectCustomerButton.Size = new System.Drawing.Size(425, 100);
+            this.SelectCustomerButton.Size = new System.Drawing.Size(270, 100);
             this.SelectCustomerButton.TabIndex = 41;
             this.SelectCustomerButton.Text = "Select Customer";
             this.SelectCustomerButton.UseVisualStyleBackColor = false;
@@ -314,13 +315,27 @@
             this.NewCustomerButton.BackColor = System.Drawing.Color.Maroon;
             this.NewCustomerButton.Font = new System.Drawing.Font("Trajan Pro", 14F);
             this.NewCustomerButton.ForeColor = System.Drawing.Color.White;
-            this.NewCustomerButton.Location = new System.Drawing.Point(784, 368);
+            this.NewCustomerButton.Location = new System.Drawing.Point(646, 368);
             this.NewCustomerButton.Name = "NewCustomerButton";
-            this.NewCustomerButton.Size = new System.Drawing.Size(425, 100);
+            this.NewCustomerButton.Size = new System.Drawing.Size(270, 100);
             this.NewCustomerButton.TabIndex = 42;
             this.NewCustomerButton.Text = "New Customer";
             this.NewCustomerButton.UseVisualStyleBackColor = false;
             this.NewCustomerButton.Click += new System.EventHandler(this.NewCustomerButton_Click);
+            // 
+            // NewTicketButton
+            // 
+            this.NewTicketButton.BackColor = System.Drawing.Color.Maroon;
+            this.NewTicketButton.Enabled = false;
+            this.NewTicketButton.Font = new System.Drawing.Font("Trajan Pro", 14F);
+            this.NewTicketButton.ForeColor = System.Drawing.Color.White;
+            this.NewTicketButton.Location = new System.Drawing.Point(939, 368);
+            this.NewTicketButton.Name = "NewTicketButton";
+            this.NewTicketButton.Size = new System.Drawing.Size(270, 100);
+            this.NewTicketButton.TabIndex = 43;
+            this.NewTicketButton.Text = "New Ticket";
+            this.NewTicketButton.UseVisualStyleBackColor = false;
+            this.NewTicketButton.Click += new System.EventHandler(this.NewTicketButton_Click);
             // 
             // CustomerSearch
             // 
@@ -329,6 +344,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1234, 492);
+            this.Controls.Add(this.NewTicketButton);
             this.Controls.Add(this.NewCustomerButton);
             this.Controls.Add(this.SelectCustomerButton);
             this.Controls.Add(this.SearchButton);
@@ -387,5 +403,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telephone;
         private CustomControls.HKTStandardButton NewCustomerButton;
+        private CustomControls.HKTStandardButton NewTicketButton;
     }
 }

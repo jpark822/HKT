@@ -99,10 +99,12 @@ namespace HKTReceiptGenerator.Customer
             if (searchResults == null || searchResults.Count == 0)
             {
                 SelectCustomerButton.Enabled = false;
+                NewTicketButton.Enabled = false;
             }
             else
             {
                 SelectCustomerButton.Enabled = true;
+                NewTicketButton.Enabled = true;
             }
         }
 
@@ -142,6 +144,16 @@ namespace HKTReceiptGenerator.Customer
         {
             AddCustomerForm addCustomer = new AddCustomerForm();
             addCustomer.Show();
+            this.Close();
+        }
+
+        private void NewTicketButton_Click(object sender, EventArgs e)
+        {
+            int index = ResultGrid.CurrentCell.RowIndex;
+            CustomerResource customer = searchResults[index];
+
+            AlterationForm form = new AlterationForm(customer);
+            form.Show();
             this.Close();
         }
     }
