@@ -64,52 +64,55 @@
             this.getMailingAddressesButton = new CustomControls.HKTStandardButton();
             this.GetTicketsForDateButton = new CustomControls.HKTStandardButton();
             this.TicketsForDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.Save = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Trajan Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(265, 453);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 20);
+            this.label1.Size = new System.Drawing.Size(90, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Total Billed:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Trajan Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(284, 513);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 20);
+            this.label2.Size = new System.Drawing.Size(83, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Total Paid:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Trajan Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(255, 473);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(138, 20);
+            this.label3.Size = new System.Drawing.Size(107, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Total Taxable:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Trajan Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(207, 493);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(185, 20);
+            this.label4.Size = new System.Drawing.Size(141, 20);
             this.label4.TabIndex = 3;
             this.label4.Text = "Total Non-Taxable:";
             // 
             // TotalBilledLabel
             // 
             this.TotalBilledLabel.AutoSize = true;
-            this.TotalBilledLabel.Font = new System.Drawing.Font("Trajan Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalBilledLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TotalBilledLabel.Location = new System.Drawing.Point(398, 453);
             this.TotalBilledLabel.Name = "TotalBilledLabel";
             this.TotalBilledLabel.Size = new System.Drawing.Size(49, 20);
@@ -119,7 +122,7 @@
             // TotalClosedLabel
             // 
             this.TotalClosedLabel.AutoSize = true;
-            this.TotalClosedLabel.Font = new System.Drawing.Font("Trajan Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalClosedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TotalClosedLabel.Location = new System.Drawing.Point(398, 513);
             this.TotalClosedLabel.Name = "TotalClosedLabel";
             this.TotalClosedLabel.Size = new System.Drawing.Size(49, 20);
@@ -129,7 +132,7 @@
             // TotalTaxableLabel
             // 
             this.TotalTaxableLabel.AutoSize = true;
-            this.TotalTaxableLabel.Font = new System.Drawing.Font("Trajan Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalTaxableLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TotalTaxableLabel.Location = new System.Drawing.Point(399, 473);
             this.TotalTaxableLabel.Name = "TotalTaxableLabel";
             this.TotalTaxableLabel.Size = new System.Drawing.Size(49, 20);
@@ -139,7 +142,7 @@
             // TotalNonTaxableLabel
             // 
             this.TotalNonTaxableLabel.AutoSize = true;
-            this.TotalNonTaxableLabel.Font = new System.Drawing.Font("Trajan Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalNonTaxableLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TotalNonTaxableLabel.Location = new System.Drawing.Point(398, 493);
             this.TotalNonTaxableLabel.Name = "TotalNonTaxableLabel";
             this.TotalNonTaxableLabel.Size = new System.Drawing.Size(49, 20);
@@ -149,46 +152,46 @@
             // StartingDatePicker
             // 
             this.StartingDatePicker.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StartingDatePicker.Font = new System.Drawing.Font("Trajan Pro", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StartingDatePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StartingDatePicker.Location = new System.Drawing.Point(79, 67);
             this.StartingDatePicker.Name = "StartingDatePicker";
-            this.StartingDatePicker.Size = new System.Drawing.Size(452, 38);
+            this.StartingDatePicker.Size = new System.Drawing.Size(452, 35);
             this.StartingDatePicker.TabIndex = 12;
             this.StartingDatePicker.Value = new System.DateTime(2013, 5, 6, 0, 0, 0, 0);
             // 
             // EndingDatePicker
             // 
             this.EndingDatePicker.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EndingDatePicker.Font = new System.Drawing.Font("Trajan Pro", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EndingDatePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EndingDatePicker.Location = new System.Drawing.Point(538, 67);
             this.EndingDatePicker.Name = "EndingDatePicker";
-            this.EndingDatePicker.Size = new System.Drawing.Size(452, 38);
+            this.EndingDatePicker.Size = new System.Drawing.Size(452, 35);
             this.EndingDatePicker.TabIndex = 13;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Trajan Pro", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(216, 31);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(204, 30);
+            this.label7.Size = new System.Drawing.Size(151, 29);
             this.label7.TabIndex = 14;
             this.label7.Text = "Starting Date";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Trajan Pro", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(683, 31);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(185, 30);
+            this.label8.Size = new System.Drawing.Size(145, 29);
             this.label8.TabIndex = 15;
             this.label8.Text = "Ending Date";
             // 
             // GetStatsButton
             // 
             this.GetStatsButton.BackColor = System.Drawing.Color.Maroon;
-            this.GetStatsButton.Font = new System.Drawing.Font("Trajan Pro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GetStatsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GetStatsButton.ForeColor = System.Drawing.Color.White;
             this.GetStatsButton.Location = new System.Drawing.Point(80, 127);
             this.GetStatsButton.Name = "GetStatsButton";
@@ -201,7 +204,7 @@
             // GetEmailsButton
             // 
             this.GetEmailsButton.BackColor = System.Drawing.Color.Maroon;
-            this.GetEmailsButton.Font = new System.Drawing.Font("Trajan Pro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GetEmailsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GetEmailsButton.ForeColor = System.Drawing.Color.White;
             this.GetEmailsButton.Location = new System.Drawing.Point(538, 127);
             this.GetEmailsButton.Name = "GetEmailsButton";
@@ -223,7 +226,7 @@
             // CopyToClipboardButton
             // 
             this.CopyToClipboardButton.BackColor = System.Drawing.Color.Maroon;
-            this.CopyToClipboardButton.Font = new System.Drawing.Font("Trajan Pro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CopyToClipboardButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CopyToClipboardButton.ForeColor = System.Drawing.Color.White;
             this.CopyToClipboardButton.Location = new System.Drawing.Point(538, 462);
             this.CopyToClipboardButton.Name = "CopyToClipboardButton";
@@ -236,7 +239,7 @@
             // BackupButton
             // 
             this.BackupButton.BackColor = System.Drawing.Color.Maroon;
-            this.BackupButton.Font = new System.Drawing.Font("Trajan Pro", 14F);
+            this.BackupButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.BackupButton.ForeColor = System.Drawing.Color.White;
             this.BackupButton.Location = new System.Drawing.Point(1036, 735);
             this.BackupButton.Name = "BackupButton";
@@ -249,7 +252,7 @@
             // TotalPaidTaxableFromOrdersLabel
             // 
             this.TotalPaidTaxableFromOrdersLabel.AutoSize = true;
-            this.TotalPaidTaxableFromOrdersLabel.Font = new System.Drawing.Font("Trajan Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalPaidTaxableFromOrdersLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TotalPaidTaxableFromOrdersLabel.Location = new System.Drawing.Point(399, 367);
             this.TotalPaidTaxableFromOrdersLabel.Name = "TotalPaidTaxableFromOrdersLabel";
             this.TotalPaidTaxableFromOrdersLabel.Size = new System.Drawing.Size(49, 20);
@@ -259,27 +262,27 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Trajan Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(198, 367);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(195, 20);
+            this.label5.Size = new System.Drawing.Size(155, 20);
             this.label5.TabIndex = 24;
             this.label5.Text = "Taxable Orders Paid:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Trajan Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(151, 387);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(242, 20);
+            this.label6.Size = new System.Drawing.Size(189, 20);
             this.label6.TabIndex = 26;
             this.label6.Text = "Non-Taxable Orders Paid:";
             // 
             // TotalPaidNonTaxableFromOrdersLabel
             // 
             this.TotalPaidNonTaxableFromOrdersLabel.AutoSize = true;
-            this.TotalPaidNonTaxableFromOrdersLabel.Font = new System.Drawing.Font("Trajan Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalPaidNonTaxableFromOrdersLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TotalPaidNonTaxableFromOrdersLabel.Location = new System.Drawing.Point(399, 387);
             this.TotalPaidNonTaxableFromOrdersLabel.Name = "TotalPaidNonTaxableFromOrdersLabel";
             this.TotalPaidNonTaxableFromOrdersLabel.Size = new System.Drawing.Size(49, 20);
@@ -289,17 +292,17 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Trajan Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(194, 347);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(198, 20);
+            this.label9.Size = new System.Drawing.Size(142, 20);
             this.label9.TabIndex = 28;
             this.label9.Text = "Total Orders Billed:";
             // 
             // TotalOrdersBilledLabel
             // 
             this.TotalOrdersBilledLabel.AutoSize = true;
-            this.TotalOrdersBilledLabel.Font = new System.Drawing.Font("Trajan Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalOrdersBilledLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TotalOrdersBilledLabel.Location = new System.Drawing.Point(399, 347);
             this.TotalOrdersBilledLabel.Name = "TotalOrdersBilledLabel";
             this.TotalOrdersBilledLabel.Size = new System.Drawing.Size(49, 20);
@@ -309,17 +312,17 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Trajan Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(194, 222);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(198, 20);
+            this.label10.Size = new System.Drawing.Size(144, 20);
             this.label10.TabIndex = 34;
             this.label10.Text = "Total Tickets Billed:";
             // 
             // TotalTicketsBilledLabel
             // 
             this.TotalTicketsBilledLabel.AutoSize = true;
-            this.TotalTicketsBilledLabel.Font = new System.Drawing.Font("Trajan Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalTicketsBilledLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TotalTicketsBilledLabel.Location = new System.Drawing.Point(398, 222);
             this.TotalTicketsBilledLabel.Name = "TotalTicketsBilledLabel";
             this.TotalTicketsBilledLabel.Size = new System.Drawing.Size(49, 20);
@@ -329,17 +332,17 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Trajan Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(228, 262);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(164, 20);
+            this.label12.Size = new System.Drawing.Size(124, 20);
             this.label12.TabIndex = 32;
             this.label12.Text = "Alterations Paid:";
             // 
             // AlterationsLabel
             // 
             this.AlterationsLabel.AutoSize = true;
-            this.AlterationsLabel.Font = new System.Drawing.Font("Trajan Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AlterationsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AlterationsLabel.Location = new System.Drawing.Point(398, 262);
             this.AlterationsLabel.Name = "AlterationsLabel";
             this.AlterationsLabel.Size = new System.Drawing.Size(49, 20);
@@ -349,17 +352,17 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Trajan Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(281, 242);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(111, 20);
+            this.label14.Size = new System.Drawing.Size(89, 20);
             this.label14.TabIndex = 30;
             this.label14.Text = "Retail Paid:";
             // 
             // RetailLabel
             // 
             this.RetailLabel.AutoSize = true;
-            this.RetailLabel.Font = new System.Drawing.Font("Trajan Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RetailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RetailLabel.Location = new System.Drawing.Point(398, 242);
             this.RetailLabel.Name = "RetailLabel";
             this.RetailLabel.Size = new System.Drawing.Size(49, 20);
@@ -369,17 +372,17 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Trajan Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(155, 282);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(237, 20);
+            this.label11.Size = new System.Drawing.Size(182, 20);
             this.label11.TabIndex = 36;
             this.label11.Text = "Alterations + Retail Paid:";
             // 
             // AlterationsPlusRetailLabel
             // 
             this.AlterationsPlusRetailLabel.AutoSize = true;
-            this.AlterationsPlusRetailLabel.Font = new System.Drawing.Font("Trajan Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AlterationsPlusRetailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AlterationsPlusRetailLabel.Location = new System.Drawing.Point(398, 282);
             this.AlterationsPlusRetailLabel.Name = "AlterationsPlusRetailLabel";
             this.AlterationsPlusRetailLabel.Size = new System.Drawing.Size(49, 20);
@@ -389,17 +392,17 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Trajan Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(179, 407);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(214, 20);
+            this.label13.Size = new System.Drawing.Size(174, 20);
             this.label13.TabIndex = 38;
             this.label13.Text = "Taxable + Non-Taxable:";
             // 
             // TaxablePlusNonTaxableOrdersLabel
             // 
             this.TaxablePlusNonTaxableOrdersLabel.AutoSize = true;
-            this.TaxablePlusNonTaxableOrdersLabel.Font = new System.Drawing.Font("Trajan Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TaxablePlusNonTaxableOrdersLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TaxablePlusNonTaxableOrdersLabel.Location = new System.Drawing.Point(398, 407);
             this.TaxablePlusNonTaxableOrdersLabel.Name = "TaxablePlusNonTaxableOrdersLabel";
             this.TaxablePlusNonTaxableOrdersLabel.Size = new System.Drawing.Size(49, 20);
@@ -409,7 +412,7 @@
             // getMailingAddressesButton
             // 
             this.getMailingAddressesButton.BackColor = System.Drawing.Color.Maroon;
-            this.getMailingAddressesButton.Font = new System.Drawing.Font("Trajan Pro", 14F);
+            this.getMailingAddressesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.getMailingAddressesButton.ForeColor = System.Drawing.Color.White;
             this.getMailingAddressesButton.Location = new System.Drawing.Point(946, 127);
             this.getMailingAddressesButton.Name = "getMailingAddressesButton";
@@ -422,7 +425,7 @@
             // GetTicketsForDateButton
             // 
             this.GetTicketsForDateButton.BackColor = System.Drawing.Color.Maroon;
-            this.GetTicketsForDateButton.Font = new System.Drawing.Font("Trajan Pro", 14F);
+            this.GetTicketsForDateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.GetTicketsForDateButton.ForeColor = System.Drawing.Color.White;
             this.GetTicketsForDateButton.Location = new System.Drawing.Point(79, 732);
             this.GetTicketsForDateButton.Name = "GetTicketsForDateButton";
@@ -435,12 +438,44 @@
             // TicketsForDatePicker
             // 
             this.TicketsForDatePicker.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TicketsForDatePicker.Font = new System.Drawing.Font("Trajan Pro", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TicketsForDatePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TicketsForDatePicker.Location = new System.Drawing.Point(79, 688);
             this.TicketsForDatePicker.Name = "TicketsForDatePicker";
-            this.TicketsForDatePicker.Size = new System.Drawing.Size(452, 38);
+            this.TicketsForDatePicker.Size = new System.Drawing.Size(452, 35);
             this.TicketsForDatePicker.TabIndex = 41;
             this.TicketsForDatePicker.Value = new System.DateTime(2013, 5, 6, 0, 0, 0, 0);
+            // 
+            // Save
+            // 
+            this.Save.BackColor = System.Drawing.Color.Maroon;
+            this.Save.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.Save.ForeColor = System.Drawing.Color.White;
+            this.Save.Location = new System.Drawing.Point(834, 777);
+            this.Save.Name = "Save";
+            this.Save.Size = new System.Drawing.Size(128, 44);
+            this.Save.TabIndex = 42;
+            this.Save.Text = "Save";
+            this.Save.UseVisualStyleBackColor = false;
+            this.Save.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(647, 777);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(137, 35);
+            this.textBox1.TabIndex = 43;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.label15.Location = new System.Drawing.Point(629, 735);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(374, 29);
+            this.label15.TabIndex = 44;
+            this.label15.Text = "Max Alerations Per Day in Dollars ";
             // 
             // AdminStatsForm
             // 
@@ -448,6 +483,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1309, 831);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Save);
             this.Controls.Add(this.TicketsForDatePicker);
             this.Controls.Add(this.GetTicketsForDateButton);
             this.Controls.Add(this.getMailingAddressesButton);
@@ -530,5 +568,8 @@
         private CustomControls.HKTStandardButton getMailingAddressesButton;
         private CustomControls.HKTStandardButton GetTicketsForDateButton;
         private System.Windows.Forms.DateTimePicker TicketsForDatePicker;
+        private System.Windows.Forms.Button Save;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label15;
     }
 }

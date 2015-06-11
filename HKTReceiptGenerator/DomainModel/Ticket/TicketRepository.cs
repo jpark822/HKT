@@ -431,6 +431,31 @@ namespace DomainModel.Ticket
             return ticketResources;
         }
 
+        public IEnumerable<AlterationToatalForDay> GetAlterationToatalForDays()
+        {
+            DBConnector connector = new DBConnector();
+            MySqlCommand getTicketsCommand = new MySqlCommand();
+            getTicketsCommand.Connection = connector.connection;
+            getTicketsCommand.CommandText = "SELECT date_ready, SUM( price ) as price FROM Tickets t JOIN Ticket_Alterations ta ON t.ticket_id = ta.ticket_id WHERE date_ready >= CURDATE( ) AND  taxable =0 GROUP BY date_ready";
+            List<AlterationToatalForDay> list = new List<AlterationToatalForDay>();
+            try
+            {
+                MySqlDataReader reader = getTicketsCommand.ExecuteReader();
+                while (reader.Read())
+                {
+                    list.Add(ConvertSQLReaderRowToAlterationToatalForDay(reader));
+                }
+                reader.Close();
+                connector.CloseConnection();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("There was an error. Contact Jay with this message: " + ex.Message + " error code: " + ex.Number);
+            }
+
+            return list;
+        }
+
         private Dictionary<String, object> ConvertTicketIntoDictionary(TicketResource ticket)
         {
             Dictionary<String, object> ticketArgs = new Dictionary<string, object>();
@@ -527,6 +552,15 @@ namespace DomainModel.Ticket
             String orderId = reader["order_id"] is DBNull ? "" : (String)reader["order_id"];
 
             return TicketFactory.CreateTicket(ticketId, status, title, firstName, lastName, middleName, address, city, state, zip, telephone, email, comments, pickedUp, dateIn, dateReady, totalPrice, deposit, tailorName, orderId, completedDate, customerId);
+        }
+
+        private AlterationToatalForDay ConvertSQLReaderRowToAlterationToatalForDay(MySqlDataReader reader)
+        {
+
+            var date = (DateTime)reader["date_ready"];
+            var totalPrice = reader["price"] is DBNull ? 0 : (double)reader["price"];
+
+            return new AlterationToatalForDay { Date = date, TotalPrice = totalPrice };
         }
     }
 }

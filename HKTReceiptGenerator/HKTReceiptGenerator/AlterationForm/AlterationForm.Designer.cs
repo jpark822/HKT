@@ -283,6 +283,7 @@
             this.DateReadyPicker.Size = new System.Drawing.Size(316, 29);
             this.DateReadyPicker.TabIndex = 11;
             this.DateReadyPicker.Value = new System.DateTime(2013, 2, 12, 10, 19, 56, 0);
+            this.DateReadyPicker.CloseUp += new System.EventHandler(this.DateReadyPickerValidate);
             // 
             // AlterationGrid
             // 

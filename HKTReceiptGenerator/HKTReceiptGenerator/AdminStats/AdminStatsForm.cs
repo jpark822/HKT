@@ -15,13 +15,14 @@ using System.CodeDom;
 using System.CodeDom.Compiler;
 using System.IO;
 using DomainModel.TicketAlterations;
+using System.Configuration;
 
 namespace HKTReceiptGenerator.AdminStats
 {
     //TODO: completely overhaul this class to use ticket repository
     public partial class AdminStatsForm : Form
     {
-        
+
         public AdminStatsForm()
         {
             InitializeComponent();
@@ -32,9 +33,11 @@ namespace HKTReceiptGenerator.AdminStats
             StartingDatePicker.Value = DateTime.Today;
             EndingDatePicker.Value = DateTime.Today;
             TicketsForDatePicker.Value = DateTime.Today;
+            Configuration configuration = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            textBox1.Text = configuration.AppSettings.Settings["maxAlterations"].Value;
         }
 
-        
+
 
         private double getPriceTotalFromDatatable(System.Data.DataTable table)
         {
@@ -68,7 +71,7 @@ namespace HKTReceiptGenerator.AdminStats
             double totalPaidNonTaxableFromOrders = repo.GetTotalPaidOrdersBetweenDates(startDate, endDate, false);
             double billedOrders = repo.getTotalBilled(startDate, endDate, true);
             TotalPaidTaxableFromOrdersLabel.Text = String.Format("{0:C}", totalPaidTaxableFromOrders);
-            TotalPaidNonTaxableFromOrdersLabel.Text = String.Format("{0:C}",totalPaidNonTaxableFromOrders);
+            TotalPaidNonTaxableFromOrdersLabel.Text = String.Format("{0:C}", totalPaidNonTaxableFromOrders);
             TotalOrdersBilledLabel.Text = String.Format("{0:C}", billedOrders);
             TaxablePlusNonTaxableOrdersLabel.Text = String.Format("{0:C}", totalPaidTaxableFromOrders + totalPaidNonTaxableFromOrders);
 
@@ -132,7 +135,7 @@ namespace HKTReceiptGenerator.AdminStats
         private void BackupButton_Click(object sender, EventArgs e)
         {
             //TODO mysql backup 
-           //Emailer.SendBackupToEmail();
+            //Emailer.SendBackupToEmail();
         }
 
         private void getMailingAddressesButton_Click(object sender, EventArgs e)
@@ -223,7 +226,7 @@ namespace HKTReceiptGenerator.AdminStats
             //    string telephone = ticket.Telephone == null || ticket.Telephone == "" ? "''" : ticket.Telephone;
             //    string comments = ticket.Comments.Replace("'", "\\'");
             //    comments = comments.Replace("\"", "\\\"");
-                
+
             //    Console.WriteLine(@"insert into Tickets (ticket_id, status, name_title, first_name, middle_name, last_name, address, city, state, zip, telephone, email, comments, picked_up, last_modified_timestamp, date_in, date_ready, total_price, deposit, tailor_name, order_id) " +
             //        "values (" 
             //        + ticket.TicketId + ",'"
@@ -253,7 +256,7 @@ namespace HKTReceiptGenerator.AdminStats
         private void hktStandardButton2_Click(object sender, EventArgs e)
         {
             TicketAlterationRepository ticketAltRepo = new TicketAlterationRepository();
-           // List<TicketAlterationResourceItem> allAlterations = ticketAltRepo.GetAllAlterationItems();
+            // List<TicketAlterationResourceItem> allAlterations = ticketAltRepo.GetAllAlterationItems();
 
 
             //foreach (TicketAlterationResourceItem alteration in allAlterations)
@@ -269,6 +272,40 @@ namespace HKTReceiptGenerator.AdminStats
             //    + alteration.Price + ","
             //    + alteration.Taxable + ");");
             //}
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            string actualdata = string.Empty;
+            char[] entereddata = textBox1.Text.ToCharArray();
+            foreach (char aChar in entereddata.AsEnumerable())
+            {
+                if (Char.IsDigit(aChar))
+                {
+                    actualdata = actualdata + aChar;
+
+                }
+                else
+                {
+                    MessageBox.Show(aChar + " is not a number");
+                    actualdata.Replace(aChar, ' ');
+                    actualdata.Trim();
+                }
+            }
+            textBox1.Text = actualdata;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            Configuration configuration = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            configuration.AppSettings.Settings["maxAlterations"].Value = textBox1.Text;
+            configuration.Save();
+
+            ConfigurationManager.RefreshSection("appSettings");
+
+
 
         }
     }

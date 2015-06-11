@@ -32,6 +32,8 @@ namespace HKTReceiptGenerator
         private String previousStatus;
         private CustomerResource customer;
         private int customerId = 0;
+        private IEnumerable<AlterationToatalForDay> alterationToatalForDays;
+        private double maxAlterations; 
 
         public delegate void ClothingSelectedCallback(TypeOfClothing choice);
         public delegate void ArticleSelectedCallback(AlterationModalCallbackArguments args);
@@ -51,13 +53,18 @@ namespace HKTReceiptGenerator
 
         public AlterationForm(CustomerResource customer)
         {
+            Configuration configuration = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            maxAlterations = Convert.ToDouble(configuration.AppSettings.Settings["maxAlterations"].Value);
+            TicketRepository ticketRepo = new TicketRepository();
+            alterationToatalForDays = ticketRepo.GetAlterationToatalForDays();
             SetupForm();
             this.customer = customer;
             customerId = customer.CustomerId;
             isNewAlteration = true;
             TicketNumberLabel.Hide();
             DateInPicker.Value = DateTime.Today;
-            DateReadyPicker.Value = DateTime.Today.AddDays(7);
+            var readyDate = GetNextValidDateNotOverMaxAlterations(DateTime.Today.AddDays(7));
+            DateReadyPicker.Value = readyDate;
             previousStatus = "a";
             NewTicketWithCustomerBttn.Enabled = false;
 
@@ -72,6 +79,51 @@ namespace HKTReceiptGenerator
             PhoneTextBox.Text = customer.Telephone;
             EmailTextBox.Text = customer.Email; 
 
+        }
+
+        private DateTime GetNextValidDateNotOverMaxAlterations(DateTime date)
+        {
+            var test = alterationToatalForDays.Where(x => x.Date == date).FirstOrDefault();
+            if (date.DayOfWeek == DayOfWeek.Sunday)
+            {
+                return GetNextValidDateNotOverMaxAlterations(date.AddDays(1));
+            }
+
+            if (test == null)
+            {
+                return date;
+            }
+            else if (test.TotalPrice > maxAlterations)
+            {
+                return GetNextValidDateNotOverMaxAlterations(date.AddDays(1));
+            }
+
+            return date;
+        }
+
+        private void DateReadyPickerValidate(object sender, EventArgs e)
+        {
+            var alterationToatalForDay = alterationToatalForDays.Where(x => x.Date == DateReadyPicker.Value).Select(x => x.TotalPrice).DefaultIfEmpty(0).First();
+            if (alterationToatalForDay > maxAlterations)
+            {
+                var readyDate = GetNextValidDateNotOverMaxAlterations(DateReadyPicker.Value);
+                DialogResult dr = MessageBox.Show("The total aletrations for " +
+                DateReadyPicker.Value.ToLongDateString() + " exceeds the day maximum. Would you like the next avaiable date " +
+                readyDate.ToLongDateString() + "?",
+                "Confirm Date Change", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+                if (dr == DialogResult.Yes)
+                {
+                    DateReadyPicker.Value = readyDate;
+                }
+            }
+            else if (alterationToatalForDay > (maxAlterations * 0.75))
+            {
+                var readyDate = GetNextValidDateNotOverMaxAlterations(DateReadyPicker.Value);
+                DialogResult dr = MessageBox.Show("The total aletrations for " +
+                DateReadyPicker.Value.ToLongDateString() + " is aproching the day maximum",
+                "Confirm Date Change", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         public AlterationForm(TicketResource ticketResource)
