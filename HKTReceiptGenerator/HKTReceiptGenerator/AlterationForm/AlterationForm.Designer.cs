@@ -97,6 +97,8 @@
             this.SaveButton = new CustomControls.HKTStandardButton();
             ((System.ComponentModel.ISupportInitialize)(this.AlterationGrid)).BeginInit();
             this.SuspendLayout();
+
+            this.FormClosing += Form_FormClosing;
             // 
             // label1
             // 

@@ -894,6 +894,28 @@ namespace HKTReceiptGenerator
                 UpdateAlterationInDatabase();
             }
         }
+
+        void Form_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                if (isNewAlteration)
+                {
+
+                    DialogResult dr = MessageBox.Show("Are you sure you want to close without saving?",
+                    "Confirm Close", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+                    if (dr == DialogResult.Yes)
+                    {
+                        this.Close();
+                    }
+                    e.Cancel = true;
+                }
+
+            }
+
+        }
         
     }
 }

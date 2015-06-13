@@ -1,0 +1,11 @@
+*.dll
+HKTReceiptGenerator/CustomControls/bin/Debug/CustomControls.pdb
+*.txt
+HKTReceiptGenerator/CustomControls/obj/Debug/CustomControls.csproj.FileListAbsolute.txt
+*.pdb
+HKTReceiptGenerator/HKTReceiptGenerator/obj/Debug/HKTReceiptGenerator.csproj.GenerateResource.Cache
+*.cache
+HKTReceiptGenerator/HKTReceiptGenerator/obj/Debug/HKTReceiptGenerator.exe
+*.txt
+HKTReceiptGenerator/HKTReceiptGenerator.v12.suo
+*.exe
