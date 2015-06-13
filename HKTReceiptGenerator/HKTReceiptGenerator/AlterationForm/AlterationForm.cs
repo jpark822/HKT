@@ -906,11 +906,11 @@ namespace HKTReceiptGenerator
                     DialogResult dr = MessageBox.Show("Are you sure you want to close without saving?",
                     "Confirm Close", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
 
-                    if (dr == DialogResult.Yes)
+                    if (dr == DialogResult.No)
                     {
-                        this.Close();
+                        e.Cancel = true;
                     }
-                    e.Cancel = true;
+                    
                 }
 
             }
