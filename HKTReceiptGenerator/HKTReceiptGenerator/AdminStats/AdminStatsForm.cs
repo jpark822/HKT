@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using DomainModel.Ticket;
 using DomainModel.AdminStatsRepo;
 using Microsoft.Office.Interop.Excel;
-using DomainModel.Ticket;
+using DomainModel;
 using System.CodeDom;
 using System.CodeDom.Compiler;
 using System.IO;
@@ -22,7 +22,7 @@ namespace HKTReceiptGenerator.AdminStats
     //TODO: completely overhaul this class to use ticket repository
     public partial class AdminStatsForm : Form
     {
-
+        ConfigurationRepository configRepo = new ConfigurationRepository();
         public AdminStatsForm()
         {
             InitializeComponent();
@@ -34,7 +34,8 @@ namespace HKTReceiptGenerator.AdminStats
             EndingDatePicker.Value = DateTime.Today;
             TicketsForDatePicker.Value = DateTime.Today;
             Configuration configuration = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            textBox1.Text = configuration.AppSettings.Settings["maxAlterations"].Value;
+            textBox1.Text = configRepo.GetConfigrationSettings().Where(x => x.Setting == "maxAlterations").Select(x => x.Value).DefaultIfEmpty("").First();          
+              
         }
 
 
@@ -299,13 +300,12 @@ namespace HKTReceiptGenerator.AdminStats
         private void button1_Click(object sender, EventArgs e)
         {
 
-            Configuration configuration = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            configuration.AppSettings.Settings["maxAlterations"].Value = textBox1.Text;
-            configuration.Save();
-
-            ConfigurationManager.RefreshSection("appSettings");
+            configRepo.UpdateSetting(new ConfigrationSetting { Setting = "maxAlterations", Value = textBox1.Text });
 
 
+
+            DialogResult dr = MessageBox.Show("Setting Saved ",
+            "Save", MessageBoxButtons.OK);
 
         }
     }

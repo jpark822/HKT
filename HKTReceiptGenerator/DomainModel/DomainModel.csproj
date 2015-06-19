@@ -54,6 +54,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\ConfigrationSetting.cs" />
+    <Compile Include="Configuration\ConfigurationRepository.cs" />
     <Compile Include="Customer\AdminStatsRepo.cs" />
     <Compile Include="BaseRepository.cs" />
     <Compile Include="Customer\CustomerRepository.cs" />

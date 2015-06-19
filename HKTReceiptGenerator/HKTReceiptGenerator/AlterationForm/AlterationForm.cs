@@ -54,7 +54,8 @@ namespace HKTReceiptGenerator
         public AlterationForm(CustomerResource customer)
         {
             Configuration configuration = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            maxAlterations = Convert.ToDouble(configuration.AppSettings.Settings["maxAlterations"].Value);
+            ConfigurationRepository configRepo = new ConfigurationRepository();
+            maxAlterations = Convert.ToDouble(configRepo.GetConfigrationSettings().Where(x => x.Setting == "maxAlterations").Select(x => x.Value).DefaultIfEmpty("").First()); 
             TicketRepository ticketRepo = new TicketRepository();
             alterationToatalForDays = ticketRepo.GetAlterationToatalForDays();
             SetupForm();
