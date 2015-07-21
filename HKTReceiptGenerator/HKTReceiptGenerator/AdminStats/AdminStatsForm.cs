@@ -308,5 +308,50 @@ namespace HKTReceiptGenerator.AdminStats
             "Save", MessageBoxButtons.OK);
 
         }
+
+        private void GetCustomOrdersButton_Click(object sender, EventArgs e)
+        {
+            //refactor this once API is up
+            TicketRepository repo = new TicketRepository();
+            List<TicketResource> tickets = repo.GetActiveTicketsBetweenDates(CustomOrderDatePickerStart.Value, CustomOrderDatePickerEnd.Value);
+            List<TicketResource> orders = new List<TicketResource>();
+            foreach (TicketResource ticket in tickets) 
+            {
+                if (ticket.OrderId.Trim() != "")
+                {
+                    orders.Add(ticket);
+                }
+            }
+
+            if (orders.Count > 0)
+            {
+                orders = orders.OrderBy(x => x.DateReady).ToList();
+                
+                Microsoft.Office.Interop.Excel.Application excelApp = new Microsoft.Office.Interop.Excel.Application();
+                excelApp.Visible = true;
+
+                _Workbook workbook = (_Workbook)(excelApp.Workbooks.Add(Type.Missing));
+                _Worksheet worksheet = (_Worksheet)workbook.ActiveSheet;
+
+                for (int i = 0; i < orders.Count; i++)
+                {
+                    TicketResource order = orders[i];
+                    int row = i + 1;
+                    worksheet.Cells[row, "A"] = order.TicketId;
+                    worksheet.Cells[row, "B"] = order.FirstName;
+                    worksheet.Cells[row, "C"] = order.LastName;
+                    worksheet.Cells[row, "D"] = order.DateReady.ToString();
+                    worksheet.Cells[row, "E"] = order.Telephone;
+                    worksheet.Cells[row, "F"] = "$" + order.TotalPrice;
+                }
+                worksheet.Columns["A:F"].AutoFit();
+            }
+            else
+            {
+                MessageBox.Show("There are no orders due between those dates.");
+            }
+        }
+
+
     }
 }

@@ -917,6 +917,11 @@ namespace HKTReceiptGenerator
             }
 
         }
-        
+
+        private void orderIdTextBoxKeyDown(object sender, KeyEventArgs e)
+        {
+            DateTime futureDate = DateInPicker.Value.AddDays(6 * 7);
+            DateReadyPicker.Value = futureDate;
+        }
     }
 }

@@ -97,8 +97,6 @@
             this.SaveButton = new CustomControls.HKTStandardButton();
             ((System.ComponentModel.ISupportInitialize)(this.AlterationGrid)).BeginInit();
             this.SuspendLayout();
-
-            this.FormClosing += Form_FormClosing;
             // 
             // label1
             // 
@@ -681,6 +679,7 @@
             this.OrderIdTextBox.Name = "OrderIdTextBox";
             this.OrderIdTextBox.Size = new System.Drawing.Size(366, 29);
             this.OrderIdTextBox.TabIndex = 52;
+            this.OrderIdTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.orderIdTextBoxKeyDown);
             this.OrderIdTextBox.Leave += new System.EventHandler(this.OrderIdTextBox_OnLeave);
             // 
             // label7

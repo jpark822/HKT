@@ -44,7 +44,6 @@
             this.GetEmailsButton = new CustomControls.HKTStandardButton();
             this.EmailResultTextBox = new System.Windows.Forms.TextBox();
             this.CopyToClipboardButton = new CustomControls.HKTStandardButton();
-            this.BackupButton = new CustomControls.HKTStandardButton();
             this.TotalPaidTaxableFromOrdersLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -67,6 +66,9 @@
             this.Save = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
+            this.CustomOrderDatePickerStart = new System.Windows.Forms.DateTimePicker();
+            this.CustomOrderDatePickerEnd = new System.Windows.Forms.DateTimePicker();
+            this.GetCustomOrdersButton = new CustomControls.HKTStandardButton();
             this.SuspendLayout();
             // 
             // label1
@@ -235,19 +237,6 @@
             this.CopyToClipboardButton.Text = "Export List To Excel";
             this.CopyToClipboardButton.UseVisualStyleBackColor = false;
             this.CopyToClipboardButton.Click += new System.EventHandler(this.CopyToClipboardButton_Click);
-            // 
-            // BackupButton
-            // 
-            this.BackupButton.BackColor = System.Drawing.Color.Maroon;
-            this.BackupButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.BackupButton.ForeColor = System.Drawing.Color.White;
-            this.BackupButton.Location = new System.Drawing.Point(1036, 735);
-            this.BackupButton.Name = "BackupButton";
-            this.BackupButton.Size = new System.Drawing.Size(245, 80);
-            this.BackupButton.TabIndex = 22;
-            this.BackupButton.Text = "Backup Database";
-            this.BackupButton.UseVisualStyleBackColor = false;
-            this.BackupButton.Click += new System.EventHandler(this.BackupButton_Click);
             // 
             // TotalPaidTaxableFromOrdersLabel
             // 
@@ -427,7 +416,7 @@
             this.GetTicketsForDateButton.BackColor = System.Drawing.Color.Maroon;
             this.GetTicketsForDateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.GetTicketsForDateButton.ForeColor = System.Drawing.Color.White;
-            this.GetTicketsForDateButton.Location = new System.Drawing.Point(79, 732);
+            this.GetTicketsForDateButton.Location = new System.Drawing.Point(80, 634);
             this.GetTicketsForDateButton.Name = "GetTicketsForDateButton";
             this.GetTicketsForDateButton.Size = new System.Drawing.Size(453, 83);
             this.GetTicketsForDateButton.TabIndex = 40;
@@ -439,7 +428,7 @@
             // 
             this.TicketsForDatePicker.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TicketsForDatePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TicketsForDatePicker.Location = new System.Drawing.Point(79, 688);
+            this.TicketsForDatePicker.Location = new System.Drawing.Point(80, 590);
             this.TicketsForDatePicker.Name = "TicketsForDatePicker";
             this.TicketsForDatePicker.Size = new System.Drawing.Size(452, 35);
             this.TicketsForDatePicker.TabIndex = 41;
@@ -450,7 +439,7 @@
             this.Save.BackColor = System.Drawing.Color.Maroon;
             this.Save.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.Save.ForeColor = System.Drawing.Color.White;
-            this.Save.Location = new System.Drawing.Point(834, 777);
+            this.Save.Location = new System.Drawing.Point(298, 787);
             this.Save.Name = "Save";
             this.Save.Size = new System.Drawing.Size(128, 44);
             this.Save.TabIndex = 42;
@@ -461,7 +450,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(647, 777);
+            this.textBox1.Location = new System.Drawing.Point(155, 790);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(137, 35);
             this.textBox1.TabIndex = 43;
@@ -471,18 +460,52 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.label15.Location = new System.Drawing.Point(629, 735);
+            this.label15.Location = new System.Drawing.Point(110, 752);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(374, 29);
             this.label15.TabIndex = 44;
             this.label15.Text = "Max Alerations Per Day in Dollars ";
+            // 
+            // CustomOrderDatePickerStart
+            // 
+            this.CustomOrderDatePickerStart.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CustomOrderDatePickerStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CustomOrderDatePickerStart.Location = new System.Drawing.Point(610, 590);
+            this.CustomOrderDatePickerStart.Name = "CustomOrderDatePickerStart";
+            this.CustomOrderDatePickerStart.Size = new System.Drawing.Size(319, 29);
+            this.CustomOrderDatePickerStart.TabIndex = 45;
+            // 
+            // CustomOrderDatePickerEnd
+            // 
+            this.CustomOrderDatePickerEnd.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CustomOrderDatePickerEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CustomOrderDatePickerEnd.Location = new System.Drawing.Point(935, 590);
+            this.CustomOrderDatePickerEnd.Name = "CustomOrderDatePickerEnd";
+            this.CustomOrderDatePickerEnd.Size = new System.Drawing.Size(319, 29);
+            this.CustomOrderDatePickerEnd.TabIndex = 46;
+            // 
+            // GetCustomOrdersButton
+            // 
+            this.GetCustomOrdersButton.BackColor = System.Drawing.Color.Maroon;
+            this.GetCustomOrdersButton.Font = new System.Drawing.Font("Trajan Pro", 14F);
+            this.GetCustomOrdersButton.ForeColor = System.Drawing.Color.White;
+            this.GetCustomOrdersButton.Location = new System.Drawing.Point(610, 634);
+            this.GetCustomOrdersButton.Name = "GetCustomOrdersButton";
+            this.GetCustomOrdersButton.Size = new System.Drawing.Size(644, 83);
+            this.GetCustomOrdersButton.TabIndex = 47;
+            this.GetCustomOrdersButton.Text = "Get Custom Orders Between Dates";
+            this.GetCustomOrdersButton.UseVisualStyleBackColor = false;
+            this.GetCustomOrdersButton.Click += new System.EventHandler(this.GetCustomOrdersButton_Click);
             // 
             // AdminStatsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1309, 831);
+            this.ClientSize = new System.Drawing.Size(1309, 855);
+            this.Controls.Add(this.GetCustomOrdersButton);
+            this.Controls.Add(this.CustomOrderDatePickerEnd);
+            this.Controls.Add(this.CustomOrderDatePickerStart);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.Save);
@@ -505,7 +528,6 @@
             this.Controls.Add(this.TotalPaidNonTaxableFromOrdersLabel);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.TotalPaidTaxableFromOrdersLabel);
-            this.Controls.Add(this.BackupButton);
             this.Controls.Add(this.CopyToClipboardButton);
             this.Controls.Add(this.EmailResultTextBox);
             this.Controls.Add(this.GetEmailsButton);
@@ -548,7 +570,6 @@
         private CustomControls.HKTStandardButton GetEmailsButton;
         private System.Windows.Forms.TextBox EmailResultTextBox;
         private CustomControls.HKTStandardButton CopyToClipboardButton;
-        private CustomControls.HKTStandardButton BackupButton;
         private System.Windows.Forms.Label TotalPaidTaxableFromOrdersLabel;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
@@ -571,5 +592,8 @@
         private System.Windows.Forms.Button Save;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.DateTimePicker CustomOrderDatePickerStart;
+        private System.Windows.Forms.DateTimePicker CustomOrderDatePickerEnd;
+        private CustomControls.HKTStandardButton GetCustomOrdersButton;
     }
 }
