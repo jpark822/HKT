@@ -436,7 +436,7 @@ namespace DomainModel.Ticket
             DBConnector connector = new DBConnector();
             MySqlCommand getTicketsCommand = new MySqlCommand();
             getTicketsCommand.Connection = connector.connection;
-            getTicketsCommand.CommandText = "SELECT date_ready, SUM( price ) as price FROM Tickets t JOIN Ticket_Alterations ta ON t.ticket_id = ta.ticket_id WHERE date_ready >= CURDATE( ) AND  taxable =0 GROUP BY date_ready";
+            getTicketsCommand.CommandText = "SELECT date_ready, SUM( price ) as price FROM Tickets t JOIN Ticket_Alterations ta ON t.ticket_id = ta.ticket_id WHERE date_ready >= CURDATE( ) AND  taxable =0 and t.order_id = ''  GROUP BY date_ready";
             List<AlterationToatalForDay> list = new List<AlterationToatalForDay>();
             try
             {
