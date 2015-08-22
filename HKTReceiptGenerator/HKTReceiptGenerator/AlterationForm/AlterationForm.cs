@@ -85,7 +85,7 @@ namespace HKTReceiptGenerator
         private DateTime GetNextValidDateNotOverMaxAlterations(DateTime date)
         {
             var test = alterationToatalForDays.Where(x => x.Date == date).FirstOrDefault();
-            if (date.DayOfWeek == DayOfWeek.Sunday)
+            if (date.DayOfWeek == DayOfWeek.Sunday || date.DayOfWeek == DayOfWeek.Saturday)
             {
                 return GetNextValidDateNotOverMaxAlterations(date.AddDays(1));
             }
@@ -124,6 +124,14 @@ namespace HKTReceiptGenerator
                 DialogResult dr = MessageBox.Show("The total aletrations for " +
                 DateReadyPicker.Value.ToLongDateString() + " is aproching the day maximum",
                 "Confirm Date Change", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else if (DateReadyPicker.Value.DayOfWeek == DayOfWeek.Saturday)
+            {
+                var readyDate = GetNextValidDateNotOverMaxAlterations(DateReadyPicker.Value);
+                DialogResult dr = MessageBox.Show(DateReadyPicker.Value.ToLongDateString()+
+                " Saturdays are not recommended for alterations. Would you like the next avaiable date " +
+                readyDate.ToLongDateString() + "?",
+                "Confirm Date Change", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             }
         }
 
