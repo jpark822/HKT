@@ -138,6 +138,11 @@ namespace HKTReceiptGenerator
         public AlterationForm(TicketResource ticketResource)
         {
             SetupForm();
+            ConfigurationRepository configRepo = new ConfigurationRepository();
+            TicketRepository ticketRepo = new TicketRepository();
+            maxAlterations = Convert.ToDouble(configRepo.GetConfigrationSettings().Where(x => x.Setting == "maxAlterations").Select(x => x.Value).DefaultIfEmpty("").First());
+            alterationToatalForDays = ticketRepo.GetAlterationToatalForDays();
+
             if (ticketResource.TicketId == 0)
             {
                 isNewAlteration = true;
