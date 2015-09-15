@@ -53,6 +53,7 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.CloseButton = new CustomControls.HKTStandardButton();
+            this.DartUnderLapelButton = new CustomControls.HKTStandardButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -329,6 +330,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.DartUnderLapelButton);
             this.groupBox2.Controls.Add(this.DoubleToSingleBttn);
             this.groupBox2.Controls.Add(this.NarrowLapelsBttn);
             this.groupBox2.Controls.Add(this.SidesBttn);
@@ -338,7 +340,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Trajan Pro", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 325);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(820, 301);
+            this.groupBox2.Size = new System.Drawing.Size(1113, 301);
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Misc";
@@ -360,7 +362,7 @@
             this.groupBox4.Controls.Add(this.CloseSingleVentsBttn);
             this.groupBox4.Controls.Add(this.CloseTwoVentsBttn);
             this.groupBox4.Font = new System.Drawing.Font("Trajan Pro", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(849, 325);
+            this.groupBox4.Location = new System.Drawing.Point(1143, 325);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(276, 301);
             this.groupBox4.TabIndex = 21;
@@ -396,7 +398,7 @@
             this.CloseButton.BackColor = System.Drawing.Color.Maroon;
             this.CloseButton.Font = new System.Drawing.Font("Trajan Pro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CloseButton.ForeColor = System.Drawing.Color.White;
-            this.CloseButton.Location = new System.Drawing.Point(1158, 480);
+            this.CloseButton.Location = new System.Drawing.Point(1158, 666);
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Size = new System.Drawing.Size(246, 130);
             this.CloseButton.TabIndex = 17;
@@ -404,12 +406,25 @@
             this.CloseButton.UseVisualStyleBackColor = false;
             this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
+            // DartUnderLapelButton
+            // 
+            this.DartUnderLapelButton.BackColor = System.Drawing.Color.Maroon;
+            this.DartUnderLapelButton.Font = new System.Drawing.Font("Trajan Pro", 14F);
+            this.DartUnderLapelButton.ForeColor = System.Drawing.Color.White;
+            this.DartUnderLapelButton.Location = new System.Drawing.Point(837, 19);
+            this.DartUnderLapelButton.Name = "DartUnderLapelButton";
+            this.DartUnderLapelButton.Size = new System.Drawing.Size(244, 130);
+            this.DartUnderLapelButton.TabIndex = 18;
+            this.DartUnderLapelButton.Text = "Dart Under Lapel";
+            this.DartUnderLapelButton.UseVisualStyleBackColor = false;
+            this.DartUnderLapelButton.Click += new System.EventHandler(this.DartUnderLapelButton_Click);
+            // 
             // AddJacketModal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1434, 643);
+            this.ClientSize = new System.Drawing.Size(1434, 822);
             this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
@@ -461,5 +476,6 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.GroupBox groupBox6;
         private CustomControls.HKTStandardButton CloseButton;
+        private CustomControls.HKTStandardButton DartUnderLapelButton;
     }
 }

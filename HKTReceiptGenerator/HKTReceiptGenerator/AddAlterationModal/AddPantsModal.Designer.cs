@@ -44,6 +44,8 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.CloseButton = new CustomControls.HKTStandardButton();
+            this.HemNoLiningButton = new CustomControls.HKTStandardButton();
+            this.TaperLegsOutsideButton = new CustomControls.HKTStandardButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -97,7 +99,7 @@
             this.TaperLegBttn.Name = "TaperLegBttn";
             this.TaperLegBttn.Size = new System.Drawing.Size(246, 130);
             this.TaperLegBttn.TabIndex = 3;
-            this.TaperLegBttn.Text = "Taper Legs";
+            this.TaperLegBttn.Text = "Taper Legs Inside";
             this.TaperLegBttn.UseVisualStyleBackColor = false;
             this.TaperLegBttn.Click += new System.EventHandler(this.TaperLegBttn_Click);
             // 
@@ -207,6 +209,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.HemNoLiningButton);
             this.groupBox1.Controls.Add(this.HemNoCuffsBttn);
             this.groupBox1.Controls.Add(this.HemWithCuffsBttn);
             this.groupBox1.Controls.Add(this.OriginalHemJeansBttn);
@@ -220,6 +223,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.TaperLegsOutsideButton);
             this.groupBox2.Controls.Add(this.NewLiningFront);
             this.groupBox2.Controls.Add(this.TaperLegBttn);
             this.groupBox2.Controls.Add(this.NewLiningFrontBack);
@@ -227,7 +231,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Trajan Pro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 319);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(529, 301);
+            this.groupBox2.Size = new System.Drawing.Size(529, 429);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Lining and Taper";
@@ -260,12 +264,38 @@
             this.CloseButton.UseVisualStyleBackColor = false;
             this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
+            // HemNoLiningButton
+            // 
+            this.HemNoLiningButton.BackColor = System.Drawing.Color.Maroon;
+            this.HemNoLiningButton.Font = new System.Drawing.Font("Trajan Pro", 14F);
+            this.HemNoLiningButton.ForeColor = System.Drawing.Color.White;
+            this.HemNoLiningButton.Location = new System.Drawing.Point(267, 158);
+            this.HemNoLiningButton.Name = "HemNoLiningButton";
+            this.HemNoLiningButton.Size = new System.Drawing.Size(246, 130);
+            this.HemNoLiningButton.TabIndex = 8;
+            this.HemNoLiningButton.Text = "Hem With Lining";
+            this.HemNoLiningButton.UseVisualStyleBackColor = false;
+            this.HemNoLiningButton.Click += new System.EventHandler(this.HemNoLiningButton_Click);
+            // 
+            // TaperLegsOutsideButton
+            // 
+            this.TaperLegsOutsideButton.BackColor = System.Drawing.Color.Maroon;
+            this.TaperLegsOutsideButton.Font = new System.Drawing.Font("Trajan Pro", 14F);
+            this.TaperLegsOutsideButton.ForeColor = System.Drawing.Color.White;
+            this.TaperLegsOutsideButton.Location = new System.Drawing.Point(15, 294);
+            this.TaperLegsOutsideButton.Name = "TaperLegsOutsideButton";
+            this.TaperLegsOutsideButton.Size = new System.Drawing.Size(246, 129);
+            this.TaperLegsOutsideButton.TabIndex = 11;
+            this.TaperLegsOutsideButton.Text = "Taper Legs Outside";
+            this.TaperLegsOutsideButton.UseVisualStyleBackColor = false;
+            this.TaperLegsOutsideButton.Click += new System.EventHandler(this.TaperLegsOutsideButton_Click);
+            // 
             // AddPantsModal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1091, 641);
+            this.ClientSize = new System.Drawing.Size(1091, 797);
             this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -300,5 +330,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private CustomControls.HKTStandardButton CloseButton;
+        private CustomControls.HKTStandardButton HemNoLiningButton;
+        private CustomControls.HKTStandardButton TaperLegsOutsideButton;
     }
 }

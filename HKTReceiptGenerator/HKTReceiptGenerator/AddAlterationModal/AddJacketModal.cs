@@ -30,47 +30,47 @@ namespace HKTReceiptGenerator.AddAlterationModal
 
         private void SleevesShortLengthButton_Click(object sender, EventArgs e)
         {
-            AlterationChosen("J Sleeves - Shorten or Lengthen ($25.00)", 25.00);
+            AlterationChosen("J Sleeves - Shorten or Lengthen ($30.00)", 30.00);
         }
 
         private void ShouldersButton_Click(object sender, EventArgs e)
         {
-            AlterationChosen("J Shoulders ($125.00)", 125.00);
+            AlterationChosen("J Shoulders ($175.00)", 175.00);
         }
 
         private void SleevesTaperLetButton_Click(object sender, EventArgs e)
         {
-            AlterationChosen("J Sleeves - Taper or Let Out ($30.00)", 30.00);
+            AlterationChosen("J Sleeves - Taper or Let Out ($35.00)", 35.00);
         }
 
         private void LowerRollBttn_Click(object sender, EventArgs e)
         {
-            AlterationChosen("J Lower Roll Behind Collar ($35.00)", 35.00);
+            AlterationChosen("J Lower Roll Behind Collar ($40.00)", 40.00);
         }
 
         private void ExtensiveRollBttn_Click(object sender, EventArgs e)
         {
-            AlterationChosen("J Lift Back Panel For Extensive Roll Behind Collar ($75.00)", 75.00);
+            AlterationChosen("J Lift Back Panel For Extensive Roll Behind Collar ($120.00)", 120.00);
         }
 
         private void SidesBttn_Click(object sender, EventArgs e)
         {
-            AlterationChosen("J Sides ($45.00)", 45.00);
+            AlterationChosen("J Sides ($55.00)", 55.00);
         }
 
         private void DartsAtFrontBttn_Click(object sender, EventArgs e)
         {
-            AlterationChosen("J Darts at Front ($25.00)", 25.00);
+            AlterationChosen("J Darts at Front ($35.00)", 35.00);
         }
 
         private void CollarInBttn_Click(object sender, EventArgs e)
         {
-            AlterationChosen("J Collar in ($60.00)", 60.00);
+            AlterationChosen("J Collar in ($70.00)", 70.00);
         }
 
         private void CollarInToWasitBttn_Click(object sender, EventArgs e)
         {
-            AlterationChosen("J Collar in to Waistline ($85.00)", 85.00);
+            AlterationChosen("J Collar in to Waistline ($100.00)", 100.00);
         }
 
         private void ShouldPadReplaceBttn_Click(object sender, EventArgs e)
@@ -80,27 +80,27 @@ namespace HKTReceiptGenerator.AddAlterationModal
 
         private void NarrowLapelsBttn_Click(object sender, EventArgs e)
         {
-            AlterationChosen("J Narrow Lapels ($100.00)", 100.00);
+            AlterationChosen("J Narrow Lapels ($120.00)", 120.00);
         }
 
         private void FunctionalButtonHolesSleevesBttn_Click(object sender, EventArgs e)
         {
-            AlterationChosen("J Functional Button holes in Sleeves or Lapel ($10)", 10);
+            AlterationChosen("J Functional Button holes in Sleeves or Lapel ($20)", 20);
         }
 
         private void FunctionalButtonHolesLapelBttn_Click(object sender, EventArgs e)
         {
-            AlterationChosen("J Functional Button Holes on front panel or Lapel ($20)", 20);
+            AlterationChosen("J Functional Button Holes on front panel or Lapel ($25)", 25);
         }
 
         private void NewLiningBttn_Click(object sender, EventArgs e)
         {
-            AlterationChosen("J New Lining ($150.00)", 150);
+            AlterationChosen("J New Lining ($200.00)", 200);
         }
 
         private void ShortenLengthBttn_Click(object sender, EventArgs e)
         {
-            AlterationChosen("J Shorten Length ($50.00)", 50);
+            AlterationChosen("J Shorten Length ($60.00)", 60);
         }
 
         private void CloseSingleVentsBttn_Click(object sender, EventArgs e)
@@ -126,6 +126,11 @@ namespace HKTReceiptGenerator.AddAlterationModal
         private void CloseButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void DartUnderLapelButton_Click(object sender, EventArgs e)
+        {
+            AlterationChosen("J Dart Under Lapel ($75.00)", 75);
         }
     }
 }

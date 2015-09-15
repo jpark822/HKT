@@ -30,7 +30,7 @@ namespace HKTReceiptGenerator.AddAlterationModal
 
         private void PatchBttn_Click(object sender, EventArgs e)
         {
-            AlterationChosen("Patch ($5.00)", 5);
+            AlterationChosen("Patch ($7.00)", 7);
         }
 
         private void CDCBttn_Click(object sender, EventArgs e)
@@ -40,12 +40,12 @@ namespace HKTReceiptGenerator.AddAlterationModal
 
         private void TieExtendShortenBttn_Click(object sender, EventArgs e)
         {
-            AlterationChosen("Tie Extension/Shortening ($20.00)", 20);
+            AlterationChosen("Tie Extension/Shortening ($30.00)", 30);
         }
 
         private void TieNarrowingBttn_Click(object sender, EventArgs e)
         {
-            AlterationChosen("Tie Narrowing ($20.00)", 20);
+            AlterationChosen("Tie Narrowing ($30.00)", 30);
         }
 
         private void AddMiscModal_Load(object sender, EventArgs e)

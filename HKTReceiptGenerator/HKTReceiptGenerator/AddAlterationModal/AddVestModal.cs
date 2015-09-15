@@ -30,17 +30,17 @@ namespace HKTReceiptGenerator.AddAlterationModal
 
         private void TaperBttn_Click(object sender, EventArgs e)
         {
-            AlterationChosen("V Taper Sides ($25.00)", 25);
+            AlterationChosen("V Taper Sides ($30.00)", 30);
         }
 
         private void BackPanelBttn_Click(object sender, EventArgs e)
         {
-            AlterationChosen("V New Back Panel ($60.00)", 60);
+            AlterationChosen("V New Back Panel ($75.00)", 75);
         }
 
         private void ShortenBttn_Click(object sender, EventArgs e)
         {
-            AlterationChosen("V Shorten Length ($30.00)", 30);
+            AlterationChosen("V Shorten Length ($40.00)", 40);
         }
 
         private void AddVestModal_Load(object sender, EventArgs e)
