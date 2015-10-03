@@ -41,11 +41,13 @@
             this.LowerWaistBandBttn = new CustomControls.HKTStandardButton();
             this.WaistAndDartsBttn = new CustomControls.HKTStandardButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.HemNoLiningButton = new CustomControls.HKTStandardButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.TaperLegsOutsideButton = new CustomControls.HKTStandardButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.CloseButton = new CustomControls.HKTStandardButton();
-            this.HemNoLiningButton = new CustomControls.HKTStandardButton();
-            this.TaperLegsOutsideButton = new CustomControls.HKTStandardButton();
+            this.TaperCenterSeamButton = new CustomControls.HKTStandardButton();
+            this.RemovePleatsButton = new CustomControls.HKTStandardButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -221,8 +223,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Hem";
             // 
+            // HemNoLiningButton
+            // 
+            this.HemNoLiningButton.BackColor = System.Drawing.Color.Maroon;
+            this.HemNoLiningButton.Font = new System.Drawing.Font("Trajan Pro", 14F);
+            this.HemNoLiningButton.ForeColor = System.Drawing.Color.White;
+            this.HemNoLiningButton.Location = new System.Drawing.Point(267, 158);
+            this.HemNoLiningButton.Name = "HemNoLiningButton";
+            this.HemNoLiningButton.Size = new System.Drawing.Size(246, 130);
+            this.HemNoLiningButton.TabIndex = 8;
+            this.HemNoLiningButton.Text = "Hem With Lining";
+            this.HemNoLiningButton.UseVisualStyleBackColor = false;
+            this.HemNoLiningButton.Click += new System.EventHandler(this.HemNoLiningButton_Click);
+            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.TaperCenterSeamButton);
             this.groupBox2.Controls.Add(this.TaperLegsOutsideButton);
             this.groupBox2.Controls.Add(this.NewLiningFront);
             this.groupBox2.Controls.Add(this.TaperLegBttn);
@@ -236,8 +252,22 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Lining and Taper";
             // 
+            // TaperLegsOutsideButton
+            // 
+            this.TaperLegsOutsideButton.BackColor = System.Drawing.Color.Maroon;
+            this.TaperLegsOutsideButton.Font = new System.Drawing.Font("Trajan Pro", 14F);
+            this.TaperLegsOutsideButton.ForeColor = System.Drawing.Color.White;
+            this.TaperLegsOutsideButton.Location = new System.Drawing.Point(15, 294);
+            this.TaperLegsOutsideButton.Name = "TaperLegsOutsideButton";
+            this.TaperLegsOutsideButton.Size = new System.Drawing.Size(246, 129);
+            this.TaperLegsOutsideButton.TabIndex = 11;
+            this.TaperLegsOutsideButton.Text = "Taper Legs Outside";
+            this.TaperLegsOutsideButton.UseVisualStyleBackColor = false;
+            this.TaperLegsOutsideButton.Click += new System.EventHandler(this.TaperLegsOutsideButton_Click);
+            // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.RemovePleatsButton);
             this.groupBox3.Controls.Add(this.WaistAndSeatButton);
             this.groupBox3.Controls.Add(this.WaistSeatCrotchThigh);
             this.groupBox3.Controls.Add(this.WSCTToBottom);
@@ -256,7 +286,7 @@
             this.CloseButton.BackColor = System.Drawing.Color.Maroon;
             this.CloseButton.Font = new System.Drawing.Font("Trajan Pro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CloseButton.ForeColor = System.Drawing.Color.White;
-            this.CloseButton.Location = new System.Drawing.Point(814, 477);
+            this.CloseButton.Location = new System.Drawing.Point(830, 618);
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Size = new System.Drawing.Size(246, 130);
             this.CloseButton.TabIndex = 18;
@@ -264,38 +294,38 @@
             this.CloseButton.UseVisualStyleBackColor = false;
             this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
-            // HemNoLiningButton
+            // TaperCenterSeamButton
             // 
-            this.HemNoLiningButton.BackColor = System.Drawing.Color.Maroon;
-            this.HemNoLiningButton.Font = new System.Drawing.Font("Trajan Pro", 14F);
-            this.HemNoLiningButton.ForeColor = System.Drawing.Color.White;
-            this.HemNoLiningButton.Location = new System.Drawing.Point(267, 158);
-            this.HemNoLiningButton.Name = "HemNoLiningButton";
-            this.HemNoLiningButton.Size = new System.Drawing.Size(246, 130);
-            this.HemNoLiningButton.TabIndex = 8;
-            this.HemNoLiningButton.Text = "Hem With Lining";
-            this.HemNoLiningButton.UseVisualStyleBackColor = false;
-            this.HemNoLiningButton.Click += new System.EventHandler(this.HemNoLiningButton_Click);
+            this.TaperCenterSeamButton.BackColor = System.Drawing.Color.Maroon;
+            this.TaperCenterSeamButton.Font = new System.Drawing.Font("Trajan Pro", 14F);
+            this.TaperCenterSeamButton.ForeColor = System.Drawing.Color.White;
+            this.TaperCenterSeamButton.Location = new System.Drawing.Point(268, 295);
+            this.TaperCenterSeamButton.Name = "TaperCenterSeamButton";
+            this.TaperCenterSeamButton.Size = new System.Drawing.Size(245, 128);
+            this.TaperCenterSeamButton.TabIndex = 12;
+            this.TaperCenterSeamButton.Text = "Taper Center Seam";
+            this.TaperCenterSeamButton.UseVisualStyleBackColor = false;
+            this.TaperCenterSeamButton.Click += new System.EventHandler(this.TaperCenterSeamButton_Click);
             // 
-            // TaperLegsOutsideButton
+            // RemovePleatsButton
             // 
-            this.TaperLegsOutsideButton.BackColor = System.Drawing.Color.Maroon;
-            this.TaperLegsOutsideButton.Font = new System.Drawing.Font("Trajan Pro", 14F);
-            this.TaperLegsOutsideButton.ForeColor = System.Drawing.Color.White;
-            this.TaperLegsOutsideButton.Location = new System.Drawing.Point(15, 294);
-            this.TaperLegsOutsideButton.Name = "TaperLegsOutsideButton";
-            this.TaperLegsOutsideButton.Size = new System.Drawing.Size(246, 129);
-            this.TaperLegsOutsideButton.TabIndex = 11;
-            this.TaperLegsOutsideButton.Text = "Taper Legs Outside";
-            this.TaperLegsOutsideButton.UseVisualStyleBackColor = false;
-            this.TaperLegsOutsideButton.Click += new System.EventHandler(this.TaperLegsOutsideButton_Click);
+            this.RemovePleatsButton.BackColor = System.Drawing.Color.Maroon;
+            this.RemovePleatsButton.Font = new System.Drawing.Font("Trajan Pro", 14F);
+            this.RemovePleatsButton.ForeColor = System.Drawing.Color.White;
+            this.RemovePleatsButton.Location = new System.Drawing.Point(15, 294);
+            this.RemovePleatsButton.Name = "RemovePleatsButton";
+            this.RemovePleatsButton.Size = new System.Drawing.Size(246, 130);
+            this.RemovePleatsButton.TabIndex = 13;
+            this.RemovePleatsButton.Text = "Remove Pleats";
+            this.RemovePleatsButton.UseVisualStyleBackColor = false;
+            this.RemovePleatsButton.Click += new System.EventHandler(this.RemovePleatsButton_Click);
             // 
             // AddPantsModal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1091, 797);
+            this.ClientSize = new System.Drawing.Size(1091, 761);
             this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -332,5 +362,7 @@
         private CustomControls.HKTStandardButton CloseButton;
         private CustomControls.HKTStandardButton HemNoLiningButton;
         private CustomControls.HKTStandardButton TaperLegsOutsideButton;
+        private CustomControls.HKTStandardButton TaperCenterSeamButton;
+        private CustomControls.HKTStandardButton RemovePleatsButton;
     }
 }

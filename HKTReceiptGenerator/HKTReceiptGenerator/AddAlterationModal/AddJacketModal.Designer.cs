@@ -48,12 +48,13 @@
             this.LowerRollBttn = new CustomControls.HKTStandardButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.DartUnderLapelButton = new CustomControls.HKTStandardButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.CloseButton = new CustomControls.HKTStandardButton();
-            this.DartUnderLapelButton = new CustomControls.HKTStandardButton();
+            this.ButtonHoleReadySleevesButton = new CustomControls.HKTStandardButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -166,11 +167,11 @@
             this.FunctionalButtonHolesSleevesBttn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.FunctionalButtonHolesSleevesBttn.Font = new System.Drawing.Font("Trajan Pro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FunctionalButtonHolesSleevesBttn.ForeColor = System.Drawing.Color.White;
-            this.FunctionalButtonHolesSleevesBttn.Location = new System.Drawing.Point(15, 21);
+            this.FunctionalButtonHolesSleevesBttn.Location = new System.Drawing.Point(15, 23);
             this.FunctionalButtonHolesSleevesBttn.Name = "FunctionalButtonHolesSleevesBttn";
-            this.FunctionalButtonHolesSleevesBttn.Size = new System.Drawing.Size(246, 130);
+            this.FunctionalButtonHolesSleevesBttn.Size = new System.Drawing.Size(246, 85);
             this.FunctionalButtonHolesSleevesBttn.TabIndex = 11;
-            this.FunctionalButtonHolesSleevesBttn.Text = "Funtional Button holes on Sleeves";
+            this.FunctionalButtonHolesSleevesBttn.Text = "Functional Button holes on Sleeves";
             this.FunctionalButtonHolesSleevesBttn.UseVisualStyleBackColor = false;
             this.FunctionalButtonHolesSleevesBttn.Click += new System.EventHandler(this.FunctionalButtonHolesSleevesBttn_Click);
             // 
@@ -180,11 +181,11 @@
             this.FunctionalButtonHolesLapelBttn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.FunctionalButtonHolesLapelBttn.Font = new System.Drawing.Font("Trajan Pro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FunctionalButtonHolesLapelBttn.ForeColor = System.Drawing.Color.White;
-            this.FunctionalButtonHolesLapelBttn.Location = new System.Drawing.Point(15, 157);
+            this.FunctionalButtonHolesLapelBttn.Location = new System.Drawing.Point(15, 109);
             this.FunctionalButtonHolesLapelBttn.Name = "FunctionalButtonHolesLapelBttn";
-            this.FunctionalButtonHolesLapelBttn.Size = new System.Drawing.Size(246, 130);
+            this.FunctionalButtonHolesLapelBttn.Size = new System.Drawing.Size(246, 85);
             this.FunctionalButtonHolesLapelBttn.TabIndex = 12;
-            this.FunctionalButtonHolesLapelBttn.Text = "Funtional Funtional Button Holes on front panel or Lapel";
+            this.FunctionalButtonHolesLapelBttn.Text = "Functional Button Holes on front panel or Lapel";
             this.FunctionalButtonHolesLapelBttn.UseVisualStyleBackColor = false;
             this.FunctionalButtonHolesLapelBttn.Click += new System.EventHandler(this.FunctionalButtonHolesLapelBttn_Click);
             // 
@@ -345,8 +346,22 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Misc";
             // 
+            // DartUnderLapelButton
+            // 
+            this.DartUnderLapelButton.BackColor = System.Drawing.Color.Maroon;
+            this.DartUnderLapelButton.Font = new System.Drawing.Font("Trajan Pro", 14F);
+            this.DartUnderLapelButton.ForeColor = System.Drawing.Color.White;
+            this.DartUnderLapelButton.Location = new System.Drawing.Point(837, 19);
+            this.DartUnderLapelButton.Name = "DartUnderLapelButton";
+            this.DartUnderLapelButton.Size = new System.Drawing.Size(244, 130);
+            this.DartUnderLapelButton.TabIndex = 18;
+            this.DartUnderLapelButton.Text = "Dart Under Lapel";
+            this.DartUnderLapelButton.UseVisualStyleBackColor = false;
+            this.DartUnderLapelButton.Click += new System.EventHandler(this.DartUnderLapelButton_Click);
+            // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.ButtonHoleReadySleevesButton);
             this.groupBox3.Controls.Add(this.FunctionalButtonHolesSleevesBttn);
             this.groupBox3.Controls.Add(this.FunctionalButtonHolesLapelBttn);
             this.groupBox3.Font = new System.Drawing.Font("Trajan Pro", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -406,18 +421,18 @@
             this.CloseButton.UseVisualStyleBackColor = false;
             this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
-            // DartUnderLapelButton
+            // ButtonHoleReadySleevesButton
             // 
-            this.DartUnderLapelButton.BackColor = System.Drawing.Color.Maroon;
-            this.DartUnderLapelButton.Font = new System.Drawing.Font("Trajan Pro", 14F);
-            this.DartUnderLapelButton.ForeColor = System.Drawing.Color.White;
-            this.DartUnderLapelButton.Location = new System.Drawing.Point(837, 19);
-            this.DartUnderLapelButton.Name = "DartUnderLapelButton";
-            this.DartUnderLapelButton.Size = new System.Drawing.Size(244, 130);
-            this.DartUnderLapelButton.TabIndex = 18;
-            this.DartUnderLapelButton.Text = "Dart Under Lapel";
-            this.DartUnderLapelButton.UseVisualStyleBackColor = false;
-            this.DartUnderLapelButton.Click += new System.EventHandler(this.DartUnderLapelButton_Click);
+            this.ButtonHoleReadySleevesButton.BackColor = System.Drawing.Color.Maroon;
+            this.ButtonHoleReadySleevesButton.Font = new System.Drawing.Font("Trajan Pro", 14F);
+            this.ButtonHoleReadySleevesButton.ForeColor = System.Drawing.Color.White;
+            this.ButtonHoleReadySleevesButton.Location = new System.Drawing.Point(15, 200);
+            this.ButtonHoleReadySleevesButton.Name = "ButtonHoleReadySleevesButton";
+            this.ButtonHoleReadySleevesButton.Size = new System.Drawing.Size(246, 85);
+            this.ButtonHoleReadySleevesButton.TabIndex = 13;
+            this.ButtonHoleReadySleevesButton.Text = "Button Hole Ready Sleeves";
+            this.ButtonHoleReadySleevesButton.UseVisualStyleBackColor = false;
+            this.ButtonHoleReadySleevesButton.Click += new System.EventHandler(this.ButtonHoleReadySleevesButton_Click);
             // 
             // AddJacketModal
             // 
@@ -477,5 +492,6 @@
         private System.Windows.Forms.GroupBox groupBox6;
         private CustomControls.HKTStandardButton CloseButton;
         private CustomControls.HKTStandardButton DartUnderLapelButton;
+        private CustomControls.HKTStandardButton ButtonHoleReadySleevesButton;
     }
 }

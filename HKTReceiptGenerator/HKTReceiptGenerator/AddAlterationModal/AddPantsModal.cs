@@ -107,5 +107,15 @@ namespace HKTReceiptGenerator.AddAlterationModal
         {
             AlterationChosen("P Taper Legs Outside ($25.00)", 25);
         }
+
+        private void TaperCenterSeamButton_Click(object sender, EventArgs e)
+        {
+            AlterationChosen("P Taper Center Seam ($40.00)", 40);
+        }
+
+        private void RemovePleatsButton_Click(object sender, EventArgs e)
+        {
+            AlterationChosen("P Remove Pleats ($125.00)", 125);
+        }
     }
 }

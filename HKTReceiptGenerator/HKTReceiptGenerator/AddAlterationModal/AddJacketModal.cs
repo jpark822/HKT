@@ -85,7 +85,7 @@ namespace HKTReceiptGenerator.AddAlterationModal
 
         private void FunctionalButtonHolesSleevesBttn_Click(object sender, EventArgs e)
         {
-            AlterationChosen("J Functional Button holes in Sleeves or Lapel ($20)", 20);
+            AlterationChosen("J Functional Button holes in Sleeves or Lapel ($15)", 15);
         }
 
         private void FunctionalButtonHolesLapelBttn_Click(object sender, EventArgs e)
@@ -131,6 +131,11 @@ namespace HKTReceiptGenerator.AddAlterationModal
         private void DartUnderLapelButton_Click(object sender, EventArgs e)
         {
             AlterationChosen("J Dart Under Lapel ($75.00)", 75);
+        }
+
+        private void ButtonHoleReadySleevesButton_Click(object sender, EventArgs e)
+        {
+            AlterationChosen("J Button Hole Ready Sleeves ($25)", 25);
         }
     }
 }
