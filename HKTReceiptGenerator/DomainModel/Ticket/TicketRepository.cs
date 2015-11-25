@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using System.Data;
 using DomainModel.TicketAlterations;
 using MySql.Data.MySqlClient;
+using System.Text.RegularExpressions;
 
 namespace DomainModel.Ticket
 {
@@ -277,8 +278,9 @@ namespace DomainModel.Ticket
                 }
                 if (entry.Key == TicketProperty.Telephone)
                 {
-                    sql += "Customer.telephone = @telephone";
-                    getTicketsCommand.Parameters.AddWithValue("@telephone", (String)entry.Value);
+                    var phone = Regex.Match((String)entry.Value, @"\d+").Value;
+                    sql += "TRIM( REPLACE( REPLACE( REPLACE( REPLACE( REPLACE( REPLACE( Customer.phone,  ' ',  '' ) ,  '-',  '' ) ,  ',',  '' ) ,  '/',  '' ) ,  '(',  '' ) ,  ')',  '' ) ) LIKE @telephone";
+                    getTicketsCommand.Parameters.AddWithValue("@telephone", "%" + (String)phone + "%");
                 }
                 if (entry.Key == TicketProperty.Email)
                 {
