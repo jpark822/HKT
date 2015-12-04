@@ -21,6 +21,7 @@ using DomainModel.Ticket;
 using DomainModel.TicketAlterations;
 using DomainModel.Customer;
 using HKTReceiptGenerator.Customer;
+using System.Text.RegularExpressions;
 
 namespace HKTReceiptGenerator
 {
@@ -372,7 +373,14 @@ namespace HKTReceiptGenerator
             if (didUpdateOrInsertCorrectly)
             {
                 String text = ReceiptStringBulder.BuildStringFromArgs(CollectDataForReceiptPrinting(true), true, true);
-                Emailer.SendEmailWithBodyAsync(text, EmailTextBox.Text);
+
+                bool isEmail = Regex.IsMatch(EmailTextBox.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase);
+                if (isEmail)
+                {
+                    Emailer.SendEmailWithBodyAsync(text, EmailTextBox.Text);
+                }else{
+                     MessageBox.Show("You must enter a valid email");
+                }
             }
         }
 
