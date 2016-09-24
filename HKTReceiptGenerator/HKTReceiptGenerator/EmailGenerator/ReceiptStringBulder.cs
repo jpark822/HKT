@@ -13,11 +13,11 @@ namespace HKTReceiptGenerator
             StringBuilder text = new StringBuilder();
             if (isCusomterCopy)
             {
-                text.AppendLine("                Hong Kong Tailors");
+                text.AppendLine("               HKT Custom Clothiers");
                 text.AppendLine("           5378 Buford Highway NE");
                 text.AppendLine("                Atlanta, GA 30340");
                 text.AppendLine("                    770.458.8682");
-                text.AppendLine("            www.hongkongtailor.com");
+                text.AppendLine("            www.hktclothiers.com");
                 text.AppendLine();  
             }
             text.AppendLine("Ticket ID: " + args.TicketId);
@@ -53,7 +53,7 @@ namespace HKTReceiptGenerator
 
             if (isCusomterCopy && isEmailCopy)
             {
-                text.AppendLine("Please DO NOT reply to this automated email as its inbox is unmonitored. Please contact HKT@hongkongtailor.com if you have any questions or concerns.");
+                text.AppendLine("Please DO NOT reply to this automated email as its inbox is unmonitored. Please contact team@hktclothiers.com if you have any questions or concerns.");
                 text.AppendLine();
             }
             if (isCusomterCopy)
@@ -65,12 +65,12 @@ namespace HKTReceiptGenerator
                 text.AppendLine("No refunds or exchanges on custom clothing. ");
                 text.AppendLine("Custom orders are generally ready 4 to 6 weeks from order date. ");
                 text.AppendLine("Refunds will be issued in the original tender of the purchase, except cash refunds will be issued by check.");
-                text.AppendLine("Hong Kong Tailors reserves the right to modify its return and exchange policy");
+                text.AppendLine("HKT Custom Clothiers reserves the right to modify its return and exchange policy");
                 text.AppendLine();
-                text.AppendLine("Thank you for choosing Hong Kong Tailors!");
-                text.AppendLine("Like us on Facebook: www.facebook.com/HongKongTailorsAtlanta");
-                text.AppendLine("Follow us on Instagram: www.instagram.com/hongkongtailor");
-                text.AppendLine("Follow us on Twitter: www.twitter.com/HongKongTailors");
+                text.AppendLine("Thank you for choosing HKT Custom Clothiers!");
+                text.AppendLine("Like us on Facebook: www.facebook.com/HKTClothiers");
+                text.AppendLine("Follow us on Instagram: www.instagram.com/hktclothiers");
+                text.AppendLine("Follow us on Twitter: www.twitter.com/HKTClothiers");
             }
             else if (!isCusomterCopy)
             {

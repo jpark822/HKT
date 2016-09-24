@@ -21,7 +21,6 @@ using DomainModel.Ticket;
 using DomainModel.TicketAlterations;
 using DomainModel.Customer;
 using HKTReceiptGenerator.Customer;
-using System.Text.RegularExpressions;
 
 namespace HKTReceiptGenerator
 {
@@ -86,7 +85,7 @@ namespace HKTReceiptGenerator
         private DateTime GetNextValidDateNotOverMaxAlterations(DateTime date)
         {
             var test = alterationToatalForDays.Where(x => x.Date == date).FirstOrDefault();
-            if (date.DayOfWeek == DayOfWeek.Sunday || date.DayOfWeek == DayOfWeek.Saturday)
+            if (date.DayOfWeek == DayOfWeek.Sunday || date.DayOfWeek == DayOfWeek.Saturday || date.Date == new DateTime(2015, 12, 25) || date.Date == new DateTime(2016, 01, 01) || date.Date == new DateTime(2016, 05, 30))
             {
                 return GetNextValidDateNotOverMaxAlterations(date.AddDays(1));
             }
@@ -131,6 +130,14 @@ namespace HKTReceiptGenerator
                 var readyDate = GetNextValidDateNotOverMaxAlterations(DateReadyPicker.Value);
                 DialogResult dr = MessageBox.Show(DateReadyPicker.Value.ToLongDateString()+
                 " Saturdays are not recommended for alterations. Would you like the next avaiable date " +
+                readyDate.ToLongDateString() + "?",
+                "Confirm Date Change", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            }
+            else if (DateReadyPicker.Value == new DateTime(2015, 12, 25) || DateReadyPicker.Value == new DateTime(2016, 01, 01))
+            {
+                var readyDate = GetNextValidDateNotOverMaxAlterations(DateReadyPicker.Value);
+                DialogResult dr = MessageBox.Show(DateReadyPicker.Value.ToLongDateString() +
+                " Holidays are not recommended for alterations. Would you like the next avaiable date " +
                 readyDate.ToLongDateString() + "?",
                 "Confirm Date Change", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             }
@@ -373,14 +380,7 @@ namespace HKTReceiptGenerator
             if (didUpdateOrInsertCorrectly)
             {
                 String text = ReceiptStringBulder.BuildStringFromArgs(CollectDataForReceiptPrinting(true), true, true);
-
-                bool isEmail = Regex.IsMatch(EmailTextBox.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase);
-                if (isEmail)
-                {
-                    Emailer.SendEmailWithBodyAsync(text, EmailTextBox.Text);
-                }else{
-                     MessageBox.Show("You must enter a valid email");
-                }
+                Emailer.SendEmailWithBodyAsync(text, EmailTextBox.Text);
             }
         }
 

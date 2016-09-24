@@ -41,7 +41,7 @@
             // CustomerButton
             // 
             this.CustomerButton.BackColor = System.Drawing.Color.Maroon;
-            this.CustomerButton.Font = new System.Drawing.Font("Trajan Pro", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CustomerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CustomerButton.ForeColor = System.Drawing.Color.White;
             this.CustomerButton.Location = new System.Drawing.Point(45, 445);
             this.CustomerButton.Name = "CustomerButton";
@@ -54,7 +54,7 @@
             // SearchButton
             // 
             this.SearchButton.BackColor = System.Drawing.Color.Maroon;
-            this.SearchButton.Font = new System.Drawing.Font("Trajan Pro", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchButton.ForeColor = System.Drawing.Color.White;
             this.SearchButton.Location = new System.Drawing.Point(302, 445);
             this.SearchButton.Name = "SearchButton";
@@ -67,7 +67,7 @@
             // AdminStatsButton
             // 
             this.AdminStatsButton.BackColor = System.Drawing.Color.Maroon;
-            this.AdminStatsButton.Font = new System.Drawing.Font("Trajan Pro", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AdminStatsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AdminStatsButton.ForeColor = System.Drawing.Color.White;
             this.AdminStatsButton.Location = new System.Drawing.Point(556, 445);
             this.AdminStatsButton.Name = "AdminStatsButton";
@@ -90,9 +90,9 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Location = new System.Drawing.Point(12, -1);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(800, 571);
+            this.pictureBox2.Size = new System.Drawing.Size(756, 471);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;

@@ -34,7 +34,7 @@ namespace HKTReceiptGenerator
 
             string toaddress = toEmailAddress;
             MailMessage message = new MailMessage(fromaddress, toaddress);
-            message.Subject = "Your e-Receipt From Hong Kong Tailors";
+            message.Subject = "Your e-Receipt From HKT Custom Clothiers";
             message.Body = body;
             SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
             client.EnableSsl = true;
